@@ -41,6 +41,7 @@ function App() {
         </a>
         <div>
           <p>Luc De Nardi</p>
+          <p>Hanna Gebrel</p>
         </div>
       </header>
       <Form>
