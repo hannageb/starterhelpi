@@ -1,4 +1,20 @@
 import React from 'react';
-//import App from './App.tsx'
+import { BrowserRouter as Router, Routes, Route }
+    from "react-router-dom";
+import App from './App'
 
-export{}
+function goHomeScreen(){
+    return(
+        <div>
+            <header>
+                <Router>
+                    <Routes>
+                        <Route path="/"
+                            element={<App />} />
+                    </Routes>
+                </Router>
+            </header>
+        </div>
+    );
+}
+export default goHomeScreen;
