@@ -40,9 +40,9 @@ function App() {
           Learn React
         </a>
         <div>
-          <p>Luc De Nardi</p>
-          <p>Hanna Gebrel</p>
-          <p>Isha Kashif</p>
+          <h3>Luc De Nardi</h3>
+          <h3>Hanna Gebrel</h3>
+          <h3>Isha Kashif</h3>
         </div>
       </header>
       <Form>
