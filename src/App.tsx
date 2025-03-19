@@ -24,6 +24,7 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -39,12 +40,12 @@ function App() {
         >
           Learn React
         </a>
-        <div>
+      </header>
+      <div>
           <h3>Luc De Nardi</h3>
           <h3>Hanna Gebrel</h3>
           <h3>Isha Kashif</h3>
         </div>
-      </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
