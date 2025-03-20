@@ -1,20 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route }
-    from "react-router-dom";
 import App from './App'
+import { Button } from 'react-bootstrap';
 
-function goHomeScreen(){
+export function goHomeScreen() {
     return(
         <div>
-            <header>
-                <Router>
-                    <Routes>
-                        <Route path="/"
-                            element={<App />} />
-                    </Routes>
-                </Router>
+            <header className="bg-blue-600 p-4 flex justify-between items-center shadow-md">
+                <Button onClick={ () => { navigate('/') } }>Home Page</Button>
             </header>
         </div>
     );
 }
-export default goHomeScreen;
+
+export function basicQs(){
+    return(
+        <div>
+            <p>
+                welcome
+            </p>
+        </div>
+    )
+}
