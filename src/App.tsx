@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import GoHomeScreen from './BasicQs'
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -43,9 +45,17 @@ function App() {
 
       </header>
       <div>
-          <h3>Luc De Nardi</h3>
-          <h3>Hanna Gebrel</h3>
-          <h3>Isha Kashif</h3>
+        <h3>Luc De Nardi</h3>
+        <h3>Hanna Gebrel</h3>
+        <h3>Isha Kashif</h3>
+      </div>
+      <div>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<div><h4>Welcome to the Career Helpi</h4></div>} />
+              <Route path="/Basic Question" element={<GoHomeScreen />} />
+            </Routes>
+          </BrowserRouter>
         </div>
       <Form>
         <Form.Label>API Key:</Form.Label>

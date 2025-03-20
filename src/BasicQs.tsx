@@ -1,16 +1,16 @@
 import React from 'react';
-import App from './App'
-import { Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
-export function goHomeScreen() {
+function GoHomeScreen() {
     return(
         <div>
-            <header className="bg-blue-600 p-4 flex justify-between items-center shadow-md">
-                <Button onClick={ () => { navigate('/') } }>Home Page</Button>
-            </header>
+            <h5>
+                <Link to="/">Homepage</Link>
+            </h5>
         </div>
     );
 }
+export default GoHomeScreen
 
 export function basicQs(){
     return(
