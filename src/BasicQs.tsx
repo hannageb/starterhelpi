@@ -10,4 +10,9 @@ function GoHomeScreen() {
         </div>
     );
 }
-export default GoHomeScreen
+function BasicQ(){
+    return(
+        <GoHomeScreen></GoHomeScreen>
+    );
+}
+export default BasicQ

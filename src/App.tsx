@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import GoHomeScreen from './BasicQs'
+import BasicQ from './BasicQs'
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -53,7 +53,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<div><h4>Welcome to the Career Helpi</h4></div>} />
-              <Route path="/Basic Question" element={<GoHomeScreen />} />
+              <Route path="/Basic Question" element={<BasicQ />} />
             </Routes>
           </BrowserRouter>
         </div>
