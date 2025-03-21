@@ -1,20 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route }
-    from "react-router-dom";
-import App from './App'
+import { Link } from "react-router-dom";
 
-function goHomeScreen(){
+function GoHomeScreen() {
     return(
         <div>
-            <header>
-                <Router>
-                    <Routes>
-                        <Route path="/"
-                            element={<App />} />
-                    </Routes>
-                </Router>
-            </header>
+            <h5>
+                <Link to="/">Homepage</Link>
+            </h5>
         </div>
     );
 }
-export default goHomeScreen;
+function DetailedQ(){
+    return(
+        <GoHomeScreen></GoHomeScreen>
+    );
+}
+export default DetailedQ

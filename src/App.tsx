@@ -4,6 +4,7 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BasicQ from './BasicQs'
+import DetailedQ from './DetailedQs';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -54,6 +55,7 @@ function App() {
             <Routes>
               <Route path="/" element={<div><h4>Welcome to the Career Helpi</h4></div>} />
               <Route path="/Basic Question" element={<BasicQ />} />
+              <Route path="/Detailed Question" element={<DetailedQ/>} />
             </Routes>
           </BrowserRouter>
         </div>
