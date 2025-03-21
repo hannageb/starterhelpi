@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 function GoHomeScreen() {
@@ -13,10 +13,28 @@ function GoHomeScreen() {
         </header>
     );
 }
+
 function BasicQ(){
+    const [response, setResponse] = useState<string>("");
+
+    function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
+        setResponse(event.target.value);
+    }
+
     return(
         <div>
             <GoHomeScreen></GoHomeScreen>
+            <div>
+                <Form.Check
+                    type="radio"
+                    name="basic-question"
+                    onChange={updateResponse}
+                    id="response-"
+                    label=" "
+                    value=" "
+                    checked={response === " "}
+                />
+            </div>
         </div>
     );
 }
