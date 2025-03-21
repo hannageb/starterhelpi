@@ -9,7 +9,8 @@ function GoHomeScreen() {
                 <Link to="/">
                     <Button style={{float:'right'}}>
                         Homepage
-                    </Button></Link>
+                    </Button>
+                </Link>
             </h5>
         </div>
     );
