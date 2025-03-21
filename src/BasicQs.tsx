@@ -11,13 +11,3 @@ function GoHomeScreen() {
     );
 }
 export default GoHomeScreen
-
-export function basicQs(){
-    return(
-        <div>
-            <p>
-                welcome
-            </p>
-        </div>
-    )
-}
