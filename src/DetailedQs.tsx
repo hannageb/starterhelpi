@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 
 function GoHomeScreen() {
     return(
-        <div style={{ display: "flex" }}>
-            <header>
-                <Link to="/">
-                    <Button style={{float:'right'}}>
-                        Homepage
-                    </Button>
-                </Link>
-            </header>
-        </div>
+        <header>
+            <Link to="/">
+                <Button style={{float:'right'}}>
+                    Homepage
+                </Button>
+            </Link>
+        </header>
     );
 }
 function DetailedQ(){
     return(
-        <GoHomeScreen></GoHomeScreen>
+        <div>
+            <GoHomeScreen></GoHomeScreen>
+        </div>
     );
 }
 export default DetailedQ
