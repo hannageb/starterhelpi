@@ -25,6 +25,9 @@ function BasicQ(){
         <div>
             <GoHomeScreen></GoHomeScreen>
             <div>
+                <h3 style={{alignItems:'center'}}>
+                    Question filler    
+                </h3>
                 <Form.Check
                     type="radio"
                     name="basic-question"
