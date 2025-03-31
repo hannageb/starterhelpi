@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+//import logo from './logo.svg';
 import './App.css';
-import { Button, Form } from 'react-bootstrap';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import BasicQ from './BasicQs'
-import DetailedQ from './DetailedQs';
+import {useNavigate} from 'react-router-dom';
 
+/**
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -13,10 +11,10 @@ const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: 
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
-
-function App(): JSX.Element{
+*/
+  /** 
+  function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -27,44 +25,45 @@ function App(): JSX.Element{
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
-
+  */
+function App() {
+  const navigate = useNavigate();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-      </header>
-      <div>
+    <div>
+      <div className='team-members'>
         <h3>Luc De Nardi</h3>
         <h3>Hanna Gebrel</h3>
         <h3>Isha Kashif</h3>
       </div>
-      <div>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<div><h4>Welcome to the Career Helpi</h4></div>} />
-              <Route path="/Basic Question" element={<BasicQ />} />
-              <Route path="/Detailed Question" element={<DetailedQ/>} />
-            </Routes>
-          </BrowserRouter>
-        </div>
+    
+
+      <div className="basic-qs">
+        Home{" "}
+        <button
+        onClick={()=>{
+          navigate('/Basic Question');
+        }}>
+          Basic Questions
+        </button>
+        <div className="detailed-qs">
+        Home{" "}
+        <button
+        onClick={()=>{
+          navigate('/Detailed Question');
+        }}>
+          Detailed Questions
+        </button>  
+      </div>
+      
+      {/** 
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
+      */}
+    </div>
     </div>
   );
 }
