@@ -2,14 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import BasicQ from './pages/BasicQs'
+import DetailedQ from './pages/DetailedQs';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App/>} />
+      <Route path="/Basic Question" element={<BasicQ />} />
+      <Route path="/Detailed Question" element={<DetailedQ/>} />
+    </Routes>
+  </BrowserRouter>  
   </React.StrictMode>
 );
 
