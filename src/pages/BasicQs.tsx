@@ -2,21 +2,17 @@ import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 
-export function GoHomeScreen() {
+function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false)
     if (goToHome){
         return <Navigate to="/"/>;
     }
 
     return(
-        <div>
-            BASIC QUESTIONS
-            <button
-            onClick={() => {
-                setGoToHome(true)
-            }}>
-            {" "}
-            Go to Homepage
+        <div style={{ display: "flex" }}>
+            <h1>BASIC QUESTIONS</h1>
+            <button onClick={() => {setGoToHome(true)}} style={{ marginLeft: "auto" }}>
+                {" "}Go to Homepage
             </button>
         </div>
     );
@@ -31,9 +27,9 @@ function BasicQ(){
         <div>
         <GoHomeScreen></GoHomeScreen>
         <div>
-            <h3 style={{alignItems:'center'}}>
+            <h2 style={{alignItems:'center'}}>
                 Question filler    
-            </h3>
+            </h2>
             <Form.Check
                 type="radio"
                 name="basic-question"

@@ -1,6 +1,25 @@
 import React, { useState } from "react";
-import GoHomeScreen from './BasicQs';
+//import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
+import { Navigate } from "react-router-dom";
+
+function GoHomeScreen() {
+    const [goToHome, setGoToHome] = React.useState(false)
+    if (goToHome){
+        return <Navigate to="/"/>;
+    }
+
+    return(
+        <div style={{ display: "flex"}}>
+            <h1 style={{marginTop: "auto"}} >
+                <span>DETAILED QUESTIONS</span>
+            </h1>
+            <button onClick={() => {setGoToHome(true)}} style={{ marginLeft: "auto" }}>
+                {" "}Go to Homepage
+            </button>
+        </div>
+    );
+}
 
 function DetailedQ(){
     const [response, setResponse] = useState<string>("");

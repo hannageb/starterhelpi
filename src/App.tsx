@@ -46,11 +46,11 @@ function App() {
           Basic Questions
         </button>
         <div className="detailed-qs">
-        Home{" "}
-        <button
-        onClick={()=>{
-          navigate('/Detailed Question');
-        }}>
+          Home{" "}
+          <button
+            onClick={()=>{
+              navigate('/Detailed Question');
+            }}>
           Detailed Questions
         </button>  
       </div>
