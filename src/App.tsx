@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import BasicQ from './BasicQs'
+import DetailedQ from './DetailedQs';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -24,6 +27,7 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -39,12 +43,22 @@ function App() {
         >
           Learn React
         </a>
-        <div>
-          <h3>Luc De Nardi</h3>
-          <h3>Hanna Gebrel</h3>
-          <h3>Isha Kashif</h3>
-        </div>
+
       </header>
+      <div>
+        <h3>Luc De Nardi</h3>
+        <h3>Hanna Gebrel</h3>
+        <h3>Isha Kashif</h3>
+      </div>
+      <div>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<div><h4>Welcome to the Career Helpi</h4></div>} />
+              <Route path="/Basic Question" element={<BasicQ />} />
+              <Route path="/Detailed Question" element={<DetailedQ/>} />
+            </Routes>
+          </BrowserRouter>
+        </div>
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
