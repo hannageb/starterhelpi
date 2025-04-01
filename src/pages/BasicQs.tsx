@@ -30,9 +30,9 @@ function BasicQ(){
         <div>
             <GoHomeScreen></GoHomeScreen>
         <div>
-            <h2>
+            <h3>
                 Question filler    
-            </h2>
+            </h3>
             <Form.Check
                 type="radio"
                 name="basic-question"

@@ -31,7 +31,7 @@ function DetailedQ(){
         <div>
         <GoHomeScreen></GoHomeScreen>
         <div>
-            <h3 style={{alignItems:'center'}}>
+            <h3>
                 Question filler    
             </h3>
             <Form.Check
