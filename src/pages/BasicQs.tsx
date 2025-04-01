@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
+import './BasicQs.css'
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false)
@@ -9,12 +10,14 @@ function GoHomeScreen() {
     }
 
     return(
-        <div style={{ display: "flex" }}>
-            <h1>BASIC QUESTIONS</h1>
-            <button onClick={() => {setGoToHome(true)}} style={{ marginLeft: "auto" }}>
+        <header className="header">
+            <h1 className="centerTitle">
+                BASIC QUESTIONS
+            </h1>
+            <button onClick={() => {setGoToHome(true)}} className="back-button">
                 {" "}Go to Homepage
             </button>
-        </div>
+        </header>
     );
 }
 function BasicQ(){
@@ -24,8 +27,8 @@ function BasicQ(){
         setResponse(event.target.value);
     }
     return(
-        <div>
-        <GoHomeScreen></GoHomeScreen>
+        <div className="title">
+            <GoHomeScreen></GoHomeScreen>
         <div>
             <h2 style={{alignItems:'center'}}>
                 Question filler    

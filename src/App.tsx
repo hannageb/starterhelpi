@@ -45,12 +45,12 @@ function App() {
         </button>
         </div>
         <div className="detailed-qs">
-          <button
-            onClick={()=>{
-              navigate('/Detailed Question');
-            }}>
-          Detailed Questions
-        </button>  
+            <button
+                onClick={()=>{
+                  navigate('/Detailed Question');
+                }}>
+              Detailed Questions
+          </button>  
         </div>
       {/** 
       <Form>
