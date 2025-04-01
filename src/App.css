@@ -37,3 +37,20 @@
   }
 }
 */
+.title{
+  text-align: center;
+  padding-top: 2%;
+}
+.basic-qs {
+  position: absolute;
+  left: 10px;
+  padding: 10px;
+  padding-top: 30%;
+}
+
+.detailed-qs{
+  position:absolute;
+  right: 10px;
+  padding: 10px;
+  padding-top: 30%;
+}

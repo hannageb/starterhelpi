@@ -1,3 +1,4 @@
+
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
@@ -30,31 +31,27 @@ function App() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className='team-members'>
-        <h3>Luc De Nardi</h3>
-        <h3>Hanna Gebrel</h3>
-        <h3>Isha Kashif</h3>
+      <div className="title">
+        <h1>Welcome to CareerHelpi!</h1>
+        <h3>Luc De Nardi, Hanna Gebrel & Isha Kashif</h3>
       </div>
     
-
       <div className="basic-qs">
-        Home{" "}
         <button
         onClick={()=>{
           navigate('/Basic Question');
         }}>
           Basic Questions
         </button>
+        </div>
         <div className="detailed-qs">
-        Home{" "}
-        <button
-        onClick={()=>{
-          navigate('/Detailed Question');
-        }}>
+          <button
+            onClick={()=>{
+              navigate('/Detailed Question');
+            }}>
           Detailed Questions
         </button>  
-      </div>
-      
+        </div>
       {/** 
       <Form>
         <Form.Label>API Key:</Form.Label>
@@ -63,7 +60,6 @@ function App() {
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
       */}
-    </div>
     </div>
   );
 }
