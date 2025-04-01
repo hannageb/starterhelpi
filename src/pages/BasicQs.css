@@ -8,6 +8,13 @@
     text-align: center;
 }
 
+.Desc{
+    text-align: center;
+    font-style: italic;
+
+}
+
 .back-button{
     margin-left: auto;
 }
+
