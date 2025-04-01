@@ -10,14 +10,14 @@ function GoHomeScreen() {
     }
 
     return(
-        <div style={{ display: "flex"}}>
-            <h1 style={{marginTop: "auto"}} >
-                <span>DETAILED QUESTIONS</span>
+        <header className="header">
+            <h1 className="centerTitle">
+                DETAILED QUESTIONS
             </h1>
-            <button onClick={() => {setGoToHome(true)}} style={{ marginLeft: "auto" }}>
+            <button onClick={() => {setGoToHome(true)}} className="back-button">
                 {" "}Go to Homepage
             </button>
-        </div>
+        </header>
     );
 }
 

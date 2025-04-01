@@ -27,10 +27,10 @@ function BasicQ(){
         setResponse(event.target.value);
     }
     return(
-        <div className="title">
+        <div>
             <GoHomeScreen></GoHomeScreen>
         <div>
-            <h2 style={{alignItems:'center'}}>
+            <h2>
                 Question filler    
             </h2>
             <Form.Check
