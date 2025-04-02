@@ -88,7 +88,71 @@ function DetailedQ(){
                 value="independent"
                 checked={response === "independent"}
             />
+            </div>
+            <div>
+                <h3>
+                    Which skills do you excel at or enjoy using the most?
+                </h3>
+                <Form.Check
+                type="radio"
+                name="work-skills"
+                onChange={updateResponse}
+                id="problem-solving"
+                label="Problem Solving"
+                value="problem-solving"
+                checked={response === "problem-solving"}
+                />
+                <Form.Check
+                type="radio"
+                name="work-skills"
+                onChange={updateResponse}
+                id="communication"
+                label="Communication"
+                value="communication"
+                checked={response === "communication"}
+                />
+                <Form.Check
+                type="radio"
+                name="work-skills"
+                onChange={updateResponse}
+                id="creativity"
+                label="Creativity"
+                value="creativity"
+                checked={response === "creativity"}
+                />
+                <Form.Check
+                type="radio"
+                name="work-skills"
+                onChange={updateResponse}
+                id="leadership"
+                label="Leadership"
+                value="leadership"
+                checked={response === "leadership"}
+                />
+                <Form.Check
+                type="radio"
+                name="work-skills"
+                onChange={updateResponse}
+                id="technical-skills"
+                label="Technical Skills"
+                value="technical-skills"
+                checked={response === "technical-skills"}
+                />
+                <Form.Check
+                type="radio"
+                name="work-skills"
+                onChange={updateResponse}
+                id="teaching"
+                label="Teaching/Education"
+                value="teaching"
+                checked={response === "teaching"}
+                />   
                 </div>
+            <div>
+                <h3>
+                    
+                </h3>
+            </div>
         </div>
     )
 }
