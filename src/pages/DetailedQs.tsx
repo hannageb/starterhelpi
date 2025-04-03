@@ -394,7 +394,7 @@ function DetailedQ(){
                 name="problem-solving"
                 onChange={updateResponse}
                 id="logical-analytical"
-                label="Logical and analytical thinking - I like breaking down problems, finding patterns, and using facts to make decisions. (e.g., Engineering, IT, Finance, Data Science)"
+                label="I like breaking down problems, finding patterns, and using facts to make decisions"
                 value="logical-analytical"
                 checked={response === "logical-analytical"}
             />
@@ -403,7 +403,7 @@ function DetailedQ(){
                 name="problem-solving"
                 onChange={updateResponse}
                 id="creative-innovative"
-                label="Creative and innovative approaches – I enjoy thinking outside the box and coming up with new ideas. (e.g., Design, Advertising, Product Development, Music, Writing)"
+                label="I enjoy thinking outside the box and coming up with new ideas"
                 value="creative-innovative"
                 checked={response === "creative-innovative"}
             />
@@ -412,7 +412,7 @@ function DetailedQ(){
                 name="problem-solving"
                 onChange={updateResponse}
                 id="practical"
-                label="Practical and hands-on solutions – I prefer fixing things directly or physically working through solutions. (e.g., Mechanics, Construction, Manufacturing, Science Labs)"
+                label="I prefer fixing things directly or physically working through solutions"
                 value="practical"
                 checked={response === "practical"}
             />
@@ -421,7 +421,7 @@ function DetailedQ(){
                 name="problem-solving"
                 onChange={updateResponse}
                 id="people-focused"
-                label="Collaborative and people-focused solutions – I believe the best answers come from teamwork and understanding people’s needs. (e.g., HR, Counseling, Management, Teaching)"
+                label="I believe the best answers come from teamwork and understanding people’s needs"
                 value="people-focused"
                 checked={response === "people-focused"}
             />
@@ -430,11 +430,72 @@ function DetailedQ(){
                 name="problem-solving"
                 onChange={updateResponse}
                 id="high-pressure"
-                label="High-pressure, quick decision-making – I perform well under stress and like making fast, decisive choices. (e.g., Medicine, Law Enforcement, Crisis Management, Emergency Services)"
+                label="I perform well under stress and like making fast, decisive choices"
                 value="high-pressure"
                 checked={response === "high-pressure"}
             />
+            </div>
+            <div>
+                <h3>
+                    How do you want to be recognized or valued in your career?
+                </h3>
+            <Form.Check
+                type="radio"
+                name="recognization"
+                onChange={updateResponse}
+                id="financial-rewards"
+                label="I want my salary, bonuses, and benefits to reflect my hard work and skills"
+                value="financial-rewards"
+                checked={response === "financial-rewards"}
+            />
+            <Form.Check
+                type="radio"
+                name="recognization"
+                onChange={updateResponse}
+                id="public-recognition"
+                label="I want to be known for my work and have a strong professional reputation"
+                value="public-recognition"
+                checked={response === "public-recognition"}
+            />
+            <Form.Check
+                type="radio"
+                name="recognization"
+                onChange={updateResponse}
+                id="personal-fulfillment"
+                label="I care more about making a difference in people’s lives than receiving public recognition"
+                value="personal-fulfillment"
+                checked={response === "personal-fulfillment"}
+            />
+            <Form.Check
+                type="radio"
+                name="recognization"
+                onChange={updateResponse}
+                id="career-growth"
+                label="I want to be respected as an expert in my field and have opportunities to advance"
+                value="career-growth"
+                checked={response === "career-growth"}
+            />
+            <Form.Check
+                type="radio"
+                name="recognization"
+                onChange={updateResponse}
+                id="creative-expression"
+                label="I want my ideas, creativity, or problem-solving skills to be valued"
+                value="creative-expression"
+                checked={response === "creative-expression"}
+            />
+            <Form.Check
+                type="radio"
+                name="recognization"
+                onChange={updateResponse}
+                id="independence-autonomy"
+                label="I prefer to work on my own terms without needing external validation"
+                value="independence-autonomy"
+                checked={response === "independence-autonomy"}
+            />
             
+        
+
             </div>
         </div>
     )
