@@ -385,6 +385,57 @@ function DetailedQ(){
                 checked={response === "highly-skilled"}
             />
             </div>
+            <div>
+                <h3>
+                    How do you prefer to solve problems at work?
+                </h3>
+            <Form.Check
+                type="radio"
+                name="problem-solving"
+                onChange={updateResponse}
+                id="logical-analytical"
+                label="Logical and analytical thinking - I like breaking down problems, finding patterns, and using facts to make decisions. (e.g., Engineering, IT, Finance, Data Science)"
+                value="logical-analytical"
+                checked={response === "logical-analytical"}
+            />
+            <Form.Check
+                type="radio"
+                name="problem-solving"
+                onChange={updateResponse}
+                id="creative-innovative"
+                label="Creative and innovative approaches – I enjoy thinking outside the box and coming up with new ideas. (e.g., Design, Advertising, Product Development, Music, Writing)"
+                value="creative-innovative"
+                checked={response === "creative-innovative"}
+            />
+            <Form.Check
+                type="radio"
+                name="problem-solving"
+                onChange={updateResponse}
+                id="practical"
+                label="Practical and hands-on solutions – I prefer fixing things directly or physically working through solutions. (e.g., Mechanics, Construction, Manufacturing, Science Labs)"
+                value="practical"
+                checked={response === "practical"}
+            />
+            <Form.Check
+                type="radio"
+                name="problem-solving"
+                onChange={updateResponse}
+                id="people-focused"
+                label="Collaborative and people-focused solutions – I believe the best answers come from teamwork and understanding people’s needs. (e.g., HR, Counseling, Management, Teaching)"
+                value="people-focused"
+                checked={response === "people-focused"}
+            />
+            <Form.Check
+                type="radio"
+                name="problem-solving"
+                onChange={updateResponse}
+                id="high-pressure"
+                label="High-pressure, quick decision-making – I perform well under stress and like making fast, decisive choices. (e.g., Medicine, Law Enforcement, Crisis Management, Emergency Services)"
+                value="high-pressure"
+                checked={response === "high-pressure"}
+            />
+            
+            </div>
         </div>
     )
 }
