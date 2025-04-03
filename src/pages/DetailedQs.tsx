@@ -344,6 +344,47 @@ function DetailedQ(){
                 checked={response === "no"}
             />
             </div>
+            <div>
+                <h3>
+                    What kind of career growth and advancement opportunities are important to you?
+                </h3>
+            <Form.Check
+                type="radio"
+                name="career-growth"
+                onChange={updateResponse}
+                id="clear-structured"
+                label="I want a clear, structured promotion path"
+                value="clear-structured"
+                checked={response === "clear-structured"}
+            />
+            <Form.Check
+                type="radio"
+                name="career-growth"
+                onChange={updateResponse}
+                id="self-driven-growth"
+                label="I want a flexible career with new opportunities and self-driven growth"
+                value="self-driven-growth"
+                checked={response === "self-driven-growth"}
+            />
+            <Form.Check
+                type="radio"
+                name="career-growth"
+                onChange={updateResponse}
+                id="managing"
+                label="I see myself managing and leading teams, making strategic decisions and guiding others in my field"
+                value="managing"
+                checked={response === "managing"}
+            />
+            <Form.Check
+                type="radio"
+                name="career-growth"
+                onChange={updateResponse}
+                id="highly-skilled"
+                label="I want to become a highly skilled specialist in my field without necessarily managing people."
+                value="highly-skilled"
+                checked={response === "highly-skilled"}
+            />
+            </div>
         </div>
     )
 }
