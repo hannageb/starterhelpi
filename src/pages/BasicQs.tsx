@@ -21,10 +21,13 @@ function GoHomeScreen() {
     );
 }
 function BasicQ(){
-    const [response, setResponse] = useState<string>("");
+    const [responses, setResponses] = useState<{ [key: string]: string }>({});
 
     function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
-        setResponse(event.target.value);
+        setResponses({
+            ...responses,
+            [event.target.name]: event.target.value,
+        });
     }
     return(
         <div>
@@ -34,17 +37,195 @@ function BasicQ(){
             </div>
             <div className="Questions">
                 <h3>
-                    Question filler    
+                    1) I like disassembling and reassembling things
                 </h3>
                 <Form.Check
                     type="radio"
-                    name="basic-question"
+                    name="assembling"
                     onChange={updateResponse}
-                    id="response-"
-                    label=" "
-                    value=" "
-                    checked={response === " "}
+                    id="strongly agree"
+                    label="Strongly Agree"
+                    value="Strongly Agree"
+                    checked={responses["assembling"] === "Strongly Agree"}
                 />
+                <Form.Check
+                    type="radio"
+                    name="assembling"
+                    onChange={updateResponse}
+                    id="agree"
+                    label="Agree"
+                    value="Agree"
+                    checked={responses["assembling"] === "Agree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="assembling"
+                    onChange={updateResponse}
+                    id="neither"
+                    label="Neither agree nor Disagree"
+                    value="Neither agree nor Disagree"
+                    checked={responses["assembling"] === "Neither agree nor Disagree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="assembling"
+                    onChange={updateResponse}
+                    id="Disagree"
+                    label="Disagree"
+                    value="Disagree"
+                    checked={responses["assembling"] === "Disagree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="assembling"
+                    onChange={updateResponse}
+                    id="Strongly Disagree"
+                    label="Strongly Disagree"
+                    value="Strongly Disagree"
+                    checked={responses["assembling"] === "Strongly Disagree"}
+                />
+                <h3>
+                    2) I am good at collaborating with others
+                </h3>
+                <Form.Check
+                    type="radio"
+                    name="collaboration"
+                    onChange={updateResponse}
+                    id="strongly agree"
+                    label="Strongly Agree"
+                    value="Strongly Agree"
+                    checked={responses["collaboration"] === "Strongly Agree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="collaboration"
+                    onChange={updateResponse}
+                    id="agree"
+                    label="Agree"
+                    value="Agree"
+                    checked={responses["collaboration"] === "Agree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="collaboration"
+                    onChange={updateResponse}
+                    id="neither"
+                    label="Neither agree nor Disagree"
+                    value="Neither agree nor Disagree"
+                    checked={responses["collaboration"] === "Neither agree nor Disagree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="collaboration"
+                    onChange={updateResponse}
+                    id="Disagree"
+                    label="Disagree"
+                    value="Disagree"
+                    checked={responses["collaboration"] === "Disagree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="collaboration"
+                    onChange={updateResponse}
+                    id="Strongly Disagree"
+                    label="Strongly Disagree"
+                    value="Strongly Disagree"
+                    checked={responses["collaboration"] === "Strongly Disagree"}
+                />
+                <h3>
+                    3) I am good at persuading others
+                </h3>
+                <Form.Check
+                    type="radio"
+                    name="persuasion"
+                    onChange={updateResponse}
+                    id="strongly agree"
+                    label="Strongly Agree"
+                    value="Strongly Agree"
+                    checked={responses["persuasion"] === "Strongly Agree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="persuasion"
+                    onChange={updateResponse}
+                    id="agree"
+                    label="Agree"
+                    value="Agree"
+                    checked={responses["persuasion"] === "Agree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="persuasion"
+                    onChange={updateResponse}
+                    id="neither"
+                    label="Neither agree nor Disagree"
+                    value="Neither agree nor Disagree"
+                    checked={responses["persuasion"] === "Neither agree nor Disagree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="persuasion"
+                    onChange={updateResponse}
+                    id="Disagree"
+                    label="Disagree"
+                    value="Disagree"
+                    checked={responses["persuasion"] === "Disagree"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="persuasion"
+                    onChange={updateResponse}
+                    id="Strongly Disagree"
+                    label="Strongly Disagree"
+                    value="Strongly Disagree"
+                    checked={responses["persuasion"] === "Strongly Disagree"}
+                />
+                <h3>
+                    4) What subjects do you enjoy?
+                </h3>
+                <Form.Check
+                    type="checkbox"
+                    name="subjects"
+                    onChange={updateResponse}
+                    id="math"
+                    label="Mathematics"
+                    value="math"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="subjects"
+                    onChange={updateResponse}
+                    id="bisc"
+                    label="Biology"
+                    value="bisc"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="subjects"
+                    onChange={updateResponse}
+                    id="hist"
+                    label="History"
+                    value="hist"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="subjects"
+                    onChange={updateResponse}
+                    id="engl"
+                    label="English & Foreign Language"
+                    value="engl"
+                />
+                 <Form.Check
+                    type="checkbox"
+                    name="subjects"
+                    onChange={updateResponse}
+                    id="chem"
+                    label="Chemistry"
+                    value="chem"
+                />
+                <h3>
+                    5) 
+                </h3>
             </div>
         </div>
     );
