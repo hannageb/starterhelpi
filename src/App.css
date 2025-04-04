@@ -54,6 +54,14 @@ body {
   padding-top: 10%;
 }
 
+button{
+  background-color: goldenrod;
+  color: #0a3a6a;
+}
+button:hover{
+  background-color: rgb(229, 192, 97)
+}
+
 .detailed-qs{
   position: fixed;
   right: 20%;
@@ -65,16 +73,3 @@ body {
   left: 0;
   bottom: 0;
 }
-
-button{
-  /*from w3schools css buttons https://www.w3schools.com/css/css3_buttons.asp*/
-  background-color: goldenrod;
-  border: none;
-  color: white;
-  font-style: bold;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
-  font-size: 20px;
-}
-button::hover
