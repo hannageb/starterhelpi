@@ -4,22 +4,27 @@ import { Form } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 
 function GoHomeScreen() {
-    const [goToHome, setGoToHome] = React.useState(false)
-    if (goToHome){
-        return <Navigate to="/"/>;
+    const [goToHome, setGoToHome] = React.useState(false);
+
+    if (goToHome) {
+        return <Navigate to="/" />;
     }
 
-    return(
+    return (
         <header className="header">
-            <h1 className="centerTitle">
-                DETAILED QUESTIONS
-            </h1>
-            <button onClick={() => {setGoToHome(true)}} className="back-button">
-                {" "}Go to Homepage
-            </button>
+            <div className="titleContainer">
+                <h1 className="centerTitle">DETAILED QUESTIONS</h1>
+                <h5 className="description">
+                    Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.
+                </h5>
+            </div>
+            <div>
+                <button onClick={() => setGoToHome(true)}>Go Home</button>
+            </div>
         </header>
     );
-}
+}    
+
 
 
 function DetailedQ() {
