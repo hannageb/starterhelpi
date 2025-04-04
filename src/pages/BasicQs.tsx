@@ -29,19 +29,22 @@ function BasicQ(){
     return(
         <div>
             <GoHomeScreen></GoHomeScreen>
-        <div>
-            <h3>
-                Question filler    
-            </h3>
-            <Form.Check
-                type="radio"
-                name="basic-question"
-                onChange={updateResponse}
-                id="response-"
-                label=" "
-                value=" "
-                checked={response === " "}
-            />
+            <div className="Desc">
+                <h4>Find out what field might be best for you by answering a sweet and simple questionaire</h4>
+            </div>
+            <div className="Questions">
+                <h3>
+                    Question filler    
+                </h3>
+                <Form.Check
+                    type="radio"
+                    name="basic-question"
+                    onChange={updateResponse}
+                    id="response-"
+                    label=" "
+                    value=" "
+                    checked={response === " "}
+                />
             </div>
         </div>
     );
