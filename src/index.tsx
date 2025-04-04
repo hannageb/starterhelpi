@@ -5,20 +5,20 @@ import App from './App';
 import BasicQ from './pages/BasicQs'
 import DetailedQ from './pages/DetailedQs';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<App/>} />
       <Route path="/Basic Question" element={<BasicQ />} />
       <Route path="/Detailed Question" element={<DetailedQ/>} />
     </Routes>
-  </BrowserRouter>  
+  </HashRouter>  
   </React.StrictMode>
 );
 

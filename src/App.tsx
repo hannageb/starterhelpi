@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 //import logo from './logo.svg';
 import './App.css';
+import {Button, Form} from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
 
-/**
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -12,10 +13,9 @@ const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: 
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
-*/
-  /** 
-  function App() {
+function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  const navigate = useNavigate(); // for navigating between pages
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -26,16 +26,16 @@ if (prevKey !== null) {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
-  */
-function App() {
-  const navigate = useNavigate();
+
+  
   return (
-    <div>
+    <div className='body'>
       <div className="title">
-        <h1>Welcome to CareerHelpi!</h1>
-        <h3>Luc De Nardi, Hanna Gebrel & Isha Kashif</h3>
+        <header>
+          <h1>Welcome to CareerHelpi!</h1>
+          <h3>Luc De Nardi, Hanna Gebrel & Isha Kashif</h3>
+        </header>
       </div>
-    
       <div className="basic-qs">
         <button
         onClick={()=>{
@@ -52,14 +52,12 @@ function App() {
               Detailed Questions
           </button>  
         </div>
-      {/** 
-      <Form>
+      <Form className='api-key' style={{position: "fixed"}}>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
-      */}
     </div>
   );
 }

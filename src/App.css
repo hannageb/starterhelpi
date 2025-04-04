@@ -37,20 +37,39 @@
   }
 }
 */
+body {
+  background-color: rgb(147, 177, 201);
+}
 .title{
   text-align: center;
-  padding-top: 2%;
+  padding: 2%;
+  background-color: #0a3a6a;
+  color: goldenrod;
 }
+
 .basic-qs {
-  position: absolute;
-  left: 10px;
+  position: fixed;
+  left: 20%;
   padding: 10px;
-  padding-top: 30%;
+  padding-top: 10%;
+}
+
+button{
+  background-color: goldenrod;
+  color: #0a3a6a;
+}
+button:hover{
+  background-color: rgb(229, 192, 97)
 }
 
 .detailed-qs{
-  position:absolute;
-  right: 10px;
+  position: fixed;
+  right: 20%;
   padding: 10px;
-  padding-top: 30%;
+  padding-top: 10%;
+}
+
+.api-key{
+  left: 0;
+  bottom: 0;
 }
