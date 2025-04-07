@@ -31,10 +31,13 @@ function BasicQ(){
     }
 
     const [progress, setProgress] = useState<number>(0);
-    const [pressed, setPressed] = useState<boolean>(false);
+    const [propName, setPropName] = useState([""])
 
-    const ChangeProg = () => {
-        setProgress((prevProgress)=> prevProgress+5>100 ? 100:prevProgress+5)
+    const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if(propName.indexOf(event.target.name) === -1){
+            setPropName( [...propName, event.target.name])
+            setProgress((prevProgress)=> prevProgress+5>100 ? 100:prevProgress+5)
+        }
     }
 
     return(
@@ -47,11 +50,11 @@ function BasicQ(){
                 <h3>
                     1) I like disassembling and reassembling things
                 </h3>
-                <Form.Group onClick={handleClick}>
+                <Form.Group onChange={ChangeProg}>
                     <Form.Check
                         type="radio"
                         name="assembling"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="strongly agree"
                         label="Strongly Agree"
                         value="Strongly Agree"
@@ -60,7 +63,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="assembling"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="agree"
                         label="Agree"
                         value="Agree"
@@ -69,7 +72,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="assembling"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="neither"
                         label="Neither agree nor Disagree"
                         value="Neither agree nor Disagree"
@@ -78,7 +81,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="assembling"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Disagree"
                         label="Disagree"
                         value="Disagree"
@@ -87,7 +90,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="assembling"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Strongly Disagree"
                         label="Strongly Disagree"
                         value="Strongly Disagree"
@@ -98,11 +101,11 @@ function BasicQ(){
                 <h3>
                     2) I am good at collaborating with others
                 </h3>
-                <Form.Group onClick={handleClick}>
+                <Form.Group>
                     <Form.Check
                         type="radio"
                         name="collaboration"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="strongly agree"
                         label="Strongly Agree"
                         value="Strongly Agree"
@@ -111,7 +114,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="collaboration"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="agree"
                         label="Agree"
                         value="Agree"
@@ -120,7 +123,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="collaboration"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="neither"
                         label="Neither agree nor Disagree"
                         value="Neither agree nor Disagree"
@@ -129,7 +132,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="collaboration"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Disagree"
                         label="Disagree"
                         value="Disagree"
@@ -138,7 +141,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="collaboration"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Strongly Disagree"
                         label="Strongly Disagree"
                         value="Strongly Disagree"
@@ -152,7 +155,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="strongly agree"
                     label="Strongly Agree"
                     value="Strongly Agree"
@@ -161,7 +164,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="agree"
                     label="Agree"
                     value="Agree"
@@ -170,7 +173,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="neither"
                     label="Neither agree nor Disagree"
                     value="Neither agree nor Disagree"
@@ -179,7 +182,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="Disagree"
                     label="Disagree"
                     value="Disagree"
@@ -188,7 +191,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="Strongly Disagree"
                     label="Strongly Disagree"
                     value="Strongly Disagree"
@@ -200,7 +203,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="math"
                     label="Mathematics"
                     value="math"
@@ -208,7 +211,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="bisc"
                     label="Biology"
                     value="bisc"
@@ -216,7 +219,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="hist"
                     label="History"
                     value="hist"
@@ -224,7 +227,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="engl"
                     label="English & Foreign Language"
                     value="engl"
@@ -232,7 +235,7 @@ function BasicQ(){
                  <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="chem"
                     label="Chemistry"
                     value="chem"
