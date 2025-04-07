@@ -27,23 +27,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |       0 |        0 |       0 |       0 |                   
- src                 |       0 |        0 |       0 |       0 |                   
-  App.tsx            |       0 |        0 |       0 |       0 | 10-50             
-  index.tsx          |       0 |      100 |     100 |       0 | 10-28             
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/pages           |       0 |        0 |       0 |       0 |                   
-  BasicQs.tsx        |       0 |        0 |       0 |       0 | 7-32              
-  DetailedQs.tsx     |       0 |        0 |       0 |       0 | 7-39              
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       0 total
-Snapshots:   0 total
-Time:        3.018 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -56,3 +39,20 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |       0 |        0 |       0 |       0 |                   
+ src                 |       0 |        0 |       0 |       0 |                   
+  App.tsx            |       0 |        0 |       0 |       0 | 10-50             
+  index.tsx          |       0 |      100 |     100 |       0 | 10-28             
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/pages           |       0 |        0 |       0 |       0 |                   
+  BasicQs.tsx        |       0 |        0 |       0 |       0 | 7-238             
+  DetailedQs.tsx     |       0 |        0 |       0 |       0 | 7-500             
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.608 s
+Ran all test suites.
