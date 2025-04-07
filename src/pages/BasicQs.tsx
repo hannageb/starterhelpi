@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import './BasicQs.css'
@@ -30,7 +30,9 @@ function BasicQ(){
         });
     }
 
-    const [progress, setProgress] = useState(0);
+    const [progress, setProgress] = useState<number>(0);
+    const [pressed, setPressed] = useState<boolean>(false);
+
     const ChangeProg = () => {
         setProgress((prevProgress)=> prevProgress+5>100 ? 100:prevProgress+5)
     }
@@ -45,99 +47,105 @@ function BasicQ(){
                 <h3>
                     1) I like disassembling and reassembling things
                 </h3>
-                <Form.Check
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="strongly agree"
-                    label="Strongly Agree"
-                    value="Strongly Agree"
-                    checked={responses["assembling"] === "Strongly Agree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="agree"
-                    label="Agree"
-                    value="Agree"
-                    checked={responses["assembling"] === "Agree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="neither"
-                    label="Neither agree nor Disagree"
-                    value="Neither agree nor Disagree"
-                    checked={responses["assembling"] === "Neither agree nor Disagree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="Disagree"
-                    label="Disagree"
-                    value="Disagree"
-                    checked={responses["assembling"] === "Disagree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="Strongly Disagree"
-                    label="Strongly Disagree"
-                    value="Strongly Disagree"
-                    checked={responses["assembling"] === "Strongly Disagree"}
-                />
+                <Form.Group onClick={handleClick}>
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={updateResponse}
+                        id="strongly agree"
+                        label="Strongly Agree"
+                        value="Strongly Agree"
+                        checked={responses["assembling"] === "Strongly Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={updateResponse}
+                        id="agree"
+                        label="Agree"
+                        value="Agree"
+                        checked={responses["assembling"] === "Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={updateResponse}
+                        id="neither"
+                        label="Neither agree nor Disagree"
+                        value="Neither agree nor Disagree"
+                        checked={responses["assembling"] === "Neither agree nor Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={updateResponse}
+                        id="Disagree"
+                        label="Disagree"
+                        value="Disagree"
+                        checked={responses["assembling"] === "Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={updateResponse}
+                        id="Strongly Disagree"
+                        label="Strongly Disagree"
+                        value="Strongly Disagree"
+                        checked={responses["assembling"] === "Strongly Disagree"}
+                    />
+                </Form.Group>
+                
                 <h3>
                     2) I am good at collaborating with others
                 </h3>
-                <Form.Check
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="strongly agree"
-                    label="Strongly Agree"
-                    value="Strongly Agree"
-                    checked={responses["collaboration"] === "Strongly Agree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="agree"
-                    label="Agree"
-                    value="Agree"
-                    checked={responses["collaboration"] === "Agree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="neither"
-                    label="Neither agree nor Disagree"
-                    value="Neither agree nor Disagree"
-                    checked={responses["collaboration"] === "Neither agree nor Disagree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="Disagree"
-                    label="Disagree"
-                    value="Disagree"
-                    checked={responses["collaboration"] === "Disagree"}
-                />
-                <Form.Check
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="Strongly Disagree"
-                    label="Strongly Disagree"
-                    value="Strongly Disagree"
-                    checked={responses["collaboration"] === "Strongly Disagree"}
-                />
+                <Form.Group onClick={handleClick}>
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={updateResponse}
+                        id="strongly agree"
+                        label="Strongly Agree"
+                        value="Strongly Agree"
+                        checked={responses["collaboration"] === "Strongly Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={updateResponse}
+                        id="agree"
+                        label="Agree"
+                        value="Agree"
+                        checked={responses["collaboration"] === "Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={updateResponse}
+                        id="neither"
+                        label="Neither agree nor Disagree"
+                        value="Neither agree nor Disagree"
+                        checked={responses["collaboration"] === "Neither agree nor Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={updateResponse}
+                        id="Disagree"
+                        label="Disagree"
+                        value="Disagree"
+                        checked={responses["collaboration"] === "Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={updateResponse}
+                        id="Strongly Disagree"
+                        label="Strongly Disagree"
+                        value="Strongly Disagree"
+                        checked={responses["collaboration"] === "Strongly Disagree"}
+                    />
+                </Form.Group>
+                
                 <h3>
                     3) I am good at persuading others
                 </h3>
