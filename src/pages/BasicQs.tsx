@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import './BasicQs.css'
@@ -29,6 +29,12 @@ function BasicQ(){
             [event.target.name]: event.target.value,
         });
     }
+
+    const [progress, setProgress] = useState(0);
+    const ChangeProg = () => {
+        setProgress((prevProgress)=> prevProgress+5>100 ? 100:prevProgress+5)
+    }
+
     return(
         <div>
             <GoHomeScreen></GoHomeScreen>
@@ -226,6 +232,14 @@ function BasicQ(){
                 <h3>
                     5) 
                 </h3>
+            </div>
+            <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
+                <div style={{textAlign:'center'}}>
+                    <p>{progress}%</p>
+                    <div style={{width:'700px', border:'2px solid'}}>
+                        <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
+                    </div>
+                </div>
             </div>
         </div>
     );
