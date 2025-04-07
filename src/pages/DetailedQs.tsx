@@ -30,6 +30,16 @@ function GoHomeScreen() {
 function DetailedQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
 
+    const [progress, setProgress] = useState<number>(0);
+    const [propName, setPropName] = useState([""])
+
+    const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if(propName.indexOf(event.target.name) === -1){
+            setPropName( [...propName, event.target.name])
+            setProgress((prevProgress)=> prevProgress+10>100 ? 100:prevProgress+10)
+        }
+    }
+
     function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
         setResponses({
             ...responses,
@@ -46,7 +56,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-environment"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="office"
                 label="Structured office setting"
                 value="office"
@@ -55,7 +65,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-environment"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="remote"
                 label="Flexible remote work"
                 value="remote"
@@ -64,7 +74,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-environment"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="hybrid"
                 label="Flexible hybrid work"
                 value="hybrid"
@@ -73,7 +83,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-environment"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="outdoor"
                 label="Outdoor or hands-on work"
                 value="outdoor"
@@ -82,7 +92,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-environment"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="fast-paced"
                 label="Fast paced, high-energy settings (e.g., hospitals, stock markets)"
                 value="fast-paced"
@@ -91,7 +101,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-environment"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="independent"
                 label="Independent or freelance work"
                 value="independent"
@@ -105,7 +115,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-skills"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="problem-solving"
                 label="Problem Solving"
                 value="problem-solving"
@@ -114,7 +124,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-skills"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="communication"
                 label="Communication"
                 value="communication"
@@ -123,7 +133,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-skills"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="creativity"
                 label="Creativity"
                 value="creativity"
@@ -132,7 +142,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-skills"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="leadership"
                 label="Leadership"
                 value="leadership"
@@ -141,7 +151,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-skills"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="technical-skills"
                 label="Technical Skills"
                 value="technical-skills"
@@ -150,7 +160,7 @@ function DetailedQ() {
             <Form.Check
             type="radio"
                 name="work-skills"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="teaching"
                 label="Teaching/Education"
                 value="teaching"
@@ -164,7 +174,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-preferences"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="independently"
                 label="Independently"
                 value="independently"
@@ -173,7 +183,7 @@ function DetailedQ() {
             <Form.Check 
                 type="radio"
                 name="work-preferences"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="small-team"
                 label="In a small team"
                 value="small-team"
@@ -182,7 +192,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-preferences"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="leading"
                 label="Leading and managing people"
                 value="leading"
@@ -191,7 +201,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="work-preferences"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="large-group"
                 label="Large group settings"
                 value="large-group"
@@ -205,7 +215,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="education-level"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="high-school"
                 label="High school diploma or equivalent"
                 value="high-school"
@@ -214,7 +224,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="education-level"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="trade-school"
                 label="Certification or trade school"
                 value="trade-school"
@@ -223,7 +233,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="education-level"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="associates-or-bachelors"
                 label="Associate's or bachelor's degree"
                 value="associates-or-bachelors"
@@ -232,7 +242,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="education-level"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="masters"
                 label="Master's degree or higher"
                 value="masters"
@@ -246,7 +256,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="stability-and-salary"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="extremely-important"
                 label="Extremely important (I need a secure and high-paying job)"
                 value="extremely-important"
@@ -255,7 +265,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="stability-and-salary"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="somewhat-important"
                 label="Somewhat important (I value passion as much as financial security)"
                 value="somewhat-important"
@@ -264,7 +274,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="stability-and-salary"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="not-very-important"
                 label="Not very important (I prioritize creativity, purpose, or flexibility over salary)"
                 value="not-very-important"
@@ -278,7 +288,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="handle-stress"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="thrive-in-high-pressure"
                 label="I thrive in high-pressure situations"
                 value="thrive-in-high-pressure"
@@ -287,7 +297,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="handle-stress"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="steady-manageable"
                 label="I prefer steady, manageable workloads"
                 value="steady-manageable"
@@ -296,7 +306,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="handle-stress"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="creative-time-sensitive"
                 label="I like creative problem-solving over time-sensitive tasks"
                 value="creative-time-sensitive"
@@ -305,7 +315,7 @@ function DetailedQ() {
             <Form.Check
                  type="radio"
                  name="handle-stress"
-                 onChange={updateResponse}
+                 onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                  id="balanced-challenges"
                  label="I enjoy challenges but need a balanced workload"
                  value="balanced-challenges"
@@ -319,7 +329,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="relocating"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="yes"
                 label="Yes, I’m willing to move anywhere for the right opportunity"
                 value="yes"
@@ -328,7 +338,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="relocating"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="maybe"
                 label="Maybe, but I prefer staying in my current region"
                 value="maybe"
@@ -337,7 +347,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="relocating"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="no"
                 label="No, I want to work close to home"
                 value="no"
@@ -351,7 +361,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="career-growth"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="clear-structured"
                 label="I want a clear, structured promotion path"
                 value="clear-structured"
@@ -360,7 +370,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="career-growth"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="self-driven-growth"
                 label="I want a flexible career with new opportunities and self-driven growth"
                 value="self-driven-growth"
@@ -369,7 +379,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="career-growth"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="managing"
                 label="I see myself managing and leading teams, making strategic decisions and guiding others in my field"
                 value="managing"
@@ -378,7 +388,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="career-growth"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="highly-skilled"
                 label="I want to become a highly skilled specialist in my field without necessarily managing people."
                 value="highly-skilled"
@@ -392,7 +402,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="problem-solving"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="logical-analytical"
                 label="I like breaking down problems, finding patterns, and using facts to make decisions"
                 value="logical-analytical"
@@ -401,7 +411,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="problem-solving"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="creative-innovative"
                 label="I enjoy thinking outside the box and coming up with new ideas"
                 value="creative-innovative"
@@ -410,7 +420,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="problem-solving"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="practical"
                 label="I prefer fixing things directly or physically working through solutions"
                 value="practical"
@@ -419,7 +429,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="problem-solving"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="people-focused"
                 label="I believe the best answers come from teamwork and understanding people’s needs"
                 value="people-focused"
@@ -428,7 +438,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="problem-solving"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="high-pressure"
                 label="I perform well under stress and like making fast, decisive choices"
                 value="high-pressure"
@@ -442,7 +452,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="recognition"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="financial-rewards"
                 label="I want my salary, bonuses, and benefits to reflect my hard work and skills"
                 value="financial-rewards"
@@ -451,7 +461,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="recognization"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="public-recognition"
                 label="I want to be known for my work and have a strong professional reputation"
                 value="public-recognition"
@@ -460,7 +470,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="recognition"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="personal-fulfillment"
                 label="I care more about making a difference in people’s lives than receiving public recognition"
                 value="personal-fulfillment"
@@ -469,7 +479,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="recognition"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="opporunities"
                 label="I want to be respected as an expert in my field and have opportunities to advance"
                 value="opportunities"
@@ -478,7 +488,7 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="recognition"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="creative-expression"
                 label="I want my ideas, creativity, or problem-solving skills to be valued"
                 value="creative-expression"
@@ -487,15 +497,21 @@ function DetailedQ() {
             <Form.Check
                 type="radio"
                 name="recognition"
-                onChange={updateResponse}
+                onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                 id="independence-autonomy"
                 label="I prefer to work on my own terms without needing external validation"
                 value="independence-autonomy"
                 checked={responses["recognition"] === "independence-autonomy"}
             />
             
-        
-
+                <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
+                    <div style={{textAlign:'center'}}>
+                        <p>{progress}%</p>
+                        <div style={{width:'700px', border:'2px solid'}}>
+                            <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
