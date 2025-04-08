@@ -36,7 +36,7 @@ function BasicQ(){
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
         if(propName.indexOf(event.target.name) === -1){
             setPropName( [...propName, event.target.name])
-            setProgress((prevProgress)=> prevProgress+5>100 ? 100:prevProgress+5)
+            setProgress((prevProgress)=> prevProgress+Math.round(((1/9)*100))>100 ? 100:prevProgress+Math.round(((1/9)*100)))
         }
     }
 
