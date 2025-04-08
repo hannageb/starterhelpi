@@ -29,6 +29,17 @@ function BasicQ(){
             [event.target.name]: event.target.value,
         });
     }
+
+    const [progress, setProgress] = useState<number>(0);
+    const [propName, setPropName] = useState([""])
+
+    const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if(propName.indexOf(event.target.name) === -1){
+            setPropName( [...propName, event.target.name])
+            setProgress((prevProgress)=> prevProgress+5>100 ? 100:prevProgress+5)
+        }
+    }
+
     return(
         <div>
             <GoHomeScreen></GoHomeScreen>
@@ -39,109 +50,104 @@ function BasicQ(){
                 <h3>
                     1) I like disassembling and reassembling things
                 </h3>
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="strongly agree"
-                    label="Strongly Agree"
-                    value="Strongly Agree"
-                    checked={responses["assembling"] === "Strongly Agree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="agree"
-                    label="Agree"
-                    value="Agree"
-                    checked={responses["assembling"] === "Agree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="neither"
-                    label="Neither agree nor Disagree"
-                    value="Neither agree nor Disagree"
-                    checked={responses["assembling"] === "Neither agree nor Disagree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="Disagree"
-                    label="Disagree"
-                    value="Disagree"
-                    checked={responses["assembling"] === "Disagree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="assembling"
-                    onChange={updateResponse}
-                    id="Strongly Disagree"
-                    label="Strongly Disagree"
-                    value="Strongly Disagree"
-                    checked={responses["assembling"] === "Strongly Disagree"}
-                />
+                <Form.Group onChange={ChangeProg}>
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="strongly agree"
+                        label="Strongly Agree"
+                        value="Strongly Agree"
+                        checked={responses["assembling"] === "Strongly Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="agree"
+                        label="Agree"
+                        value="Agree"
+                        checked={responses["assembling"] === "Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="neither"
+                        label="Neither agree nor Disagree"
+                        value="Neither agree nor Disagree"
+                        checked={responses["assembling"] === "Neither agree nor Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="Disagree"
+                        label="Disagree"
+                        value="Disagree"
+                        checked={responses["assembling"] === "Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="assembling"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="Strongly Disagree"
+                        label="Strongly Disagree"
+                        value="Strongly Disagree"
+                        checked={responses["assembling"] === "Strongly Disagree"}
+                    />
+                </Form.Group>
+                
                 <h3>
                     2) I am good at collaborating with others
                 </h3>
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="strongly agree"
-                    label="Strongly Agree"
-                    value="Strongly Agree"
-                    checked={responses["collaboration"] === "Strongly Agree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="agree"
-                    label="Agree"
-                    value="Agree"
-                    checked={responses["collaboration"] === "Agree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="neither"
-                    label="Neither agree nor Disagree"
-                    value="Neither agree nor Disagree"
-                    checked={responses["collaboration"] === "Neither agree nor Disagree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="Disagree"
-                    label="Disagree"
-                    value="Disagree"
-                    checked={responses["collaboration"] === "Disagree"}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    name="collaboration"
-                    onChange={updateResponse}
-                    id="Strongly Disagree"
-                    label="Strongly Disagree"
-                    value="Strongly Disagree"
-                    checked={responses["collaboration"] === "Strongly Disagree"}
-                />
+                <Form.Group>
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="strongly agree"
+                        label="Strongly Agree"
+                        value="Strongly Agree"
+                        checked={responses["collaboration"] === "Strongly Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="agree"
+                        label="Agree"
+                        value="Agree"
+                        checked={responses["collaboration"] === "Agree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="neither"
+                        label="Neither agree nor Disagree"
+                        value="Neither agree nor Disagree"
+                        checked={responses["collaboration"] === "Neither agree nor Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="Disagree"
+                        label="Disagree"
+                        value="Disagree"
+                        checked={responses["collaboration"] === "Disagree"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="collaboration"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="Strongly Disagree"
+                        label="Strongly Disagree"
+                        value="Strongly Disagree"
+                        checked={responses["collaboration"] === "Strongly Disagree"}
+                    />
+                </Form.Group>
                 <h3>
                     3) I am good at persuading others
                 </h3>
@@ -149,7 +155,7 @@ function BasicQ(){
                     inline
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="strongly agree"
                     label="Strongly Agree"
                     value="Strongly Agree"
@@ -159,7 +165,7 @@ function BasicQ(){
                     inline
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="agree"
                     label="Agree"
                     value="Agree"
@@ -169,7 +175,7 @@ function BasicQ(){
                     inline  
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="neither"
                     label="Neither agree nor Disagree"
                     value="Neither agree nor Disagree"
@@ -179,7 +185,7 @@ function BasicQ(){
                     inline
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="Disagree"
                     label="Disagree"
                     value="Disagree"
@@ -189,7 +195,7 @@ function BasicQ(){
                     inline
                     type="radio"
                     name="persuasion"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="Strongly Disagree"
                     label="Strongly Disagree"
                     value="Strongly Disagree"
@@ -201,7 +207,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="math"
                     label="Mathematics"
                     value="math"
@@ -209,7 +215,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="bisc"
                     label="Biology"
                     value="bisc"
@@ -217,7 +223,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="hist"
                     label="History"
                     value="hist"
@@ -225,7 +231,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="engl"
                     label="English & Foreign Language"
                     value="engl"
@@ -233,7 +239,7 @@ function BasicQ(){
                  <Form.Check
                     type="checkbox"
                     name="subjects"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="chem"
                     label="Chemistry"
                     value="chem"
@@ -244,7 +250,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="skillset"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="comm"
                     label="Communication"
                     value="comm"
@@ -252,7 +258,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="skillset"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="lead"
                     label="Leadership"
                     value="lead"
@@ -260,7 +266,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="skillset"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="problem-solving"
                     label="Problem Solving"
                     value="problem-solving"
@@ -268,7 +274,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="skillset"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="time"
                     label="Time Management"
                     value="time"
@@ -276,7 +282,7 @@ function BasicQ(){
                  <Form.Check
                     type="checkbox"
                     name="skillset"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="creativity"
                     label="Creativity"
                     value="creativity"
@@ -287,7 +293,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="hobbies"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="art"
                     label="Arts (drawing, painting, playing music)"
                     value="art"
@@ -295,7 +301,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="hobbies"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="hands-on"
                     label="Building something"
                     value="hands-on"
@@ -303,7 +309,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="hobbies"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="active"
                     label="Playing sports"
                     value="active"
@@ -311,7 +317,7 @@ function BasicQ(){
                 <Form.Check
                     type="checkbox"
                     name="hobbies"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="social"
                     label="Hanging out with friends"
                     value="social"
@@ -319,7 +325,7 @@ function BasicQ(){
                  <Form.Check
                     type="checkbox"
                     name="hobbies"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="learning"
                     label="Reading/Writing"
                     value="learning"
@@ -330,7 +336,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="work-environment"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="office"
                     label="Office"
                     value="Office"
@@ -339,7 +345,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="work-environment"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="Work from Home"
                     label="Work from Home"
                     value="Work from Home"
@@ -348,7 +354,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="work-environment"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="Lab"
                     label="Lab"
                     value="Lab"
@@ -357,7 +363,7 @@ function BasicQ(){
                 <Form.Check
                     type="radio"
                     name="work-environment"
-                    onChange={updateResponse}
+                    onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="Hands-on"
                     label="Hands-on"
                     value="Hands-on"
@@ -369,7 +375,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="key-factor"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Salary"
                         label="Salary"
                         value="Salary"
@@ -378,7 +384,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="key-factor"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Flexibility"
                         label="Flexibility"
                         value="Flexibility"
@@ -387,7 +393,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="key-factor"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Passion"
                         label="Passion"
                         value="Passion"
@@ -396,7 +402,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="key-factor"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Societal Impact"
                         label="Societal Impact"
                         value="Societal Impact"
@@ -408,7 +414,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="exciting"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="learning"
                         label="Learning new things"
                         value="Learning new things"
@@ -417,7 +423,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="exciting"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="Expression"
                         label="Expressing myself through art"
                         value="Expressing myself through art"
@@ -426,7 +432,7 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="exciting"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="challenge"
                         label="Challenging myself"
                         value="Challenging myself"
@@ -435,12 +441,20 @@ function BasicQ(){
                     <Form.Check
                         type="radio"
                         name="exciting"
-                        onChange={updateResponse}
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                         id="impact"
                         label="Seeing my impact on other people"
                         value="Seeing my impact on other people"
                         checked={responses["exciting"] === "Seeing my impact on other people"}
                     />
+            </div>
+            <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
+                <div style={{textAlign:'center'}}>
+                    <p>{progress}%</p>
+                    <div style={{width:'700px', border:'2px solid'}}>
+                        <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
+                    </div>
+                </div>
             </div>
         </div>
     );
