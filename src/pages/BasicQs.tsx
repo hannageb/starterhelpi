@@ -52,6 +52,7 @@ function BasicQ(){
                 </h3>
                 <Form.Group onChange={ChangeProg}>
                     <Form.Check
+                        inline
                         type="radio"
                         name="assembling"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -61,6 +62,7 @@ function BasicQ(){
                         checked={responses["assembling"] === "Strongly Agree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="assembling"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -70,6 +72,7 @@ function BasicQ(){
                         checked={responses["assembling"] === "Agree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="assembling"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -79,6 +82,7 @@ function BasicQ(){
                         checked={responses["assembling"] === "Neither agree nor Disagree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="assembling"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -88,6 +92,7 @@ function BasicQ(){
                         checked={responses["assembling"] === "Disagree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="assembling"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -103,6 +108,7 @@ function BasicQ(){
                 </h3>
                 <Form.Group>
                     <Form.Check
+                        inline
                         type="radio"
                         name="collaboration"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -112,6 +118,7 @@ function BasicQ(){
                         checked={responses["collaboration"] === "Strongly Agree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="collaboration"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -121,6 +128,7 @@ function BasicQ(){
                         checked={responses["collaboration"] === "Agree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="collaboration"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -130,6 +138,7 @@ function BasicQ(){
                         checked={responses["collaboration"] === "Neither agree nor Disagree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="collaboration"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
@@ -139,6 +148,7 @@ function BasicQ(){
                         checked={responses["collaboration"] === "Disagree"}
                     />
                     <Form.Check
+                        inline
                         type="radio"
                         name="collaboration"
                         onChange={(e) => {updateResponse(e);ChangeProg(e);}}
