@@ -40,6 +40,7 @@ function BasicQ(){
                     1) I like disassembling and reassembling things
                 </h3>
                 <Form.Check
+                    inline
                     type="radio"
                     name="assembling"
                     onChange={updateResponse}
@@ -49,6 +50,7 @@ function BasicQ(){
                     checked={responses["assembling"] === "Strongly Agree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="assembling"
                     onChange={updateResponse}
@@ -58,6 +60,7 @@ function BasicQ(){
                     checked={responses["assembling"] === "Agree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="assembling"
                     onChange={updateResponse}
@@ -67,6 +70,7 @@ function BasicQ(){
                     checked={responses["assembling"] === "Neither agree nor Disagree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="assembling"
                     onChange={updateResponse}
@@ -76,6 +80,7 @@ function BasicQ(){
                     checked={responses["assembling"] === "Disagree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="assembling"
                     onChange={updateResponse}
@@ -88,6 +93,7 @@ function BasicQ(){
                     2) I am good at collaborating with others
                 </h3>
                 <Form.Check
+                    inline
                     type="radio"
                     name="collaboration"
                     onChange={updateResponse}
@@ -97,6 +103,7 @@ function BasicQ(){
                     checked={responses["collaboration"] === "Strongly Agree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="collaboration"
                     onChange={updateResponse}
@@ -106,6 +113,7 @@ function BasicQ(){
                     checked={responses["collaboration"] === "Agree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="collaboration"
                     onChange={updateResponse}
@@ -115,6 +123,7 @@ function BasicQ(){
                     checked={responses["collaboration"] === "Neither agree nor Disagree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="collaboration"
                     onChange={updateResponse}
@@ -124,6 +133,7 @@ function BasicQ(){
                     checked={responses["collaboration"] === "Disagree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="collaboration"
                     onChange={updateResponse}
@@ -136,6 +146,7 @@ function BasicQ(){
                     3) I am good at persuading others
                 </h3>
                 <Form.Check
+                    inline
                     type="radio"
                     name="persuasion"
                     onChange={updateResponse}
@@ -145,6 +156,7 @@ function BasicQ(){
                     checked={responses["persuasion"] === "Strongly Agree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="persuasion"
                     onChange={updateResponse}
@@ -154,6 +166,7 @@ function BasicQ(){
                     checked={responses["persuasion"] === "Agree"}
                 />
                 <Form.Check
+                    inline  
                     type="radio"
                     name="persuasion"
                     onChange={updateResponse}
@@ -163,6 +176,7 @@ function BasicQ(){
                     checked={responses["persuasion"] === "Neither agree nor Disagree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="persuasion"
                     onChange={updateResponse}
@@ -172,6 +186,7 @@ function BasicQ(){
                     checked={responses["persuasion"] === "Disagree"}
                 />
                 <Form.Check
+                    inline
                     type="radio"
                     name="persuasion"
                     onChange={updateResponse}
@@ -224,8 +239,208 @@ function BasicQ(){
                     value="chem"
                 />
                 <h3>
-                    5) 
+                    5) What skills do you have?
                 </h3>
+                <Form.Check
+                    type="checkbox"
+                    name="skillset"
+                    onChange={updateResponse}
+                    id="comm"
+                    label="Communication"
+                    value="comm"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="skillset"
+                    onChange={updateResponse}
+                    id="lead"
+                    label="Leadership"
+                    value="lead"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="skillset"
+                    onChange={updateResponse}
+                    id="problem-solving"
+                    label="Problem Solving"
+                    value="problem-solving"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="skillset"
+                    onChange={updateResponse}
+                    id="time"
+                    label="Time Management"
+                    value="time"
+                />
+                 <Form.Check
+                    type="checkbox"
+                    name="skillset"
+                    onChange={updateResponse}
+                    id="creativity"
+                    label="Creativity"
+                    value="creativity"
+                />
+                 <h3>
+                    6) What hobbies do you find yourself doing in your freetime?
+                </h3>
+                <Form.Check
+                    type="checkbox"
+                    name="hobbies"
+                    onChange={updateResponse}
+                    id="art"
+                    label="Arts (drawing, painting, playing music)"
+                    value="art"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="hobbies"
+                    onChange={updateResponse}
+                    id="hands-on"
+                    label="Building something"
+                    value="hands-on"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="hobbies"
+                    onChange={updateResponse}
+                    id="active"
+                    label="Playing sports"
+                    value="active"
+                />
+                <Form.Check
+                    type="checkbox"
+                    name="hobbies"
+                    onChange={updateResponse}
+                    id="social"
+                    label="Hanging out with friends"
+                    value="social"
+                />
+                 <Form.Check
+                    type="checkbox"
+                    name="hobbies"
+                    onChange={updateResponse}
+                    id="learning"
+                    label="Reading/Writing"
+                    value="learning"
+                />
+                <h3>
+                    7) What work environment do you prefer?
+                </h3>
+                <Form.Check
+                    type="radio"
+                    name="work-environment"
+                    onChange={updateResponse}
+                    id="office"
+                    label="Office"
+                    value="Office"
+                    checked={responses["work-environment"] === "Office"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="work-environment"
+                    onChange={updateResponse}
+                    id="Work from Home"
+                    label="Work from Home"
+                    value="Work from Home"
+                    checked={responses["work-environment"] === "Work from Home"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="work-environment"
+                    onChange={updateResponse}
+                    id="Lab"
+                    label="Lab"
+                    value="Lab"
+                    checked={responses["work-environment"] === "Lab"}
+                />
+                <Form.Check
+                    type="radio"
+                    name="work-environment"
+                    onChange={updateResponse}
+                    id="Hands-on"
+                    label="Hands-on"
+                    value="Hands-on"
+                    checked={responses["work-environment"] === "Hands-on"}
+                />
+                <h3>
+                    8) What do you first look at when considering a career?
+                </h3>
+                    <Form.Check
+                        type="radio"
+                        name="key-factor"
+                        onChange={updateResponse}
+                        id="Salary"
+                        label="Salary"
+                        value="Salary"
+                        checked={responses["key-factor"] === "Salary"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="key-factor"
+                        onChange={updateResponse}
+                        id="Flexibility"
+                        label="Flexibility"
+                        value="Flexibility"
+                        checked={responses["key-factor"] === "Flexibility"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="key-factor"
+                        onChange={updateResponse}
+                        id="Passion"
+                        label="Passion"
+                        value="Passion"
+                        checked={responses["key-factor"] === "Passion"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="key-factor"
+                        onChange={updateResponse}
+                        id="Societal Impact"
+                        label="Societal Impact"
+                        value="Societal Impact"
+                        checked={responses["key-factor"] === "Societal Impact"}
+                    />
+                <h3>
+                    9) Which of the following is most exciting?
+                </h3>
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={updateResponse}
+                        id="learning"
+                        label="Learning new things"
+                        value="Learning new things"
+                        checked={responses["exciting"] === "Learning new things"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={updateResponse}
+                        id="Expression"
+                        label="Expressing myself through art"
+                        value="Expressing myself through art"
+                        checked={responses["exciting"] === "Expressing myself through art"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={updateResponse}
+                        id="challenge"
+                        label="Challenging myself"
+                        value="Challenging myself"
+                        checked={responses["exciting"] === "Challenging myself"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={updateResponse}
+                        id="impact"
+                        label="Seeing my impact on other people"
+                        value="Seeing my impact on other people"
+                        checked={responses["exciting"] === "Seeing my impact on other people"}
+                    />
             </div>
         </div>
     );
