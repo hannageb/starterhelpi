@@ -26,10 +26,13 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
-
   
   return (
     <div className='body'>
+      <div className="nav">
+        <button style={{fontSize:'10px'}} onClick={()=>{navigate('/Basic Question')}}>Basic Questions</button>
+        <button style={{fontSize:'10px'}} onClick={()=>{navigate('/Detailed Question')}}>Detailed Questions</button>
+      </div>
       <div className="title">
         <header>
           <h1>Welcome to CareerHelpi!</h1>
