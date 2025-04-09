@@ -46,6 +46,14 @@ function BasicQ(){
             <div className="Desc">
                 <h4>Find out what field might be best for you by answering a sweet and simple questionaire</h4>
             </div>
+            <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
+                <div style={{textAlign:'center'}}>
+                    <p>{progress}%</p>
+                    <div style={{width:'700px', border:'2px solid'}}>
+                        <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
+                    </div>
+                </div>
+            </div>
             <div className="Questions">
                 <h3>
                     1) I like disassembling and reassembling things
@@ -458,14 +466,7 @@ function BasicQ(){
                         checked={responses["exciting"] === "Seeing my impact on other people"}
                     />
             </div>
-            <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
-                <div style={{textAlign:'center'}}>
-                    <p>{progress}%</p>
-                    <div style={{width:'700px', border:'2px solid'}}>
-                        <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     );
 }

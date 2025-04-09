@@ -57,6 +57,8 @@ body {
 button{
   background-color: goldenrod;
   color: #0a3a6a;
+  border-radius: 8px;
+  font-size: 20px;
 }
 button:hover{
   background-color: rgb(229, 192, 97)
