@@ -5,9 +5,15 @@ import { Navigate } from "react-router-dom";
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
+    const[goToBasic, setGoToBasic] = React.useState(false)
 
     if (goToHome) {
         return <Navigate to="/" />;
+    }
+    if(goToBasic){
+        if(goToBasic){
+            return <Navigate to="/Basic Question"/>;
+        }
     }
 
     return (
@@ -19,8 +25,11 @@ function GoHomeScreen() {
                 </h5>
             </div>
             <div>
-                <button onClick={() => setGoToHome(true)}>Go Home</button>
+                <button style={{fontSize:"20px"}} onClick={() => setGoToHome(true)}>Go Home</button>
             </div>
+            <button onClick={()=>{setGoToBasic(true)}}>
+                {" "}Basic Questions
+            </button>
         </header>
     );
 }    
@@ -29,7 +38,6 @@ function GoHomeScreen() {
 
 function DetailedQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
-
     const [progress, setProgress] = useState<number>(0);
     const [propName, setPropName] = useState([""])
 

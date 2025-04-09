@@ -75,3 +75,9 @@ button:hover{
   left: 0;
   bottom: 0;
 }
+
+.nav{
+  float: right;
+  /*background-color:#0a3a6a;*/
+  color: goldenrod;
+}

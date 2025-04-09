@@ -5,8 +5,15 @@ import './BasicQs.css'
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false)
+    const[goToDetailed, setGoToDetailed] = React.useState(false)
     if (goToHome){
         return <Navigate to="/"/>;
+    }
+
+    if(goToDetailed){
+        if(goToDetailed){
+            return <Navigate to="/Detailed Question"/>;
+        }
     }
 
     return(
@@ -16,6 +23,9 @@ function GoHomeScreen() {
             </h1>
             <button onClick={() => {setGoToHome(true)}} className="back-button">
                 {" "}Go to Homepage
+            </button>
+            <button onClick={()=>{setGoToDetailed(true)}} className="back-button">
+                {" "}Go to Detailed Questions
             </button>
         </header>
     );
@@ -42,7 +52,10 @@ function BasicQ(){
 
     return(
         <div>
-            <GoHomeScreen></GoHomeScreen>
+            <div>
+                <GoHomeScreen></GoHomeScreen>
+            </div>
+            
             <div className="Desc">
                 <h4>Find out what field might be best for you by answering a sweet and simple questionaire</h4>
             </div>
