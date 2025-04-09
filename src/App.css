@@ -55,13 +55,13 @@ body {
 }
 
 button{
-  background-color: goldenrod;
+  background-image: radial-gradient(rgb(237, 174, 12), rgb(246, 218, 134)) ;
   color: #0a3a6a;
   border-radius: 8px;
   font-size: 20px;
 }
 button:hover{
-  background-color: rgb(229, 192, 97)
+  background-image: radial-gradient(rgb(202, 145, 1), rgb(250, 195, 32)) ;
 }
 
 .detailed-qs{
