@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
@@ -40,7 +40,8 @@ function DetailedQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
     const [progress, setProgress] = useState<number>(0);
     const [propName, setPropName] = useState([""])
-
+    const navigate = useNavigate();
+    
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
         if(propName.indexOf(event.target.name) === -1){
             setPropName( [...propName, event.target.name])
@@ -53,6 +54,7 @@ function DetailedQ() {
             ...responses,
             [event.target.name]: event.target.value,
         });
+
     }
     return(
         <div>
@@ -521,7 +523,25 @@ function DetailedQ() {
                     </div>
                 </div>
             </div>
+            <div style={{ textAlign: 'center', marginTop: '30px' }}>
+              <button
+                disabled={Object.keys(responses).length < 10}
+                style={{
+                    backgroundColor: Object.keys(responses).length < 10 ? 'grey' : '#004080',
+                    color: 'white',
+                    fontSize: '18px',
+                    padding: '10px 30px',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: Object.keys(responses).length < 10? 'not-allowed' : 'pointer',
+                    transition: 'background-color 0.3s', 
+                }}
+                onClick={() => navigate('/')} 
+            > 
+                Submit
+            </button>
         </div>
+    </div>
     )
 }
 export default DetailedQ
