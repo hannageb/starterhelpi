@@ -17,8 +17,9 @@
 
 }
 
-.back-button{
-    margin-left: auto;
+.navigation-bar{
+    background-color:#0a3a6a;
+    float: right;
 }
 
 .Questions{

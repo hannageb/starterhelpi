@@ -5,8 +5,15 @@ import './BasicQs.css'
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false)
+    const[goToDetailed, setGoToDetailed] = React.useState(false)
     if (goToHome){
         return <Navigate to="/"/>;
+    }
+
+    if(goToDetailed){
+        if(goToDetailed){
+            return <Navigate to="/Detailed Question"/>;
+        }
     }
 
     return(
@@ -16,6 +23,9 @@ function GoHomeScreen() {
             </h1>
             <button onClick={() => {setGoToHome(true)}} className="back-button">
                 {" "}Go to Homepage
+            </button>
+            <button onClick={()=>{setGoToDetailed(true)}} className="back-button">
+                {" "}Go to Detailed Questions
             </button>
         </header>
     );
@@ -42,7 +52,10 @@ function BasicQ(){
 
     return(
         <div>
-            <GoHomeScreen></GoHomeScreen>
+            <div>
+                <GoHomeScreen></GoHomeScreen>
+            </div>
+            
             <div className="Desc">
                 <h5>Find out what field might be best for you by answering a sweet and simple questionaire</h5>
             </div>
@@ -53,6 +66,14 @@ function BasicQ(){
                     <div style={{ height: '40px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px' }}></div>
                 </div>
             </div>
+            </div>
+            <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
+                <div style={{textAlign:'center'}}>
+                    <p>{progress}%</p>
+                    <div style={{width:'700px', border:'2px solid'}}>
+                        <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
+                    </div>
+                </div>
             </div>
             <div className="Questions">
                 <h3>
