@@ -18,15 +18,11 @@ function GoHomeScreen() {
 
     return (
         <header className="header">
-            <div className="titleContainer">
-                <h1 className="centerTitle">DETAILED QUESTIONS</h1>
-                <button onClick={() => setGoToHome(true)}>Go Home</button>
-            </div>           
-            </div>
-            <div>
-                <button style={{fontSize:"20px"}} onClick={() => setGoToHome(true)}>Go Home</button>
-            </div>
-            <button onClick={()=>{setGoToBasic(true)}}>
+            <h1 className="centerTitle">DETAILED QUESTIONS</h1>
+            <button onClick={() => {setGoToHome(true)}} className="back-button">
+            {" "}Home
+            </button>
+            <button onClick={()=>{setGoToBasic(true)}} className="basic-button">
                 {" "}Basic Questions
             </button>
         </header>
@@ -539,6 +535,7 @@ function DetailedQ() {
             > 
                 Submit
             </button>
+        </div>
         </div>
     );
 }

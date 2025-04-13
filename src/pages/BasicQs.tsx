@@ -22,10 +22,10 @@ function GoHomeScreen() {
                 BASIC QUESTIONS
             </h1>
             <button onClick={() => {setGoToHome(true)}} className="back-button">
-                {" "}Go to Homepage
+                {" "}Home
             </button>
-            <button onClick={()=>{setGoToDetailed(true)}} className="back-button">
-                {" "}Go to Detailed Questions
+            <button onClick={()=>{setGoToDetailed(true)}} className="detailed-button">
+                {" "}Detailed Questions
             </button>
         </header>
     );
@@ -59,19 +59,11 @@ function BasicQ(){
             <div className="Desc">
                 <h5>Find out what field might be best for you by answering a sweet and simple questionaire</h5>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
-                <div style={{ textAlign: 'center' }}>
-                    <p>{progress}%</p>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px'}}>
-                    <div style={{ height: '40px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px' }}></div>
-                </div>
-            </div>
-            </div>
             <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
                 <div style={{textAlign:'center'}}>
                     <p>{progress}%</p>
-                    <div style={{width:'700px', border:'2px solid'}}>
-                        <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
+                    <div style={{width:'700px', border:'2px solid', borderRadius: '30px' }}>
+                        <div style={{height:'40px',background:"darkblue",width:`${progress}%`, transition:"width 0.3s ease-in-out", borderRadius: '30px' }}></div>
                     </div>
                 </div>
             </div>
