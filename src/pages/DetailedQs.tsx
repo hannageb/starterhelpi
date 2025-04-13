@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 //import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
+    const[goToBasic, setGoToBasic] = React.useState(false)
 
     if (goToHome) {
         return <Navigate to="/" />;
+    }
+    if(goToBasic){
+        if(goToBasic){
+            return <Navigate to="/Basic Question"/>;
+        }
     }
 
     return (
@@ -16,6 +22,13 @@ function GoHomeScreen() {
                 <h1 className="centerTitle">DETAILED QUESTIONS</h1>
                 <button onClick={() => setGoToHome(true)}>Go Home</button>
             </div>           
+            </div>
+            <div>
+                <button style={{fontSize:"20px"}} onClick={() => setGoToHome(true)}>Go Home</button>
+            </div>
+            <button onClick={()=>{setGoToBasic(true)}}>
+                {" "}Basic Questions
+            </button>
         </header>
     );
 }
@@ -24,10 +37,10 @@ function GoHomeScreen() {
 
 function DetailedQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
-
     const [progress, setProgress] = useState<number>(0);
     const [propName, setPropName] = useState([""])
-
+    const navigate = useNavigate();
+    
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
         if(propName.indexOf(event.target.name) === -1){
             setPropName( [...propName, event.target.name])
@@ -40,6 +53,7 @@ function DetailedQ() {
             ...responses,
             [event.target.name]: event.target.value,
         });
+
     }
     return(
         <div>
@@ -508,6 +522,23 @@ function DetailedQ() {
                     checked={responses["recognition"] === "independence-autonomy"}
                 />
             </div>
+            <div style={{ textAlign: 'center', marginTop: '30px' }}>
+              <button
+                disabled={Object.keys(responses).length < 10}
+                style={{
+                    backgroundColor: Object.keys(responses).length < 10 ? 'grey' : '#004080',
+                    color: 'white',
+                    fontSize: '18px',
+                    padding: '10px 30px',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: Object.keys(responses).length < 10? 'not-allowed' : 'pointer',
+                    transition: 'background-color 0.3s', 
+                }}
+                onClick={() => navigate('/')} 
+            > 
+                Submit
+            </button>
         </div>
     );
 }
