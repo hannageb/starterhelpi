@@ -44,16 +44,17 @@ function BasicQ(){
         <div>
             <GoHomeScreen></GoHomeScreen>
             <div className="Desc">
-                <h4>Find out what field might be best for you by answering a sweet and simple questionaire</h4>
+                <h5>Find out what field might be best for you by answering a sweet and simple questionaire</h5>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px'}}>
-                    <div style={{ height: '40px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out" }}></div>
+                    <div style={{ height: '40px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px' }}></div>
                 </div>
             </div>
-        </div><div className="Questions">
+            </div>
+            <div className="Questions">
                 <h3>
                     1) I like disassembling and reassembling things
                 </h3>
