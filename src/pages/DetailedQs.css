@@ -9,3 +9,19 @@
     flex-grow: 1;
     text-align: center;
 }
+
+.description {
+    text-align: center;
+}
+
+.questions{
+    padding-left: 1%;
+    width: 60%;
+    height: 60%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background-color: #5a96d3;
+    margin: auto;
+    border-radius: 25px;
+    overflow-wrap: break-word;
+}
