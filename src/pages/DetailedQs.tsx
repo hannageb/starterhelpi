@@ -2,7 +2,6 @@ import React, { useState } from "react";
 //import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
 import { Navigate, useNavigate } from "react-router-dom";
-import './DetailedQs.css'
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
 
@@ -133,6 +132,7 @@ function DetailedQ() {
                     value="independent"
                     checked={responses["work-environment"] === "independent"}
                 />
+                </div>
             <div>
                 <h3>
                     Which skills do you excel at or enjoy using the most?
@@ -528,27 +528,18 @@ function DetailedQ() {
                     value="independence-autonomy"
                     checked={responses["recognition"] === "independence-autonomy"}
                 />
-                </div>
-                </div>
+            </div>
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
-              <button
-                disabled={Object.keys(responses).length < 10}
-                style={{
-                    backgroundColor: Object.keys(responses).length < 10 ? 'grey' : '#004080',
-                    color: 'white',
-                    fontSize: '18px',
-                    padding: '10px 30px',
-                    border: 'none',
-                    borderRadius: '8px',
-                    cursor: Object.keys(responses).length < 10? 'not-allowed' : 'pointer',
-                    transition: 'background-color 0.3s', 
-                }}
-                onClick={() => navigate('/')} 
-            > 
-                Submit
-            </button>
+  <button
+    disabled={Object.keys(responses).length < 10}
+    className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+    onClick={() => navigate('/')}
+  >
+    Submit
+  </button>
         </div>
-        </div>
+    {showConfetti && <Confetti width={width} height={height} />}
+    </div>
     );
 }
 export default DetailedQ
