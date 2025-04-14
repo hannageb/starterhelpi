@@ -40,11 +40,15 @@
 body {
   background-color: rgb(147, 177, 201);
 }
+
 .title{
-  text-align: center;
   padding: 2%;
   background-color: #0a3a6a;
   color: goldenrod;
+}
+
+button.title{
+  text-align: right;
 }
 
 .basic-qs {
@@ -74,10 +78,4 @@ button:hover{
 .api-key{
   left: 0;
   bottom: 0;
-}
-
-.nav{
-  float: right;
-  /*background-color:#0a3a6a;*/
-  color: goldenrod;
 }
