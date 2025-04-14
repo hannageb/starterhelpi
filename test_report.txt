@@ -48,11 +48,11 @@ All files            |       0 |        0 |       0 |       0 |
   index.tsx          |       0 |      100 |     100 |       0 | 10-28             
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  src/pages           |       0 |        0 |       0 |       0 |                   
-  BasicQs.tsx        |       0 |        0 |       0 |       0 | 7-437             
-  DetailedQs.tsx     |       0 |        0 |       0 |       0 | 7-534             
+  BasicQs.tsx        |       0 |        0 |       0 |       0 | 9-462             
+  DetailedQs.tsx     |       0 |        0 |       0 |       0 | 9-536             
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.345 s
+Time:        3.402 s
 Ran all test suites.
