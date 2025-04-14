@@ -29,15 +29,15 @@ function App() {
   
   return (
     <div className='body'>
-      <div className="nav">
-        <button style={{fontSize:'10px'}} onClick={()=>{navigate('/Basic Question')}}>Basic Questions</button>
-        <button style={{fontSize:'10px'}} onClick={()=>{navigate('/Detailed Question')}}>Detailed Questions</button>
-      </div>
       <div className="title">
         <header>
           <h1>Welcome to CareerHelpi!</h1>
           <h3>Luc De Nardi, Hanna Gebrel & Isha Kashif</h3>
         </header>
+        <div className="nav">
+          <button style={{fontSize:'15px'}} onClick={()=>{navigate('/Basic Question')}}>Basic Questions</button>
+          <button style={{fontSize:'15px'}} onClick={()=>{navigate('/Detailed Question')}}>Detailed Questions</button>
+        </div>
       </div>
       <div className="basic-qs">
         <button

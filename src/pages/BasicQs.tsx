@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import './BasicQs.css'
+import Confetti from 'react-confetti';
+import { useWindowSize } from '@react-hook/window-size'; 
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false)
     const[goToDetailed, setGoToDetailed] = React.useState(false)
+    
     if (goToHome){
         return <Navigate to="/"/>;
     }
@@ -22,16 +25,19 @@ function GoHomeScreen() {
                 BASIC QUESTIONS
             </h1>
             <button onClick={() => {setGoToHome(true)}} className="back-button">
-                {" "}Go to Homepage
+                {" "}Home
             </button>
-            <button onClick={()=>{setGoToDetailed(true)}} className="back-button">
-                {" "}Go to Detailed Questions
+            <button onClick={()=>{setGoToDetailed(true)}} className="detailed-button">
+                {" "}Detailed Questions
             </button>
         </header>
     );
 }
 function BasicQ(){
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
+    const navigate = useNavigate();
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [width, height] = useWindowSize();
 
     function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
         setResponses({
@@ -44,11 +50,19 @@ function BasicQ(){
     const [propName, setPropName] = useState([""])
 
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if(propName.indexOf(event.target.name) === -1){
-            setPropName( [...propName, event.target.name])
-            setProgress((prevProgress)=> prevProgress+Math.round(((1/9)*100))>100 ? 100:prevProgress+Math.round(((1/9)*100)))
+        if (propName.indexOf(event.target.name) === -1) {
+            const updatedProps = [...propName, event.target.name];
+            const newProgress = Math.round((updatedProps.length / 9) * 100);
+            setPropName(updatedProps);
+            setProgress(newProgress);
+    
+            if (newProgress === 100) {
+                setShowConfetti(true);
+                setTimeout(() => setShowConfetti(false), 5000);
+            }
         }
-    }
+    };
+    
 
     return(
         <div>
@@ -59,19 +73,11 @@ function BasicQ(){
             <div className="Desc">
                 <h5>Find out what field might be best for you by answering a sweet and simple questionaire</h5>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
-                <div style={{ textAlign: 'center' }}>
-                    <p>{progress}%</p>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px'}}>
-                    <div style={{ height: '40px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px' }}></div>
-                </div>
-            </div>
-            </div>
             <div style={{display:'flex',justifyContent:'center', margin:'20px'}}>
                 <div style={{textAlign:'center'}}>
                     <p>{progress}%</p>
-                    <div style={{width:'700px', border:'2px solid'}}>
-                        <div style={{height:'40px',background:"green",width:`${progress}%`, transition:"width 0.3s ease-in-out"}}></div>
+                    <div style={{width:'700px', border:'2px solid', borderRadius: '30px' }}>
+                        <div style={{height:'40px',background:"darkblue",width:`${progress}%`, transition:"width 0.3s ease-in-out", borderRadius: '30px' }}></div>
                     </div>
                 </div>
             </div>
@@ -412,39 +418,55 @@ function BasicQ(){
                 <h3>
                     9) Which of the following is most exciting?
                 </h3>
-                <Form.Check
-                    type="radio"
-                    name="exciting"
-                    onChange={(e) => { updateResponse(e); ChangeProg(e); } }
-                    id="learning"
-                    label="Learning new things"
-                    value="Learning new things"
-                    checked={responses["exciting"] === "Learning new things"} />
-                <Form.Check
-                    type="radio"
-                    name="exciting"
-                    onChange={(e) => { updateResponse(e); ChangeProg(e); } }
-                    id="Expression"
-                    label="Expressing myself through art"
-                    value="Expressing myself through art"
-                    checked={responses["exciting"] === "Expressing myself through art"} />
-                <Form.Check
-                    type="radio"
-                    name="exciting"
-                    onChange={(e) => { updateResponse(e); ChangeProg(e); } }
-                    id="challenge"
-                    label="Challenging myself"
-                    value="Challenging myself"
-                    checked={responses["exciting"] === "Challenging myself"} />
-                <Form.Check
-                    type="radio"
-                    name="exciting"
-                    onChange={(e) => { updateResponse(e); ChangeProg(e); } }
-                    id="impact"
-                    label="Seeing my impact on other people"
-                    value="Seeing my impact on other people"
-                    checked={responses["exciting"] === "Seeing my impact on other people"} />
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="learning"
+                        label="Learning new things"
+                        value="Learning new things"
+                        checked={responses["exciting"] === "Learning new things"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="Expression"
+                        label="Expressing myself through art"
+                        value="Expressing myself through art"
+                        checked={responses["exciting"] === "Expressing myself through art"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="challenge"
+                        label="Challenging myself"
+                        value="Challenging myself"
+                        checked={responses["exciting"] === "Challenging myself"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="exciting"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="impact"
+                        label="Seeing my impact on other people"
+                        value="Seeing my impact on other people"
+                        checked={responses["exciting"] === "Seeing my impact on other people"}
+                    />
             </div>
+            <div style={{ textAlign: 'center', marginTop: '30px' }}>
+  <button
+    disabled={Object.keys(responses).length < 9}
+    className={`submit-button ${Object.keys(responses).length < 9 ? 'disabled' : 'enabled'}`}
+    onClick={() => navigate('/')}
+  >
+    Submit
+  </button>
+</div>
+    {showConfetti && <Confetti width={width} height={height} />}
+
+
         </div>
     );
 }

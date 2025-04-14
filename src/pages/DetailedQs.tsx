@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Navigate, useNavigate } from "react-router-dom";
 import './DetailedQs.css'
-
+import Confetti from 'react-confetti';
+import { useWindowSize } from '@react-hook/window-size'; 
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
@@ -38,13 +39,22 @@ function DetailedQ() {
     const [progress, setProgress] = useState<number>(0);
     const [propName, setPropName] = useState([""])
     const navigate = useNavigate();
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [width, height] = useWindowSize();
     
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if(propName.indexOf(event.target.name) === -1){
-            setPropName( [...propName, event.target.name])
-            setProgress((prevProgress)=> prevProgress+10>100 ? 100:prevProgress+10)
+        if (propName.indexOf(event.target.name) === -1) {
+            const newProgress = progress + 10 > 100 ? 100 : progress + 10;
+            setPropName([...propName, event.target.name]);
+            setProgress(newProgress);
+    
+            if (newProgress === 100) {
+                setShowConfetti(true);
+                setTimeout(() => setShowConfetti(false), 5000); 
+            }
         }
-    }
+    };
+    
 
     function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
         setResponses({

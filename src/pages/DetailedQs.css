@@ -4,14 +4,21 @@
     background-color: #0a3a6a;
     color: goldenrod;
 }
+
 .centerTitle { /*from Gemini; flex-grow: makes the div take up the available space while being in the center, this will push
     the button to the right*/
     flex-grow: 1;
     text-align: center;
 }
 
-.description {
+.description{
     text-align: center;
+    font-style: italic;
+}
+
+.navigation-bar{
+    background-color:#0a3a6a;
+    float: right;
 }
 
 .questions{
@@ -20,7 +27,7 @@
     height: 60%;
     padding-top: 4%;
     padding-bottom: 4%;
-    background-color: #5a96d3;
+    background-color: #418edc;
     margin: auto;
     border-radius: 25px;
     overflow-wrap: break-word;
