@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import './BasicQs.css'
+import Confetti from 'react-confetti';
+import { useWindowSize } from '@react-hook/window-size'; 
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false)
     const[goToDetailed, setGoToDetailed] = React.useState(false)
+    
     if (goToHome){
         return <Navigate to="/"/>;
     }
@@ -32,6 +35,9 @@ function GoHomeScreen() {
 }
 function BasicQ(){
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
+    const navigate = useNavigate();
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [width, height] = useWindowSize();
 
     function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
         setResponses({
@@ -44,11 +50,19 @@ function BasicQ(){
     const [propName, setPropName] = useState([""])
 
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if(propName.indexOf(event.target.name) === -1){
-            setPropName( [...propName, event.target.name])
-            setProgress((prevProgress)=> prevProgress+Math.round(((1/9)*100))>100 ? 100:prevProgress+Math.round(((1/9)*100)))
+        if (propName.indexOf(event.target.name) === -1) {
+            const updatedProps = [...propName, event.target.name];
+            const newProgress = Math.round((updatedProps.length / 9) * 100);
+            setPropName(updatedProps);
+            setProgress(newProgress);
+    
+            if (newProgress === 100) {
+                setShowConfetti(true);
+                setTimeout(() => setShowConfetti(false), 5000);
+            }
         }
-    }
+    };
+    
 
     return(
         <div>
@@ -441,6 +455,18 @@ function BasicQ(){
                         checked={responses["exciting"] === "Seeing my impact on other people"}
                     />
             </div>
+            <div style={{ textAlign: 'center', marginTop: '30px' }}>
+  <button
+    disabled={Object.keys(responses).length < 9}
+    className={`submit-button ${Object.keys(responses).length < 9 ? 'disabled' : 'enabled'}`}
+    onClick={() => navigate('/')}
+  >
+    Submit
+  </button>
+</div>
+    {showConfetti && <Confetti width={width} height={height} />}
+
+
         </div>
     );
 }

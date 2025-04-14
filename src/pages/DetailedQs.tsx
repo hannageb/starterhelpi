@@ -2,6 +2,8 @@ import React, { useState } from "react";
 //import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
 import { Navigate, useNavigate } from "react-router-dom";
+import Confetti from 'react-confetti';
+import { useWindowSize } from '@react-hook/window-size'; 
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
@@ -36,13 +38,22 @@ function DetailedQ() {
     const [progress, setProgress] = useState<number>(0);
     const [propName, setPropName] = useState([""])
     const navigate = useNavigate();
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [width, height] = useWindowSize();
     
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if(propName.indexOf(event.target.name) === -1){
-            setPropName( [...propName, event.target.name])
-            setProgress((prevProgress)=> prevProgress+10>100 ? 100:prevProgress+10)
+        if (propName.indexOf(event.target.name) === -1) {
+            const newProgress = progress + 10 > 100 ? 100 : progress + 10;
+            setPropName([...propName, event.target.name]);
+            setProgress(newProgress);
+    
+            if (newProgress === 100) {
+                setShowConfetti(true);
+                setTimeout(() => setShowConfetti(false), 5000); 
+            }
         }
-    }
+    };
+    
 
     function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
         setResponses({
@@ -519,24 +530,19 @@ function DetailedQ() {
                 />
             </div>
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
-              <button
-                disabled={Object.keys(responses).length < 10}
-                style={{
-                    backgroundColor: Object.keys(responses).length < 10 ? 'grey' : '#004080',
-                    color: 'white',
-                    fontSize: '18px',
-                    padding: '10px 30px',
-                    border: 'none',
-                    borderRadius: '8px',
-                    cursor: Object.keys(responses).length < 10? 'not-allowed' : 'pointer',
-                    transition: 'background-color 0.3s', 
-                }}
-                onClick={() => navigate('/')} 
-            > 
-                Submit
-            </button>
+  <button
+    disabled={Object.keys(responses).length < 10}
+    className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+    onClick={() => navigate('/')}
+  >
+    Submit
+  </button>
         </div>
-        </div>
+    {showConfetti && <Confetti width={width} height={height} />}
+
+
+
+    </div>
     );
 }
 export default DetailedQ

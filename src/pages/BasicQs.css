@@ -34,3 +34,26 @@
     overflow-wrap: break-word;
 }
 
+.submit-button {
+    background-color: gray;
+    color: white;
+    font-size: 18px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .submit-button.enabled {
+    background-color: #00264d;
+    cursor: pointer;
+  }
+  
+  .submit-button.enabled:hover {
+    background-color: #001f3f;
+  }
+  
+  .submit-button.disabled {
+    cursor: not-allowed;
+  }
+  
