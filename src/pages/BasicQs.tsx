@@ -492,6 +492,12 @@ function BasicQ(){
                         value="Working and collaborating with other people"
                         checked={responses["dream-job"] === "Working and collaborating with other people"}
                     />
+                    <button
+                    className="next-page"
+                    style={{float: "right", fontSize:"15px", marginRight:"10px"}}
+                    >
+                        ➡️
+                    </button>
             </div>
     <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <button
