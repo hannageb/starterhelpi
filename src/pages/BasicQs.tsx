@@ -51,14 +51,13 @@ function BasicQ(){
 
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (propName.indexOf(event.target.name) === -1) {
-            const updatedProps = [...propName, event.target.name];
-            const newProgress = Math.round((updatedProps.length / 9) * 100);
-            setPropName(updatedProps);
+            const newProgress = progress + 10 > 100 ? 100 : progress + 10;
+            setPropName([...propName, event.target.name]);
             setProgress(newProgress);
     
             if (newProgress === 100) {
                 setShowConfetti(true);
-                setTimeout(() => setShowConfetti(false), 5000);
+                setTimeout(() => setShowConfetti(false), 5000); 
             }
         }
     };
@@ -454,20 +453,56 @@ function BasicQ(){
                         value="Seeing my impact on other people"
                         checked={responses["exciting"] === "Seeing my impact on other people"}
                     />
+                <h3>
+                    10) Which of the following is the component your most excited for for your dream job?
+                </h3>
+                    <Form.Check
+                        type="radio"
+                        name="dream-job"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="traveling"
+                        label="Traveling"
+                        value="Traveling"
+                        checked={responses["dream-job"] === "Traveling"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="dream-job"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="money"
+                        label="Making money"
+                        value="Making money"
+                        checked={responses["dream-job"] === "Making money"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="dream-job"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="opportunity"
+                        label="Opportunity to learn new things in my field"
+                        value="Opportunity to learn new things in my field"
+                        checked={responses["dream-job"] === "Opportunity to learn new things in my field"}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="dream-job"
+                        onChange={(e) => {updateResponse(e);ChangeProg(e);}}
+                        id="community"
+                        label="Working and collaborating with other people"
+                        value="Working and collaborating with other people"
+                        checked={responses["dream-job"] === "Working and collaborating with other people"}
+                    />
             </div>
-            <div style={{ textAlign: 'center', marginTop: '30px' }}>
-  <button
-    disabled={Object.keys(responses).length < 9}
-    className={`submit-button ${Object.keys(responses).length < 9 ? 'disabled' : 'enabled'}`}
-    onClick={() => navigate('/')}
-  >
-    Submit
-  </button>
-</div>
+    <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <button
+            disabled={Object.keys(responses).length < 10}
+            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+            onClick={() => navigate('/')}>
+            Submit
+        </button>
+    </div>
     {showConfetti && <Confetti width={width} height={height} />}
-
-
-        </div>
+    </div>
     );
 }
 export default BasicQ

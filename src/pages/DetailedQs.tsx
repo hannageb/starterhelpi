@@ -40,7 +40,7 @@ function DetailedQ() {
     const navigate = useNavigate();
     const [showConfetti, setShowConfetti] = useState(false);
     const [width, height] = useWindowSize();
-    
+
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (propName.indexOf(event.target.name) === -1) {
             const newProgress = progress + 10 > 100 ? 100 : progress + 10;
@@ -529,15 +529,14 @@ function DetailedQ() {
                     checked={responses["recognition"] === "independence-autonomy"}
                 />
             </div>
-            <div style={{ textAlign: 'center', marginTop: '30px' }}>
-  <button
-    disabled={Object.keys(responses).length < 10}
-    className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-    onClick={() => navigate('/')}
-  >
-    Submit
-  </button>
-        </div>
+    <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <button
+            disabled={Object.keys(responses).length < 10}
+            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+            onClick={() => navigate('/')}>
+            Submit
+        </button>
+    </div>
     {showConfetti && <Confetti width={width} height={height} />}
     </div>
     );
