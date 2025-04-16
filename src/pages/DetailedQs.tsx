@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 //import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
+import './DetailedQs.css'
 import { Navigate, useNavigate } from "react-router-dom";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
@@ -132,7 +133,6 @@ function DetailedQ() {
                     value="independent"
                     checked={responses["work-environment"] === "independent"}
                 />
-                </div>
             <div>
                 <h3>
                     Which skills do you excel at or enjoy using the most?
@@ -528,6 +528,7 @@ function DetailedQ() {
                     value="independence-autonomy"
                     checked={responses["recognition"] === "independence-autonomy"}
                 />
+            </div>
             </div>
     <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <button
