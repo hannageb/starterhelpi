@@ -5,7 +5,6 @@ import './DetailedQs.css'
 import { Navigate, useNavigate } from "react-router-dom";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
-import {'./DetailedQs.css'};
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
