@@ -77,7 +77,7 @@ function DetailedQ() {
                     </div>
                 </div>
             </div>
-            <div className="questions">
+            <div className="Questions">
                 <h3>Which type of work environment do you prefer?</h3> 
                 <Form.Check
                     type="radio"
@@ -485,7 +485,7 @@ function DetailedQ() {
                 />
                 <Form.Check
                     type="radio"
-                    name="recognization"
+                    name="recognition"
                     onChange={(e) => {updateResponse(e);ChangeProg(e);}}
                     id="public-recognition"
                     label="I want to be known for my work and have a strong professional reputation"

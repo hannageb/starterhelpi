@@ -1,66 +1,119 @@
-
-import React, {useState} from 'react';
-//import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import {Button, Form} from 'react-bootstrap';
-import {useNavigate} from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import clickSound from './click.mp3';
 
+const audio = new Audio(clickSound);
 
-//local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
+const playSound = () => {
+  audio.currentTime = 0;
+  audio.play();
+};
+
 let keyData = "";
 const saveKeyData = "MYKEY";
-const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+const prevKey = localStorage.getItem(saveKeyData);
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
+
 function App() {
-  const [key, setKey] = useState<string>(keyData); //for api key input
-  const navigate = useNavigate(); // for navigating between pages
-  //sets the local storage item to the api key the user inputed
+  const [key, setKey] = useState<string>(keyData);
+  const navigate = useNavigate();
+
   function handleSubmit() {
+    playSound();
     localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    window.location.reload();
   }
 
-  //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
-  
+
   return (
     <div className='body'>
       <div className="title">
         <header>
           <h1>Welcome to CareerHelpi!</h1>
-          <h3>Luc De Nardi, Hanna Gebrel & Isha Kashif</h3>
+          <h4 className="tagline">Discover your future. One question at a time.</h4>
         </header>
+
         <div className="nav">
-          <button style={{fontSize:'15px'}} onClick={()=>{navigate('/Basic Question')}}>Basic Questions</button>
-          <button style={{fontSize:'15px'}} onClick={()=>{navigate('/Detailed Question')}}>Detailed Questions</button>
+          <button
+            style={{ fontSize: '15px' }}
+            onClick={() => {
+              playSound();
+              navigate('/Basic Question');
+            }}
+          >
+            Basic Questions
+          </button>
+          <button
+            style={{ fontSize: '15px' }}
+            onClick={() => {
+              playSound();
+              navigate('/Detailed Question');
+            }}
+          >
+            Detailed Questions
+          </button>
         </div>
       </div>
-      <div className="basic-qs">
-        <button
-        onClick={()=>{
-          navigate('/Basic Question');
-        }}>
-          Basic Questions
-        </button>
+      <div className="main-content">
+      <div className="home-button-wrapper">
+        <div className="home-button-box">
+          <button
+            onClick={() => {
+              playSound();
+              navigate('/Basic Question');
+            }}
+          >
+            Basic Questions
+          </button>
+          <p className="button-description">
+            Find out what field might be best for you by answering a sweet and simple questionnaire.
+          </p>
         </div>
-        <div className="detailed-qs">
-            <button
-                onClick={()=>{
-                  navigate('/Detailed Question');
-                }}>
-              Detailed Questions
-          </button>  
+        <div className="home-button-box">
+          <button
+            onClick={() => {
+              playSound();
+              navigate('/Detailed Question');
+            }}
+          >
+            Detailed Questions
+          </button>
+          <p className="button-description">
+            Click this button if you want a more personalized career suggestion!
+          </p>
         </div>
-      <Form className='api-key' style={{position: "fixed"}}>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
+      </div>
+
+      <div className="api-box">
+        <Form className="api-key-form">
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Insert API Key Here"
+            onChange={changeKey}
+          />
+          <br />
+          <div className="centered-button">
+            <Button
+              className="Submit-Button"
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+          </div>
+        </Form>
+      </div>
+</div>
+      <footer className="footer">
+        <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+      </footer>
     </div>
   );
 }

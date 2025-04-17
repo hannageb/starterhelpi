@@ -1,8 +1,9 @@
-.header{
-    display: flex;
-    align-items: center;
-    background-color: #0a3a6a;
-    color: goldenrod;
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, #0a3a6a, goldenrod);
+  background-color: rgb(147, 177, 201);
+  background-size: cover;
 }
 
 .centerTitle { /*from Gemini; flex-grow: makes the div take up the available space while being in the center, this will push
@@ -22,17 +23,17 @@
     float: right;
 }
 
-.Questions{
-    padding-left: 1%;
-    width: 60%;
-    height: 60%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    background-color: #5a96d3;
-    margin: auto;
-    border-radius: 25px;
-    overflow-wrap: break-word;
+.Questions {
+  padding: 4%;
+  width: 60%;
+  margin: auto;
+  background-color: rgba(10, 58, 106, 0.4); 
+  border-radius: 25px;
+  overflow-wrap: break-word;
+  color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 
 .submit-button {
     background-color: gray;
@@ -44,8 +45,6 @@
     transition: background-color 0.3s ease-in-out;
   }
   
-
-
   .submit-button.enabled {
     background-color: #00264d;
     cursor: pointer;
