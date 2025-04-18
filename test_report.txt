@@ -11,16 +11,16 @@ FAIL src/App.test.tsx
       src/App.tsx
       src/App.test.tsx
 
-      4 | import './App.css';
-      5 | import {Button, Form} from 'react-bootstrap';
-    > 6 | import {useNavigate} from 'react-router-dom';
+      2 | import './App.css';
+      3 | import { Button, Form } from 'react-bootstrap';
+    > 4 | import { useNavigate } from 'react-router-dom';
         | ^
-      7 |
-      8 |
-      9 | //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
+      5 | import clickSound from './click.mp3';
+      6 |
+      7 | const audio = new Audio(clickSound);
 
       at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
-      at Object.<anonymous> (src/App.tsx:6:1)
+      at Object.<anonymous> (src/App.tsx:4:1)
       at Object.<anonymous> (src/App.test.tsx:3:1)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
@@ -44,17 +44,15 @@ File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #
 ---------------------|---------|----------|---------|---------|-------------------
 All files            |       0 |        0 |       0 |       0 |                   
  src                 |       0 |        0 |       0 |       0 |                   
-  App.tsx            |       0 |        0 |       0 |       0 | 10-53             
+  App.tsx            |       0 |        0 |       0 |       0 | 7-83              
   index.tsx          |       0 |      100 |     100 |       0 | 10-28             
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  src/pages           |       0 |        0 |       0 |       0 |                   
-  BasicQs.tsx        |       0 |        0 |       0 |       0 | 9-506             
+  BasicQs.tsx        |       0 |        0 |       0 |       0 | 9-183             
   DetailedQs.tsx     |       0 |        0 |       0 |       0 | 10-537            
-  basicReport.tsx    |       0 |        0 |       0 |       0 |                   
-  detailedReport.tsx |       0 |        0 |       0 |       0 |                   
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.527 s
+Time:        3.485 s
 Ran all test suites.
