@@ -2,7 +2,7 @@ import React, { useState } from "react";
 //import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
 import './DetailedQs.css'
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
 
@@ -38,9 +38,11 @@ function DetailedQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
     const [progress, setProgress] = useState<number>(0);
     const [propName, setPropName] = useState([""])
-    const navigate = useNavigate();
     const [showConfetti, setShowConfetti] = useState(false);
     const [width, height] = useWindowSize();
+    const [goToReport, setGoToReport] = useState(false);
+
+    if (goToReport) return <Navigate to="/Detailed Report"/>;
 
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (propName.indexOf(event.target.name) === -1) {
@@ -534,7 +536,7 @@ function DetailedQ() {
         <button
             disabled={Object.keys(responses).length < 10}
             className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-            onClick={() => navigate('/')}>
+            onClick={()=>{setGoToReport(true)}}>
             Submit
         </button>
     </div>
