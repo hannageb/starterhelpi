@@ -38,8 +38,8 @@ function App() {
         <header>
           <h1>Welcome to CareerHelpi!</h1>
           <h4 className="tagline">Discover your future. One question at a time.</h4>
+          
         </header>
-
         <div className="nav">
           <button
             style={{ fontSize: '15px' }}
