@@ -43,14 +43,27 @@ body {
   margin: 0;
   height: 100vh;
   background-image: linear-gradient(to bottom right, #0a3a6a, goldenrod);
-  background-color: rgb(147, 177, 201);
   background-size: cover;
+  background-color: rgb(147, 177, 201);
 }
 
 .title{
+  background-image: url("/public/bkgd-img.png");
+  background-size: contain;
+  background-blend-mode:color-burn;
+  animation: moving 7s linear infinite normal;
   padding: 2%;
   background-color: #0a3a6a;
   color: goldenrod;
+}
+
+@keyframes moving{
+  0% {
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 70% 0%;
+  }
 }
 
 button.title{
