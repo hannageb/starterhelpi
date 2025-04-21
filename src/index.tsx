@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import BasicQ from './pages/BasicQs'
 import DetailedQ from './pages/DetailedQs';
+import DetailedReport from './pages/detailedReport';
+import BasicReport from './pages/basicReport';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import DetailedReport from './pages/detailedReport';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,7 +19,8 @@ root.render(
       <Route path="/" element={<App/>} />
       <Route path="/Basic Question" element={<BasicQ/>} />
       <Route path="/Detailed Question" element={<DetailedQ/>} />
-      <Route path="/Detailed Report" element={<DetailedReport/>}/>
+      <Route path='/Detailed Report' element={<DetailedReport/>} />
+      <Route path='/Basic Report' element={<BasicReport/>} />
     </Routes>
   </HashRouter>  
   </React.StrictMode>

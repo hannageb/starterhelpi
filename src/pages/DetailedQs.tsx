@@ -502,8 +502,8 @@ function DetailedQ() {
                     Submit
                 </button>
             </div>
-        {showConfetti && <Confetti width={width} height={height} />}
-        </div>
+    {showConfetti && <Confetti width={width} height={height} />}
+    </div>
     );
 }
 
