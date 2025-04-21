@@ -180,7 +180,7 @@ function BasicQ() {
                 <button
                     disabled={Object.keys(responses).length < 10}
                     className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate('/basic report')}
                 >
                     Submit
                 </button>
