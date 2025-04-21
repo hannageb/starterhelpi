@@ -1,0 +1,94 @@
+.envBody{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height:150vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.wrapper{
+    height: 400px;
+    width: 300px;
+    background-color: #1658d2;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.letter{
+    position: absolute;
+    top:0;
+    width:90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 15px;
+    z-index:2
+}
+
+.letter p{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    color: #3B4049;
+}
+
+.envelope{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    border-top:100px solid transparent;
+    border-right: 150px solid #C4DFF0;
+    border-bottom: 100px solid #C4DFF0;
+    border-left: 150px solid #A4D4F2;
+    z-index:3;
+}
+
+.lid{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: transform 0.25s linear;
+}
+
+.lid.one{
+    border-top: 100px solid #658CED;
+    transform: rotateX(0deg);
+    z-index: 3;
+    transition-delay: 0.75s
+}
+
+.lid.two{
+    border-top: 100px solid #3760C9;
+    transform: rotateX(90deg);
+    z-index: 1;
+    transition-delay: 0.5s;
+}
+
+.wrapper:hover .lid.one{
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+
+.wrapper:hover .lid.two{
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+}
+
+.wrapper:hover .letter{
+    transform: translateY(-300px);
+    transition-delay: 0.5s;
+}

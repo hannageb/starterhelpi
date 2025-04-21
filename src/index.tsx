@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import BasicQ from './pages/BasicQs'
 import DetailedQ from './pages/DetailedQs';
+import DetailedReport from './pages/detailedReport';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ root.render(
       <Route path="/" element={<App/>} />
       <Route path="/Basic Question" element={<BasicQ />} />
       <Route path="/Detailed Question" element={<DetailedQ/>} />
+      <Route path='/detailed report' element={<DetailedReport/>} />
     </Routes>
   </HashRouter>  
   </React.StrictMode>
