@@ -50,9 +50,11 @@ All files            |       0 |        0 |       0 |       0 |
  src/pages           |       0 |        0 |       0 |       0 |                   
   BasicQs.tsx        |       0 |        0 |       0 |       0 | 9-183             
   DetailedQs.tsx     |       0 |        0 |       0 |       0 | 10-537            
+  basicReport.tsx    |       0 |        0 |       0 |       0 |                   
+  detailedReport.tsx |       0 |        0 |       0 |       0 |                   
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.485 s
+Time:        3.353 s
 Ran all test suites.
