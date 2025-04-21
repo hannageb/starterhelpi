@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import './BasicQs.css';
 import Confetti from 'react-confetti';
@@ -23,12 +23,14 @@ function GoHomeScreen() {
 
 function BasicQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
-    const navigate = useNavigate();
     const [showConfetti, setShowConfetti] = useState(false);
     const [width, height] = useWindowSize();
     const [progress, setProgress] = useState<number>(0);
     const [page, setPage] = useState(1);
     const [propName, setPropName] = useState([""]);
+    const [goToReport, setGoToReport] = useState(false);
+
+    if (goToReport) return <Navigate to="/basic-report"/>;
 
     const updateResponse = (event: React.ChangeEvent<HTMLInputElement>) => {
         setResponses({ ...responses, [event.target.name]: event.target.value });
@@ -54,7 +56,7 @@ function BasicQ() {
         <div>
             <GoHomeScreen />
             <div className="Desc">
-                <h5>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
+                <h5 style={{color: '#E6D9D9'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
                 <div style={{ textAlign: 'center' }}>
@@ -180,7 +182,7 @@ function BasicQ() {
                 <button
                     disabled={Object.keys(responses).length < 10}
                     className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                    onClick={() => navigate('/')}
+                    onClick={() => {setGoToReport(true)}}
                 >
                     Submit
                 </button>
