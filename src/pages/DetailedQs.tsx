@@ -69,7 +69,7 @@ function DetailedQ() {
         <div>
             <GoHomeScreen></GoHomeScreen>
             <div className="description">
-                <h5> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
+                <h5 style={{color: '#E6D9D9'}}> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
                     <div style={{ textAlign: 'center' }}>

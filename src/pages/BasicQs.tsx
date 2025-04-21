@@ -56,7 +56,7 @@ function BasicQ() {
         <div>
             <GoHomeScreen />
             <div className="Desc">
-                <h5>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
+                <h5 style={{color: '#E6D9D9'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
                 <div style={{ textAlign: 'center' }}>
