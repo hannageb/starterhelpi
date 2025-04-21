@@ -6,6 +6,7 @@ import BasicQ from './pages/BasicQs'
 import DetailedQ from './pages/DetailedQs';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import DetailedReport from './pages/detailedReport';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,8 +16,9 @@ root.render(
   <HashRouter>
     <Routes>
       <Route path="/" element={<App/>} />
-      <Route path="/Basic Question" element={<BasicQ />} />
+      <Route path="/Basic Question" element={<BasicQ/>} />
       <Route path="/Detailed Question" element={<DetailedQ/>} />
+      <Route path="/Detailed Report" element={<DetailedReport/>}/>
     </Routes>
   </HashRouter>  
   </React.StrictMode>
