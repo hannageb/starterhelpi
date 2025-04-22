@@ -28,7 +28,8 @@
     height: 90%;
     background-color: white;
     border-radius: 15px;
-    z-index:2
+    z-index:2;
+    transition: transform 0.25s ease-in-out;
 }
 
 .letter p{
