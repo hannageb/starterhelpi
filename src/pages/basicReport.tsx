@@ -1,7 +1,7 @@
 import './basicReport.css'
 import {useState } from "react";
 import {Navigate} from "react-router-dom";
-
+import {OpenAI} from "openai"
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
@@ -34,12 +34,26 @@ function GoHomeScreen() {
         </header>
     );
 }
+function GPTIntegration() {
+    const [story, setStory] = useState<string>("Loading...");
+    const client = new OpenAI();
 
+        async function fetchStory() {
+            const response = await client.responses.create({
+                model: "gpt-4.1",
+                input: "Write a one-sentence bedtime story about a unicorn."
+            });
+            setStory(response.output_text);
+        }
+        fetchStory();
+        return <p>{story}</p>
+}
 function BasicReport(){
     return(
         <div>
             <div>
                 <GoHomeScreen></GoHomeScreen>
+                
             </div>
             <div>
                 <div className='envBody'>
@@ -48,11 +62,14 @@ function BasicReport(){
                         <div className='lid two'></div>
                         <div className='envelope'></div>
                         <div className='letter'>
-                            <p>Your result:</p>
+                            <GPTIntegration/>
                         </div>
                     </div>
                 </div>
             </div>
+            <footer className="footer">
+                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+            </footer>
         </div>
     );
 }

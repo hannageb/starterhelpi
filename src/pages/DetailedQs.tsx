@@ -503,6 +503,9 @@ function DetailedQ() {
                 </button>
             </div>
     {showConfetti && <Confetti width={width} height={height} />}
+        <footer className="footer">
+                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+            </footer>
     </div>
     );
 }
