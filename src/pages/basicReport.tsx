@@ -38,7 +38,21 @@ function GoHomeScreen() {
 function BasicReport(){
     return(
         <div>
-            <GoHomeScreen></GoHomeScreen>
+            <div>
+                <GoHomeScreen></GoHomeScreen>
+            </div>
+            <div>
+                <div className='envBody'>
+                    <div className='wrapper'>
+                        <div className='lid one'></div>
+                        <div className='lid two'></div>
+                        <div className='envelope'></div>
+                        <div className='letter'>
+                            <p>Your result:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

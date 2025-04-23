@@ -30,7 +30,7 @@ function DetailedReport(){
                 <div className='lid two'></div>
                 <div className='envelope'></div>
                 <div className='letter'>
-                    <p>Your result:</p>
+                    <p>Your first result:</p>
                 </div>
             </div>
             <div className='wrapper'>
@@ -38,7 +38,7 @@ function DetailedReport(){
                 <div className='lid two'></div>
                 <div className='envelope'></div>
                 <div className='letter'>
-                    <p>Your result:</p>
+                    <p>Your second result:</p>
                 </div>
             </div>
             <div className='wrapper'>
@@ -46,7 +46,7 @@ function DetailedReport(){
                 <div className='lid two'></div>
                 <div className='envelope'></div>
                 <div className='letter'>
-                    <p>Your result:</p>
+                    <p>Your third result:</p>
                 </div>
             </div>
         </div></>

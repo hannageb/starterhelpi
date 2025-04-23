@@ -30,7 +30,7 @@ function BasicQ() {
     const [propName, setPropName] = useState([""]);
     const [goToReport, setGoToReport] = useState(false);
 
-    if (goToReport) return <Navigate to="/basic-report"/>;
+    if (goToReport) return <Navigate to="/Basic Report"/>;
 
     const updateResponse = (event: React.ChangeEvent<HTMLInputElement>) => {
         setResponses({ ...responses, [event.target.name]: event.target.value });
