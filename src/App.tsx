@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -17,16 +17,36 @@ const prevKey = localStorage.getItem(saveKeyData);
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
-console.log(localStorage.getItem(saveKeyData))
 
 function App() {
   const [key, setKey] = useState<string>(keyData);
   const navigate = useNavigate();
 
-  function handleSubmit() {
+  const [enteredKey, setEnteredKey] = useState<boolean>(false)
+
+  useEffect(() => {//from Gemini
+    if(localStorage.getItem(saveKeyData) !== null){
+      setEnteredKey(true);
+      console.log("found");
+    }
+    else{
+      setEnteredKey(false);
+      console.log("not found");
+    }
+  }, [])
+
+  function handleSubmit() {//from Gemini
     playSound();
-    localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload();
+    if(key.trim()){
+      localStorage.setItem(saveKeyData, JSON.stringify(key));
+      setEnteredKey(true);
+      setKey('');
+      window.location.reload();
+    }
+    else{
+      console.warn("empty key")
+    }
+
   }
 
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
@@ -48,7 +68,7 @@ function App() {
               playSound();
               navigate('/Basic Question');
             }}
-            disabled={localStorage.getItem(saveKeyData)===null}
+            disabled={!enteredKey}
           >
             Basic Questions
           </button>
@@ -58,6 +78,7 @@ function App() {
               playSound();
               navigate('/Detailed Question');
             }}
+            disabled={!enteredKey}
           >
             Detailed Questions
           </button>
@@ -71,6 +92,7 @@ function App() {
               playSound();
               navigate('/Basic Question');
             }}
+            disabled={!enteredKey}
           >
             Basic Questions
           </button>
@@ -84,6 +106,7 @@ function App() {
               playSound();
               navigate('/Detailed Question');
             }}
+            disabled={!enteredKey}
           >
             Detailed Questions
           </button>
