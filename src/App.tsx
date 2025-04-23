@@ -17,6 +17,7 @@ const prevKey = localStorage.getItem(saveKeyData);
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
+console.log(localStorage.getItem(saveKeyData))
 
 function App() {
   const [key, setKey] = useState<string>(keyData);
@@ -47,6 +48,7 @@ function App() {
               playSound();
               navigate('/Basic Question');
             }}
+            disabled={localStorage.getItem(saveKeyData)===null}
           >
             Basic Questions
           </button>
@@ -90,7 +92,6 @@ function App() {
           </p>
         </div>
       </div>
-
       <div className="api-box">
         <Form className="api-key-form">
           <Form.Label>API Key:</Form.Label>
