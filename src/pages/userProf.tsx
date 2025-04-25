@@ -19,6 +19,7 @@ function UserProf(){
     return(
         <div>
             <GoHomeScreen/>
+            test
         </div>
     )
 }
