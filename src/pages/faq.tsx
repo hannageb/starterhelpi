@@ -1,9 +1,32 @@
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import './faq.css'
+
+function GoHomeScreen() {
+    const [goToHome, setGoToHome] = useState(false);
+
+    if (goToHome) return <Navigate to="/" />;
+
+    return (
+        <header className="header">
+            <h1 className="centerTitle">FAQ</h1>
+            <button onClick={() => setGoToHome(true)} className="back-button">Home</button>
+        </header>
+    );
+}
+
 function FAQ(){
     return(
-        <div className="faq">
-            test
+        <div>
+            <GoHomeScreen></GoHomeScreen>
+            <div className="Desc">
+                <h5 style={{color: '#E6D9D9'}}>Some frequently asked questions</h5>
+            </div>
+            <div className="faq">
+                test
+            </div>
         </div>
+        
     )
 }
 export default FAQ
