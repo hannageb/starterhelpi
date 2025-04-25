@@ -1,6 +1,9 @@
+import './faq.css'
 function FAQ(){
     return(
-        <div>test</div>
+        <div className="faq">
+            test
+        </div>
     )
 }
 export default FAQ

@@ -1,0 +1,14 @@
+.faq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+    width: 60%;
+    margin: auto;
+    background-color: rgba(10, 58, 106, 0.4); 
+    border-radius: 25px;
+    overflow-wrap: break-word;
+    color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
