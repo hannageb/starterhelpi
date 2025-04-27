@@ -8,7 +8,6 @@ body {
 
 .centerTitle { /*from Gemini; flex-grow: makes the div take up the available space while being in the center, this will push
     the button to the right*/
-    flex-grow: 1;
     text-align: center;
 }
 
@@ -18,9 +17,15 @@ body {
 
 }
 
-.navigation-bar{
+.left-nav{
     background-color:#0a3a6a;
-    float: right;
+    align-items: left;
+}
+
+
+.right-nav{
+  background-color:#0a3a6a;
+  float: right;
 }
 
 .Questions {
