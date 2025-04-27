@@ -8,18 +8,26 @@ import { useWindowSize } from '@react-hook/window-size';
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
     const [goToFAQ, setGoToFAQ] = useState(false);
+    const [goToDetailed, setGoToDetailed] = useState(false);
     const [goToUser, setGoToUser] = useState(false)
 
     if (goToHome) return <Navigate to="/" />;
     if (goToFAQ) return <Navigate to="/FAQ" />;
     if (goToUser) return <Navigate to="/User Profile"/>;
+    if (goToDetailed) return <Navigate to="/Detailed Question"/>;
 
     return (
         <header className="header">
             <h1 className="centerTitle">BASIC QUESTIONS</h1>
-            <button onClick={() => setGoToHome(true)} className="back-button">Home</button>
-            <button onClick={() => setGoToFAQ(true)}>FAQ</button>
-            <button onClick={() => setGoToUser(true)}>User Profile</button>
+            <div className="left-nav">
+                <button onClick={() => setGoToHome(true)} className="back-button">Home</button>
+                <button onClick={() => setGoToFAQ(true)}>FAQ</button>
+                <button onClick={() => setGoToUser(true)}>User Profile</button>
+            </div>
+            <div className="right-nav">
+                <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
+
+            </div>
         </header>
     );
 }
@@ -33,7 +41,7 @@ function BasicQ() {
     const [propName, setPropName] = useState([""]);
     const [goToReport, setGoToReport] = useState(false);
 
-    if (goToReport) return <Navigate to="/Basic Report"/>;
+    if (goToReport) return <Navigate to="/Basic Report" state={{responses}}/>;
 
     const updateResponse = (event: React.ChangeEvent<HTMLInputElement>) => {
         setResponses({ ...responses, [event.target.name]: event.target.value });

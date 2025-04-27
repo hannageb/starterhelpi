@@ -1,7 +1,6 @@
 import './basicReport.css'
-import {useState } from "react";
+import {useEffect, useState } from "react";
 import {Navigate} from "react-router-dom";
-import {OpenAI} from "openai"
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
@@ -35,30 +34,57 @@ function GoHomeScreen() {
     );
 }
 
-
+// with help from ChatGPT & the API docs
 function GPTIntegration() {
     const [story, setStory] = useState<string>("Loading...");
-    const client = new OpenAI(apiKey: savedKey);
-
-    async function fetchStory() {           
-        const response = await client.responses.create({
-            model: "gpt-4.1",
-            input: [
-                {
-                    role: "developer",
+    
+    useEffect(() => {
+    async function fetchStory() {     
+        const savedKey = JSON.parse(localStorage.getItem('MYKEY') || '"');      
+        try {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${savedKey}`,
+              },
+              body: JSON.stringify({
+                model: "gpt-4",
+                messages: [
+                  {
+                    role: "system",
                     content: "Talk like a pirate."
-                },
-                {
+                  },
+                  {
                     role: "user",
-                    content: "Are semicolons optional in JavaScript?",
-                },
-            ],
-        });
-        setStory(response.output_text);
+                    content: "Are semicolons optional in JavaScript?"
+                  }
+                ],
+                temperature: 0.7,
+                max_tokens: 500
+              }),
+            });
+    
+            const data = await response.json();
+            
+            if (data.choices && data.choices.length > 0) {
+              setStory(data.choices[0].message.content);
+            } else {
+              setStory("No response received.");
+            }
+    
+          } catch (error) {
+            console.error(error);
+            setStory("Error fetching response.");
+          }
         }
+    
         fetchStory();
-        return <p>{story}</p>
-}
+      }, []); // empty dependency array -> only run once
+    
+      return <p>{story}</p>;
+    }
+
 function BasicReport(){
     return(
         <div>

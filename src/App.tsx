@@ -4,6 +4,8 @@ import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import clickSound from './click.mp3';
 
+const API_KEY_STORAGE_KEY = "careerHelpiApiKey";
+
 const audio = new Audio(clickSound);
 
 const playSound = () => {
@@ -11,21 +13,15 @@ const playSound = () => {
   audio.play();
 };
 
-let keyData = "";
-const saveKeyData = "MYKEY";
-const prevKey = localStorage.getItem(saveKeyData);
-if (prevKey !== null) {
-  keyData = JSON.parse(prevKey);
-}
-
 function App() {
-  const [key, setKey] = useState<string>(keyData);
-  const navigate = useNavigate();
-
+  const [key, setKey] = useState<string>("");
   const [enteredKey, setEnteredKey] = useState<boolean>(false)
 
+  const navigate = useNavigate();
+
+
   useEffect(() => {//from Gemini
-    if(localStorage.getItem(saveKeyData) !== null){
+    if(localStorage.getItem(API_KEY_STORAGE_KEY) !== null){
       setEnteredKey(true);
       console.log("found");
     }
@@ -38,13 +34,12 @@ function App() {
   function handleSubmit() {//from Gemini
     playSound();
     if(key.trim()){
-      localStorage.setItem(saveKeyData, JSON.stringify(key));
+      localStorage.setItem(API_KEY_STORAGE_KEY, JSON.stringify(key));
       setEnteredKey(true);
       setKey('');
-      window.location.reload();
     }
     else{
-      console.warn("empty key")
+      alert("Empty key")
     }
 
   }
@@ -114,7 +109,7 @@ function App() {
             Click this button if you want a more personalized career suggestion!
           </p>
         </div>
-      </div>
+      </div> 
       <div className="api-box">
         <Form className="api-key-form">
           <Form.Label>API Key:</Form.Label>
@@ -134,6 +129,7 @@ function App() {
           </div>
         </Form>
       </div>
+
       </div>
       <footer className="footer">
         <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>

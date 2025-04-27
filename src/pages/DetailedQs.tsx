@@ -10,7 +10,8 @@ function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
     const [goToFAQ, setGoToFAQ] = useState(false);
     const [goToUser, setGoToUser] = useState(false)
-
+    const [goToBasic, setGoToBasic] = useState(false);
+    
     if (goToHome) {
         return <Navigate to="/" />;
     }
@@ -24,15 +25,22 @@ function GoHomeScreen() {
             <Navigate to="/User Profile"/>
         )
     }
+    
+    if (goToBasic) return <Navigate to="/Basic Question"/>
 
     return (
         <header className="header">
             <h1 className="centerTitle">DETAILED QUESTIONS</h1>
-            <button onClick={() => {setGoToHome(true)}} className="back-button">
-            {" "}Home
-            </button>
-            <button onClick={() => setGoToFAQ(true)}>FAQ</button>
-            <button onClick={() => setGoToUser(true)}>User Profile</button>
+            <div className="left-nav">
+                <button onClick={() => {setGoToHome(true)}} className="back-button">
+                {" "}Home
+                </button>
+                <button onClick={() => setGoToFAQ(true)}>FAQ</button>
+                <button onClick={() => setGoToUser(true)}>User Profile</button>
+            </div>
+            <div className="right-nav">
+                <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
+            </div>
         </header>
     );
 }
