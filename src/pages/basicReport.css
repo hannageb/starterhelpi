@@ -1,18 +1,17 @@
 .envBody{
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
-    height:150vh;
+    height: 150vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    position: -20%
 }
 
 .wrapper{
-    height: 400px;
+    height: 200px;
     width: 500px;
     background-color: #1658d2;
     position: relative;
@@ -24,9 +23,9 @@
 
 .letter{
     position: absolute;
-    top:0;
+    top: 0%;
     width:100%;
-    height: 100%;
+    height: 200%;
     background-color: white;
     border-radius: 15px;
     z-index:2;
@@ -36,7 +35,7 @@
 .letter p{
     text-align: center;
     font-size: 30px;
-    margin-top: 30px;
+    margin-top: 2%;
     color: #3B4049;
 }
 
@@ -89,19 +88,3 @@
     transform: rotateX(180deg);
     transition-delay: 0.25s;
 }
-
-.wrapper:hover .letter{
-    transform: translateY(-400px);
-    transition-delay: 0.5s;
-}
-
-.footer {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    background-color: rgba(10, 58, 106, 0.9);
-    color: white;
-    font-size: 0.9rem;
-  }
-  
-  

@@ -69,11 +69,11 @@ function BasicQ() {
             <div className="Desc">
                 <h5 style={{color: '#E6D9D9'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center'}}>
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px' }}>
-                        <div style={{ height: '40px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px' }}></div>
+                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
+                        <div style={{ height: '20px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}></div>
                     </div>
                 </div>
             </div>

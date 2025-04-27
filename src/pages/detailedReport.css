@@ -93,3 +93,12 @@
     transform: translateY(-300px);
     transition-delay: 0.5s;
 }
+
+.footer {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(10, 58, 106, 0.9);
+    color: white;
+    font-size: 0.9rem;
+    position: sticky;
+  }

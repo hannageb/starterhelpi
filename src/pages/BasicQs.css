@@ -29,9 +29,9 @@ body {
 }
 
 .Questions {
-  padding: 4%;
+  padding: 2%;
   width: 60%;
-  margin: auto;
+  margin: 2% auto;
   background-color: rgba(10, 58, 106, 0.4); 
   border-radius: 25px;
   overflow-wrap: break-word;
@@ -62,12 +62,12 @@ body {
   .submit-button.disabled {
     cursor: not-allowed;
   }
-  .footer {
-    width: 100%;
-    text-align: center;
-    padding-top: 1%;
-    padding-bottom: 0%;
-    background-color: rgba(10, 58, 106, 0.9);
-    color: white;
-    font-size: 0.9rem;
-  }
+
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(10, 58, 106, 0.9);
+  color: white;
+  font-size: 0.9rem;
+  position: sticky;
+}

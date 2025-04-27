@@ -64,12 +64,11 @@
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); 
   }
 
-  .footer {
+.footer {
     width: 100%;
     text-align: center;
-    padding-top: 1%;
-    padding-bottom: 0%;
     background-color: rgba(10, 58, 106, 0.9);
     color: white;
     font-size: 0.9rem;
+    position: sticky;
   }
