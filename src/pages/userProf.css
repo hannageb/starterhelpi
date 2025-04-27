@@ -14,17 +14,30 @@
     font-style: italic;
 }
 
-.faq {
+.UserProf {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 4%;
     width: 60%;
     margin: auto;
+    margin-top: 10%;
     background-color: rgba(10, 58, 106, 0.4); 
     border-radius: 25px;
     overflow-wrap: break-word;
     color: white;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
-  }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(10, 58, 106, 0.9);
+    color: white;
+    font-size: 0.9rem;
+}
