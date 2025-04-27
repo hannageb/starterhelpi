@@ -8,15 +8,21 @@ import { useWindowSize } from '@react-hook/window-size';
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = React.useState(false);
-    const[goToBasic, setGoToBasic] = React.useState(false)
+    const [goToFAQ, setGoToFAQ] = useState(false);
+    const [goToUser, setGoToUser] = useState(false)
 
     if (goToHome) {
         return <Navigate to="/" />;
     }
-    if(goToBasic){
-        if(goToBasic){
-            return <Navigate to="/Basic Question"/>;
+    if(goToFAQ){
+        if(goToFAQ){
+            return <Navigate to="/FAQ"/>;
         }
+    }
+    if(goToUser){
+        return(
+            <Navigate to="/User Profile"/>
+        )
     }
 
     return (
@@ -25,9 +31,8 @@ function GoHomeScreen() {
             <button onClick={() => {setGoToHome(true)}} className="back-button">
             {" "}Home
             </button>
-            <button onClick={()=>{setGoToBasic(true)}} className="basic-button">
-                {" "}Basic Questions
-            </button>
+            <button onClick={() => setGoToFAQ(true)}>FAQ</button>
+            <button onClick={() => setGoToUser(true)}>User Profile</button>
         </header>
     );
 }
