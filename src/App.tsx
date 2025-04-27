@@ -66,21 +66,21 @@ function App() {
             style={{ fontSize: '15px' }}
             onClick={() => {
               playSound();
-              navigate('/Basic Question');
+              navigate('/FAQ');
             }}
             disabled={!enteredKey}
           >
-            Basic Questions
+            Frequently asked Questions
           </button>
           <button
             style={{ fontSize: '15px' }}
             onClick={() => {
               playSound();
-              navigate('/Detailed Question');
+              navigate('/User Profile');
             }}
             disabled={!enteredKey}
           >
-            Detailed Questions
+            User Profile
           </button>
         </div>
       </div>
@@ -134,7 +134,7 @@ function App() {
           </div>
         </Form>
       </div>
-</div>
+      </div>
       <footer className="footer">
         <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
       </footer>
