@@ -22,9 +22,23 @@ function FAQ(){
             <div className="Desc">
                 <h5 style={{color: '#E6D9D9'}}>Some frequently asked questions</h5>
             </div>
-            <div className="faq">
-                test
+            
+            <div className='Container'>
+                <div className='FaQ'>
+                    <div>
+                        <h6 style={{fontWeight:'bold'}}>What is this for?</h6>
+                        <p>This is a final project for CISC275</p>
+                    </div>
+                </div>
+                <div className='FaQ'>
+                    <div>
+                        <h6 style={{fontWeight:'bold'}}>What would this help with?</h6>
+                        <p>This will help you find what field areas might work with you</p>
+                    </div>
+                </div>
             </div>
+            
+
         </div>
         
     )
