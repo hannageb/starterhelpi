@@ -34,16 +34,27 @@ function GoHomeScreen() {
         </header>
     );
 }
+
+
 function GPTIntegration() {
     const [story, setStory] = useState<string>("Loading...");
-    const client = new OpenAI();
+    const client = new OpenAI(apiKey: savedKey);
 
-        async function fetchStory() {
-            const response = await client.responses.create({
-                model: "gpt-4.1",
-                input: "Write a one-sentence bedtime story about a unicorn."
-            });
-            setStory(response.output_text);
+    async function fetchStory() {           
+        const response = await client.responses.create({
+            model: "gpt-4.1",
+            input: [
+                {
+                    role: "developer",
+                    content: "Talk like a pirate."
+                },
+                {
+                    role: "user",
+                    content: "Are semicolons optional in JavaScript?",
+                },
+            ],
+        });
+        setStory(response.output_text);
         }
         fetchStory();
         return <p>{story}</p>
