@@ -63,7 +63,6 @@ function App() {
               playSound();
               navigate('/FAQ');
             }}
-            disabled={!enteredKey}
           >
             Frequently asked Questions
           </button>
@@ -73,7 +72,6 @@ function App() {
               playSound();
               navigate('/User Profile');
             }}
-            disabled={!enteredKey}
           >
             User Profile
           </button>
