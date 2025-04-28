@@ -26,6 +26,7 @@ function GoHomeScreen() {
 function DetailedReport(){
     return(
         <><div><GoHomeScreen></GoHomeScreen></div>
+        console.log(responses)
         <div className='envBody'>
             <div className='wrapper'>
                 <div className='lid one'></div>

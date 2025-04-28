@@ -36,12 +36,13 @@ function GoHomeScreen() {
 }
 
 function BasicReport() {
- //first two vars are from chatgpt to get answers from basicqs.tsx
+ // most of this code is with help from ChatGPT and the docs
     const location = useLocation();
     const { responses } = location.state;
     const [story, setStory] = useState<string>("");
     const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
     useEffect(()=>{
+        console.log(responses);
     async function GPTIntegration(){
         const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
         try {
