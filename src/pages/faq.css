@@ -4,11 +4,13 @@
     text-align: center;
 }
 
-.navigation-bar{
-    background-color:#0a3a6a;
-    float: right;
+.header{
+    width: 100%;
 }
 
+.home-button{
+    float: left;
+}
 .Desc{
     text-align: center;
     font-style: italic;

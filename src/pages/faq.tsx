@@ -10,7 +10,9 @@ function GoHomeScreen() {
     return (
         <header className="header">
             <h1 className="centerTitle">FAQ</h1>
-            <button onClick={() => setGoToHome(true)} className="back-button">Home</button>
+            <button onClick={() => setGoToHome(true)} className="home-button">
+                <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
+            </button>
         </header>
     );
 }

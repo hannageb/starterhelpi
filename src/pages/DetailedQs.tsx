@@ -33,7 +33,7 @@ function GoHomeScreen() {
             <h1 className="centerTitle">DETAILED QUESTIONS</h1>
             <div className="left-nav">
                 <button onClick={() => {setGoToHome(true)}} className="back-button">
-                {" "}Home
+                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
