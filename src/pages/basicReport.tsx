@@ -1,46 +1,77 @@
 import './basicReport.css'
-import {useState } from "react";
-import {Navigate} from "react-router-dom";
-
+import {useEffect, useState } from "react";
+import {Navigate, useLocation} from "react-router-dom";
+import { OpenAI } from "openai";
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
     const[goToBasic, setGoToBasic] = useState(false)
+    const [goToFAQ, setGoToFAQ] = useState(false);
     const [goToDetailed, setGoToDetailed] = useState(false);
-
+    const [goToUser, setGoToUser] = useState(false)
+    
+    if (goToFAQ) return <Navigate to="/FAQ" />;
+    if (goToUser) return <Navigate to="/User Profile"/>;
     if (goToDetailed) return <Navigate to="/Detailed Question" />;
-
-    if (goToHome) {
-        return <Navigate to="/" />;
-    }
-    if(goToBasic){
-        if(goToBasic){
-            return <Navigate to="/Basic Question"/>;
-        }
-    }
+    if (goToHome) return <Navigate to="/" />;
+    if (goToBasic) return <Navigate to="/Basic Question"/>;
 
     return (
         <header className="header">
-            <h1 className="centerTitle">REPORT</h1>
-            <button onClick={() => {setGoToHome(true)}} className="back-button">
-            {" "}Home
-            </button>
-            <button onClick={()=>{setGoToBasic(true)}} className="basic-button">
-                {" "}Basic Questions
-            </button>
-            <button onClick={()=>{setGoToDetailed(true)}} className="detailed-button">
-                {" "}Detailed Questions
-            </button>
+            <h1 className="centerTitle">CAREER REPORT</h1>
+            <div className="left-nav">
+                <button onClick={() => setGoToHome(true)} className="back-button">
+                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
+                </button>
+                <button onClick={() => setGoToFAQ(true)}>FAQ</button>
+                <button onClick={() => setGoToUser(true)}>User Profile</button>
+            </div>
+            <div className="right-nav">
+                <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
+                <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
+
+            </div>
         </header>
     );
 }
 
-function BasicReport(){
+function BasicReport() {
+ // most of this code is with help from ChatGPT and the docs
+    const location = useLocation();
+    const { responses } = location.state;
+    const [report, setReport] = useState<string>("");
+    const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
+    useEffect(()=>{
+        console.log(responses);
+    async function GPTIntegration(){
+        const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true })
+        const answers = Object.entries(responses).map(([key, value]) => `${key}: ${value}`).join("\n");
+        try {
+        const response = await client.chat.completions.create({
+                model: "gpt-4.1",
+                messages: [
+                {
+                    role: "system",
+                    content: 'You are running a career helper quiz for students to find their potential future career fields. Provide a potential career field for a student based on their answers to the following questions. Be brief in your suggestion as well as explain why that career field would be suitable for the user. Start your response with "Your Results: "',
+                },{
+                    role: "user",
+                    content: `${answers}`,
+                },
+                ],
+            });
+            setReport(response.choices[0].message.content || "No response")
+            console.log(response.choices[0]?.message?.content);
+        } catch (error) {
+                console.error("Error fetching GPT response", error);
+                setReport("error");
+                }
+            }
+        GPTIntegration();
+    }, [responses, savedKey]); 
+    
     return(
         <div>
-            <div>
-                <GoHomeScreen></GoHomeScreen>
-            </div>
+            <div><GoHomeScreen></GoHomeScreen></div>
             <div>
                 <div className='envBody'>
                     <div className='wrapper'>
@@ -48,7 +79,7 @@ function BasicReport(){
                         <div className='lid two'></div>
                         <div className='envelope'></div>
                         <div className='letter'>
-                            <p>Your result:</p>
+                            <p>{report}</p>
                         </div>
                     </div>
                 </div>
@@ -57,4 +88,4 @@ function BasicReport(){
     );
 }
 
-export default BasicReport
+    export default BasicReport;

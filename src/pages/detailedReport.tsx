@@ -14,7 +14,9 @@ function GoHomeScreen() {
     return (
         <header className="header">
             <h1 className="centerTitle">REPORT</h1>
-            <button onClick={() => setGoToHome(true)} className="back-button">Home</button>
+            <button onClick={() => setGoToHome(true)} className="back-button">
+                <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
+            </button>
             <button onClick={() => setGoToDetailed(true)} className="detailed-button">Detailed Questions</button>
             <button onClick={() => setGoToBasic(true)} className="basic-button">Basic Questions</button>
         </header>
@@ -24,6 +26,7 @@ function GoHomeScreen() {
 function DetailedReport(){
     return(
         <><div><GoHomeScreen></GoHomeScreen></div>
+        console.log(responses)
         <div className='envBody'>
             <div className='wrapper'>
                 <div className='lid one'></div>

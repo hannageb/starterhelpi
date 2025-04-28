@@ -47,17 +47,38 @@ body {
   background-color: rgb(147, 177, 201);
 }
 
+
+/*text and items*/
+.title {
+  padding: 2%;
+  background-color: #0a3a6a;
+  color: goldenrod;
+  text-align: center;
+  float: left;
+}
+
+
+/*background image*/
 .title{
   background-image: url("/public/bkgd-img.png");
   background-size: contain;
   background-blend-mode:color-burn;
-  animation: moving 7s linear infinite normal;
-  padding: 2%;
+  animation: scrolling 7s linear infinite normal;
+  padding: 20px 0;
   background-color: #0a3a6a;
   color: goldenrod;
 }
 
-@keyframes moving{
+.tagline {
+  color: white;
+  font-style: italic;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+}
+
+@keyframes scrolling{
   0% {
     background-position: 0 0;
   }
@@ -66,8 +87,12 @@ body {
   }
 }
 
-button.title{
-  text-align: right;
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: center;
 }
 
 .basic-qs {
@@ -103,7 +128,7 @@ button:hover{
   display: flex;
   justify-content: center;
   gap: 80px;
-  margin: 40px auto;
+  margin-top: 2%;
   flex-wrap: wrap;
 }
 
@@ -120,19 +145,6 @@ button:hover{
 }
 
 
-.title {
-  padding: 2%;
-  background-color: #0a3a6a;
-  color: goldenrod;
-  text-align: center;
-}
-
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
 .button-description {
   margin-top: 15px;
   font-size: 16px;
@@ -155,8 +167,10 @@ button:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px auto;
+  margin: 10% auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  bottom: 50px;
 }
 .api-box:hover {
   transform: translateY(-5px);
@@ -178,12 +192,12 @@ button:hover{
   text-align: center;
 }
 
-.centered-button {
+.submit-button {
   display: flex;
   justify-content: center;
 }
 
-.Submit-Button {
+.submit-button {
   font-size: 14px;
   padding: 8px 18px;
   margin-top: 15px;
@@ -196,27 +210,11 @@ button:hover{
   box-shadow: none;
 }
 
-.Submit-Button:hover {
+.submit-button:hover {
   background-image: radial-gradient(rgb(202, 145, 1), rgb(250, 195, 32));
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
   cursor: pointer;
-}
-
-.tagline {
-  color: white;
-  font-style: italic;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.title {
-  width: 100%;
-  text-align: center;
-  padding: 20px 0;
-  background-color: #0a3a6a;
-  color: goldenrod;
 }
 
 .footer {
