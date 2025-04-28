@@ -9,7 +9,7 @@ function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
     const [goToFAQ, setGoToFAQ] = useState(false);
     const [goToDetailed, setGoToDetailed] = useState(false);
-    const [goToUser, setGoToUser] = useState(false)
+    const [goToUser, setGoToUser] = useState(false);
 
     if (goToHome) return <Navigate to="/" />;
     if (goToFAQ) return <Navigate to="/FAQ" />;

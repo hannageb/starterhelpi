@@ -1,6 +1,6 @@
 import './basicReport.css'
 import {useEffect, useState } from "react";
-import {Navigate} from "react-router-dom";
+import {Navigate, useLocation} from "react-router-dom";
 import { OpenAI } from "openai";
 
 function GoHomeScreen() {
@@ -34,59 +34,55 @@ function GoHomeScreen() {
 }
 
 function BasicReport() {
- /* first two vars are from chatgpt
+ //first two vars are from chatgpt to get answers from basicqs.tsx
     const location = useLocation();
-    const { responses } = location.state;  // Retrieve responses passed from BasicQs.tsx*/
-  const [story, setStory] = useState<string>("");
-  const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
-
-  useEffect(()=>{
-  async function GPTIntegration(){
-    const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
-    
-    try {
+    const { responses } = location.state;
+    const [story, setStory] = useState<string>("");
+    const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
+    useEffect(()=>{
+    async function GPTIntegration(){
+        const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
+        try {
         const response = await client.chat.completions.create({
-            model: "gpt-4.1",
-            messages: [
-            {
-                role: "system",
-                content: "Talk like a pirate."
-            },
-            {
-                role: "user",
-                content: "Are semicolons optional in JavaScript?",
-            },
-            ],
-        });
-        setStory(response.choices[0]?.message?.content || "No response")
-        console.log(response.choices[0]?.message?.content);
-    } catch (error) {
-            console.error("Error fetching GPT response", error);
-            setStory("error");
+                model: "gpt-4.1",
+                messages: [
+                {
+                    role: "system",
+                    content: 'Provide a potential career field for a student based on their answers. Be brief but descriptive in your suggestion as well as explain why it would be suitable for the user.'
+                },
+                {
+                    role: "user",
+                    content: `${responses}`,
+                },
+                ],
+            });
+            setStory(response.choices[0]?.message?.content || "No response")
+            console.log(response.choices[0]?.message?.content);
+        } catch (error) {
+                console.error("Error fetching GPT response", error);
+                setStory("error");
+                }
             }
-        }
-    GPTIntegration();
-  }, [savedKey]); 
-  return(
-    <div>
+        GPTIntegration();
+    }, [responses, savedKey]); 
+    
+    return(
         <div>
-            <GoHomeScreen></GoHomeScreen>
-        </div>
-        <div>
-            <div className='envBody'>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
-                        <p>{story}</p>
+            <div><GoHomeScreen></GoHomeScreen></div>
+            <div>
+                <div className='envBody'>
+                    <div className='wrapper'>
+                        <div className='lid one'></div>
+                        <div className='lid two'></div>
+                        <div className='envelope'></div>
+                        <div className='letter'>
+                            <p>{story}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-);
+    );
 }
 
-
-export default BasicReport;
+    export default BasicReport;
