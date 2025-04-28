@@ -50,7 +50,7 @@ File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #
 ---------------------|---------|----------|---------|---------|-------------------
 All files            |       0 |        0 |       0 |       0 |                   
  src                 |       0 |        0 |       0 |       0 |                   
-  App.tsx            |       0 |        0 |       0 |       0 | 7-102             
+  App.tsx            |       0 |        0 |       0 |       0 | 7-100             
   index.tsx          |       0 |      100 |     100 |       0 | 14-36             
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  src/pages           |       0 |        0 |       0 |       0 |                   
@@ -64,5 +64,5 @@ All files            |       0 |        0 |       0 |       0 |
 Test Suites: 2 failed, 2 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        4.966 s
+Time:        4.848 s
 Ran all test suites.
