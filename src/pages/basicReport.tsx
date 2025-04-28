@@ -39,31 +39,31 @@ function BasicReport() {
  // most of this code is with help from ChatGPT and the docs
     const location = useLocation();
     const { responses } = location.state;
-    const [story, setStory] = useState<string>("");
+    const [report, setReport] = useState<string>("");
     const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
     useEffect(()=>{
         console.log(responses);
     async function GPTIntegration(){
-        const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
+        const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true })
+        const answers = Object.entries(responses).map(([key, value]) => `${key}: ${value}`).join("\n");
         try {
         const response = await client.chat.completions.create({
                 model: "gpt-4.1",
                 messages: [
                 {
                     role: "system",
-                    content: 'Provide a potential career field for a student based on their answers. Be brief but descriptive in your suggestion as well as explain why it would be suitable for the user.'
-                },
-                {
+                    content: 'You are running a career helper quiz for students to find their potential future career fields. Provide a potential career field for a student based on their answers to the following questions. Be brief in your suggestion as well as explain why that career field would be suitable for the user. Start your response with "Your Results: "',
+                },{
                     role: "user",
-                    content: `${responses}`,
+                    content: `${answers}`,
                 },
                 ],
             });
-            setStory(response.choices[0]?.message?.content || "No response")
+            setReport(response.choices[0].message.content || "No response")
             console.log(response.choices[0]?.message?.content);
         } catch (error) {
                 console.error("Error fetching GPT response", error);
-                setStory("error");
+                setReport("error");
                 }
             }
         GPTIntegration();
@@ -79,7 +79,7 @@ function BasicReport() {
                         <div className='lid two'></div>
                         <div className='envelope'></div>
                         <div className='letter'>
-                            <p>{story}</p>
+                            <p>{report}</p>
                         </div>
                     </div>
                 </div>
