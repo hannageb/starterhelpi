@@ -24,7 +24,6 @@ function App() {
     if(localStorage.getItem(API_KEY_STORAGE_KEY) !== null){
       setEnteredKey(true);
       console.log("found");
-      console.log(enteredKey);
     }
     else{
       setEnteredKey(false);
