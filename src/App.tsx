@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import clickSound from './click.mp3';
 
 const API_KEY_STORAGE_KEY = "careerHelpiApiKey";
