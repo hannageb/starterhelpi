@@ -9,6 +9,12 @@ import App from './App';
 // });
 
 test('renders submit button', () => {
-  render(<App />);
+  //render(<App />);
   screen.getByText(/submit/i)
+})
+
+test('renders FaQ', ()=>{
+  render(<App />)
+  const faqElement = screen.getByRole('button', {name:"Frequently asked Questions"})
+  expect(faqElement).toBeInTheDocument();
 })
