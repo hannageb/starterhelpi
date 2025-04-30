@@ -22,14 +22,12 @@ function App() {
 
   useEffect(() => {//from Gemini
     setEnteredKey(!!localStorage.getItem(API_KEY_STORAGE_KEY)) //from Gemini
-    // if( !== ""){
-    //   setEnteredKey(true);
-    //   console.log("found");
-    // }
-    // else{
-    //   setEnteredKey(false);
-    //   console.log("not found");
-    // }
+    if(enteredKey){
+      console.log("found");
+    }
+    else{
+      console.log("not found");
+    }
   }, [])
 
   function handleSubmit() {//from Gemini
