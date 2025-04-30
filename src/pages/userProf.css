@@ -31,10 +31,8 @@
 }
 
 .footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    background-color: rgba(10, 58, 106, 0.9);
-    color: white;
-    font-size: 0.9rem;
-}
+    height: 2.5rem;
+  }
