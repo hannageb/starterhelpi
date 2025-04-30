@@ -21,12 +21,11 @@ function App() {
 
 
   useEffect(() => {//from Gemini
-    if(localStorage.getItem(API_KEY_STORAGE_KEY) !== null){
-      setEnteredKey(true);
+    setEnteredKey(!!localStorage.getItem(API_KEY_STORAGE_KEY)) //from Gemini
+    if(enteredKey){
       console.log("found");
     }
     else{
-      setEnteredKey(false);
       console.log("not found");
     }
   }, [])
@@ -36,7 +35,7 @@ function App() {
     if(key.trim()){
       localStorage.setItem(API_KEY_STORAGE_KEY, JSON.stringify(key));
       setEnteredKey(true);
-      setKey('');
+      console.log("found")
     }
     else{
       alert("Empty key")
