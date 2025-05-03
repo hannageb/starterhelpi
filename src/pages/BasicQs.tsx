@@ -215,21 +215,26 @@ function BasicQ() {
                             <Form.Check type="radio" name="Which of the following is the component you're most excited for in your dream job?" value="Community" label="Working with other people" checked={responses["Which of the following is the component you're most excited for in your dream job?"] === "Community"} />
                         </Form.Group>
                     </>
+                    
                 )}
+                
 
                 <div className="pagination-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
                     <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
                     <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
                 </div>
-            </div>
-            <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                <button
-                    disabled={Object.keys(responses).length < 10}
-                    className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                    onClick={() => {setGoToReport(true)}}
-                >
-                    Submit
-                </button>
+                <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <div className="submit-container">
+        <button
+         disabled={Object.keys(responses).length < 10}
+            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+            onClick={() => { setGoToReport(true); }}
+            >
+            Submit
+        </button>
+    </div>
+    </div>
+
             </div>
             {showConfetti && <Confetti width={width} height={height} />}
             <footer className="footer">

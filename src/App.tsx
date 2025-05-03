@@ -76,22 +76,7 @@ function App() {
             Find out what field might be best for you by answering a sweet and simple questionnaire.
           </p>
         </div>
-        <div className="home-button-box">
-          <button
-            onClick={() => {
-              playSound();
-              navigate('/Detailed Question');
-            }}
-          >
-            Detailed Questions
-          </button>
-          <p className="button-description">
-            Click this button if you want a more personalized career suggestion!
-          </p>
-        </div>
-      </div>
-
-      <div className="api-box">
+        <div className="api-box">
         <Form className="api-key-form">
           <Form.Label>API Key:</Form.Label>
           <Form.Control
@@ -110,6 +95,21 @@ function App() {
           </div>
         </Form>
       </div>
+      <div className="home-button-box">
+        <button
+            onClick={() => {
+              playSound();
+              navigate('/Detailed Question');
+            }}
+          >
+            Detailed Questions
+          </button>
+          <p className="button-description">
+            Click this button if you want a more personalized career suggestion!
+          </p>
+        </div>
+      </div>
+
 
       <footer className="footer">
         <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
