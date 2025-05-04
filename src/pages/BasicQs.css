@@ -55,7 +55,9 @@ body {
     background-color: gray;
     color: white;
     font-size: 18px;
-    padding-bottom: 10%;
+    padding: 10px 20px;
+    margin-top: 20px;
+
     border: none;
     border-radius: 8px;
     transition: background-color 0.3s ease-in-out;
@@ -81,4 +83,9 @@ body {
   color: white;
   font-size: 0.9rem;
   position: fixed;
+}
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

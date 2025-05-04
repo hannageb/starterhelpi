@@ -1,39 +1,29 @@
+// Full integrated DetailedQ.tsx including report navigation and ALL questions
+
 import React, { useState } from "react";
-//import GoHomeScreen from './BasicQs';
 import { Form } from "react-bootstrap";
-import './DetailedQs.css'
-import { Navigate} from "react-router-dom";
+import './DetailedQs.css';
+import { Navigate } from "react-router-dom";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
 
 function GoHomeScreen() {
-    const [goToHome, setGoToHome] = React.useState(false);
+    const [goToHome, setGoToHome] = useState(false);
     const [goToFAQ, setGoToFAQ] = useState(false);
-    const [goToUser, setGoToUser] = useState(false)
+    const [goToUser, setGoToUser] = useState(false);
     const [goToBasic, setGoToBasic] = useState(false);
-    
-    if (goToHome) {
-        return <Navigate to="/" />;
-    }
-    if(goToFAQ){
-        if(goToFAQ){
-            return <Navigate to="/FAQ"/>;
-        }
-    }
-    if(goToUser){
-        return(
-            <Navigate to="/User Profile"/>
-        )
-    }
-    
-    if (goToBasic) return <Navigate to="/Basic Question"/>
+
+    if (goToHome) return <Navigate to="/" />;
+    if (goToFAQ) return <Navigate to="/FAQ" />;
+    if (goToUser) return <Navigate to="/User Profile" />;
+    if (goToBasic) return <Navigate to="/Basic Question" />;
 
     return (
         <header className="header">
             <h1 className="centerTitle">DETAILED QUESTIONS</h1>
             <div className="left-nav">
-                <button onClick={() => {setGoToHome(true)}} className="back-button">
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
+                <button onClick={() => setGoToHome(true)} className="back-button">
+                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50" />
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
@@ -45,18 +35,16 @@ function GoHomeScreen() {
     );
 }
 
-
-
 function DetailedQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
-    const [progress, setProgress] = useState<number>(0);
+    const [progress, setProgress] = useState(0);
     const [page, setPage] = useState(1);
-    const [propName, setPropName] = useState([""])
+    const [propName, setPropName] = useState([""]);
     const [showConfetti, setShowConfetti] = useState(false);
     const [width, height] = useWindowSize();
     const [goToReport, setGoToReport] = useState(false);
 
-    if (goToReport) return <Navigate to="/Detailed Report"/>;
+    if (goToReport) return <Navigate to="/Detailed Report" state={{ responses }} />;
 
     const nextPage = () => { if (page < 5) setPage(page + 1); };
     const prevPage = () => { if (page > 1) setPage(page - 1); };
@@ -66,23 +54,22 @@ function DetailedQ() {
             const newProgress = progress + 10 > 100 ? 100 : progress + 10;
             setPropName([...propName, event.target.name]);
             setProgress(newProgress);
-    
+
             if (newProgress === 100) {
                 setShowConfetti(true);
-                setTimeout(() => setShowConfetti(false), 5000); 
+                setTimeout(() => setShowConfetti(false), 5000);
             }
         }
     };
-    
 
     function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
         setResponses({
             ...responses,
             [event.target.name]: event.target.value,
         });
-
     }
-    return(
+
+    return (
         <div>
             <GoHomeScreen />
             <div className="description">
@@ -96,6 +83,7 @@ function DetailedQ() {
                     </div>
                 </div>
             </div>
+
             <div className="Questions">
                 {page === 1 && (
                     <>
@@ -501,26 +489,29 @@ function DetailedQ() {
                         </Form.Group>
                     </>
                 )}
-
-                <div className="pagination-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
-                    <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
-                    <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
                 </div>
+
+            <div className="pagination-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
+                <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
+                <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
             </div>
-        <div style={{ textAlign: 'center', marginTop: '30px' }}>
+
+            <div style={{ textAlign: 'center', marginTop: '30px' }}>
                 <button
                     disabled={Object.keys(responses).length < 10}
                     className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                    onClick={() => { setGoToReport(true); } }>
+                    onClick={() => { setGoToReport(true); }}>
                     Submit
                 </button>
             </div>
-    {showConfetti && <Confetti width={width} height={height} />}
-        <footer className="footer">
+
+            {showConfetti && <Confetti width={width} height={height} />}
+
+            <footer className="footer">
                 <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
             </footer>
-    </div>
+        </div>
     );
 }
 
-export default DetailedQ
+export default DetailedQ;
