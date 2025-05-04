@@ -56,12 +56,12 @@ All files            |       0 |        0 |       0 |       0 |
   BasicQs.tsx        |       0 |        0 |       0 |       0 | 9-231             
   DetailedQs.tsx     |       0 |        0 |       0 |       0 | 11-503            
   basicReport.tsx    |       0 |        0 |       0 |       0 | 7-72              
-  detailedReport.tsx |       0 |        0 |       0 |       0 | 7-75              
+  detailedReport.tsx |       0 |        0 |       0 |       0 | 7-72              
   faq.tsx            |       0 |        0 |       0 |       0 | 6-21              
   userProf.tsx       |       0 |        0 |       0 |       0 | 6-21              
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 2 failed, 2 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.897 s
+Time:        3.767 s
 Ran all test suites.
