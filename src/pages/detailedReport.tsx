@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import './detailedReport.css'
-import { Navigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { OpenAI } from "openai";
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
@@ -10,6 +11,7 @@ function GoHomeScreen() {
     if (goToHome) return <Navigate to="/" />;
     if (goToDetailed) return <Navigate to="/Detailed Question" />;
     if (goToBasic) return <Navigate to="/Basic Question" />;
+
 
     return (
         <header className="header">
@@ -24,6 +26,39 @@ function GoHomeScreen() {
 }
 
 function DetailedReport(){
+    const location = useLocation();
+    const { responses } = location.state;
+    const [report, setReport] = useState<string>("");
+    const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
+    useEffect(() => {
+        async function fetchReport() {
+            const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
+            const answers = Object.entries(responses)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join("\n");
+
+            try {
+                const response = await client.chat.completions.create({
+                    model: "gpt-4.1",
+                    messages: [
+                        {
+                            role: "system",
+                            content: 'You are running a career helper quiz for students to find their potential future career fields. Provide a detailed and thoughtful career recommendation based on the user\'s answers to the following questions. Start your response with "Your Results: "',
+                        },
+                        {
+                            role: "user",
+                            content: `${answers}`,
+                        },
+                    ],
+                });
+                setReport(response.choices[0]?.message?.content || "No response");
+            } catch (error) {
+                console.error("Error generating report:", error);
+                setReport("error");
+            }
+        }
+    fetchReport();
+}, [responses, savedKey]);
     return(
         <><div><GoHomeScreen></GoHomeScreen></div>
         console.log(responses)
@@ -33,7 +68,7 @@ function DetailedReport(){
                 <div className='lid two'></div>
                 <div className='envelope'></div>
                 <div className='letter'>
-                    <p>Your first result:</p>
+                    <p>{report}</p>
                 </div>
             </div>
             <div className='wrapper'>
@@ -41,7 +76,7 @@ function DetailedReport(){
                 <div className='lid two'></div>
                 <div className='envelope'></div>
                 <div className='letter'>
-                    <p>Your second result:</p>
+                    <p>{report}</p>
                 </div>
             </div>
             <div className='wrapper'>
@@ -49,7 +84,7 @@ function DetailedReport(){
                 <div className='lid two'></div>
                 <div className='envelope'></div>
                 <div className='letter'>
-                    <p>Your third result:</p>
+                    <p>{report}</p>
                 </div>
             </div>
         </div></>
