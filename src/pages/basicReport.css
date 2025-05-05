@@ -1,6 +1,6 @@
 .envBody{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     height: 150vh;
     width: 100%;
@@ -23,7 +23,7 @@
 
 .letter{
     position: absolute;
-    top: 0%;
+    top:0;
     width:100%;
     height: 200%;
     background-color: white;
@@ -37,7 +37,6 @@
     font-size: 20px;
     margin-top: 2%;
     color: #3B4049;
-    font-family: serif;
 }
 
 .envelope{
@@ -88,4 +87,9 @@
 .wrapper:hover .lid.two{
     transform: rotateX(180deg);
     transition-delay: 0.25s;
+}
+
+.wrapper:hover .letter{
+    transform: translateY(-400px);
+    transition-delay: 0.5s;
 }
