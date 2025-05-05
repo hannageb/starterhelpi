@@ -70,9 +70,6 @@ function BasicQ() {
     return (
         <div>
             <GoHomeScreen />
-            <div className="Desc">
-                
-            </div>
             <div style={{ display: 'flex', justifyContent: 'center'}} data-testId="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>
@@ -226,18 +223,18 @@ function BasicQ() {
                     <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
                     <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
                 </div>
-        <div style={{ textAlign: 'center', marginTop: '30px' }}>
-            <div className="submit-container">
-            <button
-            disabled={Object.keys(responses).length < 10}
-                className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                onClick={() => { setGoToReport(true); }}
-                >
-                Submit
-            </button>
-        </div>
-        </div>
-        </div >
+                <div style={{ textAlign: 'center', marginTop: '30px' }}>
+                    <div className="submit-container">
+                        <button
+                        disabled={Object.keys(responses).length < 10}
+                            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+                            onClick={() => { setGoToReport(true); }}
+                            >
+                            Submit
+                        </button>
+                    </div>
+                </div>
+             </div >
         <div data-testId ='confettiAnim'>
             {showConfetti && <Confetti width={width} height={height} />}
         </div>

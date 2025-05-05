@@ -87,6 +87,9 @@ function BasicReport() {
                     </div>
                 </div>
             </div>
+            <footer className="footer">
+                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+            </footer>
         </div>
     );
 }
