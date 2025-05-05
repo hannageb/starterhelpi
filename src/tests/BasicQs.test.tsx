@@ -19,4 +19,8 @@ describe("testing the basic question page", () => {
             screen.getByRole("button", {name:/User Profile/i})
         ).toBeInTheDocument();
     })
+    test('if there is a button for the detailed question',()=>{
+        render(<BasicQ/>);
+        expect(screen.getByRole("button",{name:/Detailed Questions/i})).toBeInTheDocument()
+    })
 })

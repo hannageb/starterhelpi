@@ -13,10 +13,21 @@ describe("Testing homepage", () => {
     expect(screen.getByTestId('footer')).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Insert API Key Here")).toBeInTheDocument();
   })
-})
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+  test('tests if there is a button and description for the basic questions', () => {
+    render(<MemoryRouter>
+      <App/>
+    </MemoryRouter>);
+
+    const allBasic = screen.getAllByRole('button', {name:"Basic Questions"})
+    expect(allBasic.length).toEqual(2)
+  })
+
+  test('tests if there is a button and description for the detailed questions', () => {
+    render(<MemoryRouter>
+      <App/>
+    </MemoryRouter>);
+    const allDetailed = screen.getAllByRole('button', {name:/Detailed Questions/i})
+    expect(allDetailed.length).toEqual(2)
+  })
+})
