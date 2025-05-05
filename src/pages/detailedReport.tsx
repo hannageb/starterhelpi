@@ -18,15 +18,17 @@ function GoHomeScreen() {
 
 
     return (
-        <header className="header">
-            <h1 className="centerTitle">CAREER REPORT</h1>
-            <button onClick={() => setGoToHome(true)} className="back-button">
-            <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
-            </button>
-            <button onClick={() => setGoToFAQ(true)}>FAQ</button>
-            <button onClick={() => setGoToUser(true)}>User Profile</button>
-            <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
-            <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
+        <header style={{justifyContent: 'space-between'}}>
+           <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>CAREER REPORT</h1>
+           <div className='nav-bar'>
+                <button onClick={() => setGoToHome(true)} className="back-button">
+                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
+                </button>
+                <button onClick={() => setGoToFAQ(true)}>FAQ</button>
+                <button onClick={() => setGoToUser(true)}>User Profile</button>
+                <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
+                <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
+            </div>
         </header>
     );
 }
@@ -39,10 +41,7 @@ function DetailedReport(){
     useEffect(() => {
         async function fetchReport() {
             const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
-            const answers = Object.entries(responses)
-                .map(([key, value]) => `${key}: ${value}`)
-                .join("\n");
-
+            const answers = Object.entries(responses).map(([key, value]) => `${key}: ${value}`).join("\n");
             try {
                 const response = await client.chat.completions.create({
                     model: "gpt-4.1",
@@ -66,37 +65,38 @@ function DetailedReport(){
     fetchReport();
 }, [responses, savedKey]);
     return(
-        <><div><GoHomeScreen></GoHomeScreen></div>
-        console.log(responses)
-        <div className='envBody'>
-            <div className='wrapper'>
-                <div className='lid one'></div>
-                <div className='lid two'></div>
-                <div className='envelope'></div>
-                <div className='letter'>
-                    <p>{report}</p>
+        <div data-testId="resultEnvelope">
+            <div><GoHomeScreen></GoHomeScreen></div>
+            <div className='envBody'>
+                <div className='wrapper'>
+                    <div className='lid one'></div>
+                    <div className='lid two'></div>
+                    <div className='envelope'></div>
+                    <div className='letter'>
+                        <p>{report}</p>
+                    </div>
                 </div>
-            </div>
-            <div className='wrapper'>
-                <div className='lid one'></div>
-                <div className='lid two'></div>
-                <div className='envelope'></div>
-                <div className='letter'>
-                    <p>{report}</p>
+                <div className='wrapper'>
+                    <div className='lid one'></div>
+                    <div className='lid two'></div>
+                    <div className='envelope'></div>
+                    <div className='letter'>
+                        <p>{report}</p>
+                    </div>
                 </div>
-            </div>
-            <div className='wrapper'>
-                <div className='lid one'></div>
-                <div className='lid two'></div>
-                <div className='envelope'></div>
-                <div className='letter'>
-                    <p>{report}</p>
+                <div className='wrapper'>
+                    <div className='lid one'></div>
+                    <div className='lid two'></div>
+                    <div className='envelope'></div>
+                    <div className='letter'>
+                        <p>{report}</p>
+                    </div>
                 </div>
             </div>
             <footer className="footer">
                 <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
             </footer>
-        </div></>
+        </div>
     );
 }
 
