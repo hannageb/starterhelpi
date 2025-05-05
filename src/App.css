@@ -57,16 +57,9 @@ body {
 .title {
   padding: 2%;
   background-color: #0a3a6a;
-  color: goldenrod;
+  color: rgb(206, 209, 255);;
   text-align: center;
   float: left;
-}
-
-
-/*background image*/
-.title{
-  background-color: #0a3a6a;
-  color: goldenrod;
 }
 
 .tagline {
@@ -104,7 +97,7 @@ body {
 
 button{
   background-image: radial-gradient(rgb(109, 175, 237), rgb(88, 83, 235));
-  color: #224263;
+  color: rgb(223, 225, 255);
   border-radius: 8px;
   font-size: 20px;
 }
@@ -125,21 +118,20 @@ button:hover{
 } 
 
 .home-button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 80px;
-  flex-wrap: wrap;
+  display: flex; /* boxes next to each other */
+  justify-content: center; /* boxes centered */
+  gap: 80px; /* gap between boxes */
   margin-bottom: 25vh;
+  margin-top: 10vh;
+  align-content: center;
 }
-
-
 
 .home-button-box {
   background-color: rgba(10, 58, 106, 0.7); 
   padding: 40px 30px;
   border-radius: 30px;
   width: 280px;
+  height: 250px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
