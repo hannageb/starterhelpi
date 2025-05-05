@@ -19,18 +19,13 @@ function GoHomeScreen() {
     return (
         <header className="header">
             <h1 className="centerTitle">CAREER REPORT</h1>
-            <div className="left-nav">
-                <button onClick={() => setGoToHome(true)} className="back-button">
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
-                </button>
-                <button onClick={() => setGoToFAQ(true)}>FAQ</button>
-                <button onClick={() => setGoToUser(true)}>User Profile</button>
-            </div>
-            <div className="right-nav">
-                <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
-                <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
-
-            </div>
+            <button onClick={() => setGoToHome(true)} className="back-button">
+                <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
+            </button>
+            <button onClick={() => setGoToFAQ(true)}>FAQ</button>
+            <button onClick={() => setGoToUser(true)}>User Profile</button>
+            <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
+            <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
         </header>
     );
 }

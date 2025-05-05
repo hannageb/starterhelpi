@@ -38,7 +38,6 @@ function App() {
         <header>
           <h1>Welcome to CareerHelpi!</h1>
           <h4 className="tagline">Discover your future. One question at a time.</h4>
-          <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="75" height="75"></img>
         </header>
 
         <div className="nav">

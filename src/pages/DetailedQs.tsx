@@ -19,18 +19,17 @@ function GoHomeScreen() {
     if (goToBasic) return <Navigate to="/Basic Question" />;
 
     return (
-        <header className="header">
-            <h1 className="centerTitle">DETAILED QUESTIONS</h1>
-            <div className="left-nav">
+        <header style={{justifyContent: 'space-between'}}>
+            <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>DETAILED QUESTIONS</h1>
+            <div className="nav-bar">
                 <button onClick={() => setGoToHome(true)} className="back-button">
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50" />
+                <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
-            </div>
-            <div className="right-nav">
                 <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
             </div>
+            <h5 className="description" style={{ color: '#E6D9D9', fontStyle:'italic', textAlign:'center'}}> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
         </header>
     );
 }
@@ -72,9 +71,6 @@ function DetailedQ() {
     return (
         <div>
             <GoHomeScreen />
-            <div className="description">
-                <h5 style={{ color: '#E6D9D9' }}> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
-            </div>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>

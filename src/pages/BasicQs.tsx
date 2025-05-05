@@ -17,19 +17,17 @@ function GoHomeScreen() {
     if (goToDetailed) return <Navigate to="/Detailed Question"/>;
 
     return (
-        <header className="header">
-            <h1 className="centerTitle">BASIC QUESTIONS</h1>
-            <div className="left-nav">
+        <header style={{justifyContent: 'space-between'}}>
+            <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>BASIC QUESTIONS</h1>
+            <div className="nav-bar">
                 <button onClick={() => setGoToHome(true)} className="back-button">
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
+                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
-            </div>
-            <div className="right-nav">
                 <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
-
             </div>
+            <h5 className="description" style={{color: '#E6D9D9',fontStyle:'italic',textAlign:'center'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
         </header>
     );
 }
@@ -63,19 +61,21 @@ function BasicQ() {
                 setTimeout(() => setShowConfetti(false), 5000);
             }
         }
+        
     };
 
     return (
         <div>
             <GoHomeScreen />
             <div className="Desc">
-                <h5 style={{color: '#E6D9D9'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
+                
             </div>
             <div style={{ display: 'flex', justifyContent: 'center'}}>
-                <div style={{ textAlign: 'center' }}>
-                    <p>{progress}%</p>
+                <div>
+                    <br/>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
-                        <div style={{ height: '20px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}></div>
+                        <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke"}}>{progress}%</p>
+                        </div>
                     </div>
                 </div>
             </div>

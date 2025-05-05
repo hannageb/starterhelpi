@@ -40,13 +40,16 @@
 }
 */
 
-.header{
+header{
   display: flex;
   align-items: center;
   flex-grow: 1;
   align-content: flex-end;
   background-color: #0a3a6a;
   color: rgb(223, 225, 255);
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 body {
