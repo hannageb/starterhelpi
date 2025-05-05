@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate} from "react-router-dom";
+import { Navigate } from "react-router";
 import Form from 'react-bootstrap/Form';
 import './BasicQs.css';
 import Confetti from 'react-confetti';
@@ -17,11 +17,14 @@ function GoHomeScreen() {
     if (goToDetailed) return <Navigate to="/Detailed Question"/>;
 
     return (
-        <header style={{justifyContent: 'space-between'}}>
+        <header style={{justifyContent: 'space-between'}} data-testId="header">
             <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>BASIC QUESTIONS</h1>
             <div className="nav-bar">
-                <button onClick={() => setGoToHome(true)} className="back-button">
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
+                <button 
+                    onClick={() => setGoToHome(true)} 
+                    className="back-button" 
+                    aria-label="homePage" /* aria-label from Gemini */>
+                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img> 
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
@@ -70,9 +73,9 @@ function BasicQ() {
             <div className="Desc">
                 
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center'}}>
-                <div>
-                    <br/>
+            <div style={{ display: 'flex', justifyContent: 'center'}} data-testId="progressBar">
+                <div style={{ textAlign: 'center' }}>
+                    <p>{progress}%</p>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
                         <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke"}}>{progress}%</p>
                         </div>
@@ -223,25 +226,25 @@ function BasicQ() {
                     <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
                     <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '30px' }}>
-        <div className="submit-container">
-        <button
-         disabled={Object.keys(responses).length < 10}
-            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-            onClick={() => { setGoToReport(true); }}
-            >
-            Submit
-        </button>
-    </div>
-    </div>
-
-            </div>
-            {showConfetti && <Confetti width={width} height={height} />}
-            <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-            </footer>
+        <div style={{ textAlign: 'center', marginTop: '30px' }}>
+            <div className="submit-container">
+            <button
+            disabled={Object.keys(responses).length < 10}
+                className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+                onClick={() => { setGoToReport(true); }}
+                >
+                Submit
+            </button>
         </div>
-        
+        </div>
+        </div >
+        <div data-testId ='confettiAnim'>
+            {showConfetti && <Confetti width={width} height={height} />}
+        </div>
+        <footer className="footer">
+            <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+        </footer>
+    </div>    
     );
 }
 

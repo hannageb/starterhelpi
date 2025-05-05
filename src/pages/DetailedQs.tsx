@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import './DetailedQs.css';
-import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
 
@@ -19,7 +19,7 @@ function GoHomeScreen() {
     if (goToBasic) return <Navigate to="/Basic Question" />;
 
     return (
-        <header style={{justifyContent: 'space-between'}}>
+        <header style={{justifyContent: 'space-between'}} data-testId="header">
             <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>DETAILED QUESTIONS</h1>
             <div className="nav-bar">
                 <button onClick={() => setGoToHome(true)} className="back-button">
@@ -71,7 +71,10 @@ function DetailedQ() {
     return (
         <div>
             <GoHomeScreen />
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
+            <div className="description">
+                <h5 style={{ color: '#E6D9D9' }}> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }} data-testId="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px' }}>
@@ -500,8 +503,9 @@ function DetailedQ() {
                     Submit
                 </button>
             </div>
-
-            {showConfetti && <Confetti width={width} height={height} />}
+            <div data-testId='confettiAnim'>
+                {showConfetti && <Confetti width={width} height={height} />}
+            </div>
 
             <footer className="footer">
                 <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>

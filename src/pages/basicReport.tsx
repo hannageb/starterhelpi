@@ -1,6 +1,6 @@
 import './basicReport.css'
 import {useEffect, useState } from "react";
-import {Navigate, useLocation} from "react-router-dom";
+import {Navigate, useLocation} from "react-router";
 import { OpenAI } from "openai";
 
 function GoHomeScreen() {
@@ -65,7 +65,7 @@ function BasicReport() {
     }, [responses, savedKey]); 
     
     return(
-        <div>
+        <div data-testId="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
             <div>
                 <div className='envBody'>
