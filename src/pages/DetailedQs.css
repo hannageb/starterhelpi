@@ -1,15 +1,3 @@
-.header{
-  display: flex;
-  align-items: center;
-  background-color: #0a3a6a;
-  color: goldenrod;
-}
-.centerTitle { /*from Gemini; flex-grow: makes the div take up the available space while being in the center, this will push
-  the button to the right*/
-  flex-grow: 1;
-  text-align: center;
-}
-
 .submit-button {
   background-color: gray;
   color: white;
@@ -63,13 +51,4 @@
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(103, 97, 212, 0.8); 
   color: rgb(197, 198, 224);
-}
-
-.footer {
-  width: 100%;
-  text-align: center;
-  background-color: rgba(10, 58, 106, 0.9);
-  color: white;
-  font-size: 0.9rem;
-  position: sticky;
 }
