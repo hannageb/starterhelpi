@@ -19,18 +19,17 @@ function GoHomeScreen() {
     if (goToBasic) return <Navigate to="/Basic Question" />;
 
     return (
-        <header className="header" data-testId="header">
-            <h1 className="centerTitle">DETAILED QUESTIONS</h1>
-            <div className="left-nav">
-                <button onClick={() => setGoToHome(true)} className="back-button" aria-label="homePage">
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50" />
+        <header style={{justifyContent: 'space-between'}} data-testId="header">
+            <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>DETAILED QUESTIONS</h1>
+            <div className="nav-bar">
+                <button onClick={() => setGoToHome(true)} className="back-button">
+                <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
-            </div>
-            <div className="right-nav">
                 <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
             </div>
+            <h5 className="description" style={{ color: '#E6D9D9', fontStyle:'italic', textAlign:'center'}}> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
         </header>
     );
 }
@@ -72,18 +71,15 @@ function DetailedQ() {
     return (
         <div>
             <GoHomeScreen />
-            <div className="description">
-                <h5 style={{ color: '#E6D9D9' }}> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }} data-testId="progressBar">
+            <div style={{ display: 'flex', justifyContent: 'center'}} data-testId="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px' }}>
-                        <div style={{ height: '40px', background: "darkblue", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px' }}></div>
+                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
+                        <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke"}}>{progress}%</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div className="Questions">
                 {page === 1 && (
                     <>
@@ -489,21 +485,22 @@ function DetailedQ() {
                         </Form.Group>
                     </>
                 )}
+                <div className="pagination-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
+                    <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
+                    <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
                 </div>
 
-            <div className="pagination-buttons" style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
-                <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
-                <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
+                <div style={{ textAlign: 'center', marginTop: '30px' }}>
+                    <button
+                        disabled={Object.keys(responses).length < 10}
+                        className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+                        onClick={() => { setGoToReport(true); }}>
+                        Submit
+                    </button>
+                </div>
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                <button
-                    disabled={Object.keys(responses).length < 10}
-                    className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                    onClick={() => { setGoToReport(true); }}>
-                    Submit
-                </button>
-            </div>
+            
             <div data-testId='confettiAnim'>
                 {showConfetti && <Confetti width={width} height={height} />}
             </div>
