@@ -76,25 +76,6 @@ function App() {
             Find out what field might be best for you by answering a sweet and simple questionnaire.
           </p>
         </div>
-        <div className="api-box">
-        <Form className="api-key-form">
-          <Form.Label>API Key:</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Insert API Key Here"
-            onChange={changeKey}
-          />
-          <br />
-          <div className="centered-button">
-            <Button
-              className="Submit-Button"
-              onClick={handleSubmit}
-            >
-              Submit
-            </Button>
-          </div>
-        </Form>
-      </div>
       <div className="home-button-box">
         <button
             onClick={() => {
@@ -111,8 +92,29 @@ function App() {
       </div>
 
 
-      <footer className="footer">
+      <footer>
+        <div className="api-box">
+          <Form className="api-key-form">
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Insert API Key Here"
+              onChange={changeKey}
+            />
+            <br />
+            <div className="centered-button">
+              <Button
+                className="Submit-Button"
+                onClick={handleSubmit}
+              >
+                Submit
+              </Button>
+            </div>
+          </Form>
+        </div>
+        <div className="footer">
         <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+        </div>
       </footer>
     </div>
   );

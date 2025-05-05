@@ -39,12 +39,17 @@
   }
 }
 */
+
 body {
   margin: 0;
   height: 100vh;
-  background-image: linear-gradient(to bottom right, #0a3a6a, goldenrod);
+  background-image: url("/public/snowflakes.png");
   background-size: cover;
   background-color: rgb(147, 177, 201);
+  background-size: contain;
+  background-blend-mode:color-burn;
+  animation: scrolling 7s linear infinite normal;
+  padding: 20px 0;
 }
 
 
@@ -60,11 +65,6 @@ body {
 
 /*background image*/
 .title{
-  background-image: url("/public/bkgd-img.png");
-  background-size: contain;
-  background-blend-mode:color-burn;
-  animation: scrolling 7s linear infinite normal;
-  padding: 20px 0;
   background-color: #0a3a6a;
   color: goldenrod;
 }
@@ -103,13 +103,13 @@ body {
 }
 
 button{
-  background-image: radial-gradient(rgb(237, 174, 12), rgb(246, 218, 134)) ;
-  color: #0a3a6a;
+  background-image: radial-gradient(rgb(109, 175, 237), rgb(88, 83, 235));
+  color: #224263;
   border-radius: 8px;
   font-size: 20px;
 }
 button:hover{
-  background-image: radial-gradient(rgb(202, 145, 1), rgb(250, 195, 32)) ;
+  background-image: radial-gradient(rgb(90, 146, 199), rgb(86, 82, 197));
 }
 
 .detailed-qs{
@@ -162,23 +162,17 @@ button:hover{
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 } 
 
-.api-box {
+footer .api-box {
   background-color: rgba(10, 58, 106, 0.7);
-  border-radius: 30px;
-  padding: 40px 30px;
-  width: fit-content;
+  padding: 30px 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.api-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
-}
-.api-key-form label {
+
+footer .api-key-form label {
   color: white;
   font-weight: bold;
   font-size: 16px;
@@ -186,7 +180,7 @@ button:hover{
   display: block;
 }
 
-.api-key-form input {
+footer .api-key-form input {
   border-radius: 8px;
   padding: 10px;
   width: 250px;
@@ -194,40 +188,45 @@ button:hover{
   text-align: center;
 }
 
-.submit-button {
-  display: flex;
-  justify-content: center;
-}
-
-.submit-button {
+footer .submit-button {
   font-size: 14px;
   padding: 8px 18px;
   margin-top: 15px;
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  background-image: radial-gradient(rgb(237, 174, 12), rgb(246, 218, 134));
+  background-image: radial-gradient(rgb(109, 175, 237), rgb(90, 85, 233));
   color: #0a3a6a;
   transition: all 0.2s ease;
   box-shadow: none;
+  display: flex;
+  justify-content: center;
 }
 
-.submit-button:hover {
-  background-image: radial-gradient(rgb(202, 145, 1), rgb(250, 195, 32));
+footer .submit-button:hover {
+  background-image: radial-gradient(rgb(109, 175, 237), rgb(90, 85, 233));
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
   cursor: pointer;
 }
 
-.footer {
+footer {
   width: 100%;
   text-align: center;
   padding: 15px 0;
   background-color: rgba(10, 58, 106, 0.9);
-  color: white;
+  margin-top: 10px;
   font-size: 0.9rem;
+  color: white;
+  flex-direction: column;
+  align-items: center;
 }
 
+.footer{
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: white;
+}
 
 body, html {
   margin: 0;
