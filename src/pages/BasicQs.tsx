@@ -75,7 +75,7 @@ function BasicQ() {
             <div className="Desc">
                 <h5 style={{color: '#E6D9D9'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center'}}>
+            <div style={{ display: 'flex', justifyContent: 'center'}} data-testId="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
@@ -227,25 +227,25 @@ function BasicQ() {
                     <button onClick={prevPage} disabled={page === 1}>⬅️ Previous</button>
                     <button onClick={nextPage} disabled={page === 5}>Next ➡️</button>
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '30px' }}>
-        <div className="submit-container">
-        <button
-         disabled={Object.keys(responses).length < 10}
-            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-            onClick={() => { setGoToReport(true); }}
-            >
-            Submit
-        </button>
-    </div>
-    </div>
-
-            </div>
-            {showConfetti && <Confetti width={width} height={height} />}
-            <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-            </footer>
+        <div style={{ textAlign: 'center', marginTop: '30px' }}>
+            <div className="submit-container">
+            <button
+            disabled={Object.keys(responses).length < 10}
+                className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+                onClick={() => { setGoToReport(true); }}
+                >
+                Submit
+            </button>
         </div>
-        
+        </div>
+        </div >
+        <div data-testId ='confettiAnim'>
+            {showConfetti && <Confetti width={width} height={height} />}
+        </div>
+        <footer className="footer">
+            <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+        </footer>
+    </div>    
     );
 }
 

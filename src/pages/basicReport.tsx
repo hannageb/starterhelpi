@@ -70,7 +70,7 @@ function BasicReport() {
     }, [responses, savedKey]); 
     
     return(
-        <div>
+        <div data-testId="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
             <div>
                 <div className='envBody'>

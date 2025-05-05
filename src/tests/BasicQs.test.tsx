@@ -23,4 +23,20 @@ describe("testing the basic question page", () => {
         render(<BasicQ/>);
         expect(screen.getByRole("button",{name:/Detailed Questions/i})).toBeInTheDocument()
     })
+    test('see if there at least 7 questions', () => {
+        const numQues = screen.getAllByTestId("question")
+        expect(numQues.length).toBeGreaterThanOrEqual(7)
+    })
+    test('seeing if there is a progress bar', () => {
+        render(<BasicQ/>)
+        expect(screen.getByTestId("progressBar")).toBeInTheDocument()
+    })
+    test("tests for answer submit", () => {
+        render(<BasicQ/>)
+        expect(screen.getByRole('button',{name:'Submit'})).toBeInTheDocument();
+    })
+    test('testing for confetti effect', () => {
+        render(<BasicQ/>)
+        expect(screen.getByTestId('confettiAnim')).toBeInTheDocument()
+    })
 })

@@ -21,6 +21,8 @@ describe("Testing homepage", () => {
 
     const allBasic = screen.getAllByRole('button', {name:"Basic Questions"})
     expect(allBasic.length).toEqual(2)
+
+    expect(screen.getByTestId('basicDesc')).toBeInTheDocument()
   })
 
   test('tests if there is a button and description for the detailed questions', () => {
@@ -29,5 +31,7 @@ describe("Testing homepage", () => {
     </MemoryRouter>);
     const allDetailed = screen.getAllByRole('button', {name:/Detailed Questions/i})
     expect(allDetailed.length).toEqual(2)
+
+    expect(screen.getByTestId('detailedDesc')).toBeInTheDocument()
   })
 })
