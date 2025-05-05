@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate} from "react-router";
+import { Navigate } from "react-router";
 import Form from 'react-bootstrap/Form';
 import './BasicQs.css';
 import Confetti from 'react-confetti';
@@ -17,10 +17,14 @@ function GoHomeScreen() {
     if (goToDetailed) return <Navigate to="/Detailed Question"/>;
 
     return (
-        <header className="header">
+        <header className="header" data-testId="header">
             <h1 className="centerTitle">BASIC QUESTIONS</h1>
             <div className="left-nav">
-                <button onClick={() => setGoToHome(true)} className="back-button">
+                <button 
+                    onClick={() => setGoToHome(true)} 
+                    className="back-button" 
+                    aria-label="homePage" /* aria-label from Gemini */
+                    >
                     <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>

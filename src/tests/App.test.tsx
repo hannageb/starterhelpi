@@ -1,18 +1,17 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
+import { MemoryRouter } from 'react-router';
 
 describe("Testing homepage", () => {
 
-  test('renders submit button', () => {
-    render(<App />);
-    screen.getByText(/submit/i)
-  })
-  
-  test('renders FaQ', ()=>{
-    render(<App />)
-    const faqElement = screen.getByRole('button', {name:"Frequently asked Questions"})
-    expect(faqElement).toBeInTheDocument();
+  test('tests for the API key submit button', () => {
+    render(<MemoryRouter>
+      <App/>
+    </MemoryRouter>);
+    expect(screen.getByRole('button', {name:"Submit"})).toBeInTheDocument()
+    expect(screen.getByTestId('footer')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Insert API Key Here")).toBeInTheDocument();
   })
 })
 
