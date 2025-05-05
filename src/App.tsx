@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import clickSound from './click.mp3';
 
 const audio = new Audio(clickSound);

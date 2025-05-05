@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import './DetailedQs.css';
-import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
 
