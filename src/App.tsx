@@ -45,19 +45,19 @@ function App() {
             style={{ fontSize: '15px' }}
             onClick={() => {
               playSound();
-              navigate('/Basic Question');
+              navigate('/User Profile');
             }}
           >
-            Basic Questions
+            User Profile
           </button>
           <button
             style={{ fontSize: '15px' }}
             onClick={() => {
               playSound();
-              navigate('/Detailed Question');
+              navigate('/FAQ');
             }}
           >
-            Detailed Questions
+            FAQ
           </button>
         </div>
       </div>
