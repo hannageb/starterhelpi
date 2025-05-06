@@ -23,7 +23,7 @@ function GoHomeScreen() {
             <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>DETAILED QUESTIONS</h1>
             <div className="nav-bar">
                 <button onClick={() => setGoToHome(true)} className="back-button">
-                <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
+                <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30" aria-label="homePage"></img>
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
