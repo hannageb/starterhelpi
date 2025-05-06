@@ -2,7 +2,41 @@
 > starter_helpi@0.1.0 test
 > react-scripts test --coverage
 
-PASS src/tests/App.test.tsx
+FAIL src/tests/App.test.tsx
+  ● Testing homepage › tests if there is a button and description for the basic questions
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 2
+    Received: 1
+
+    [0m [90m 21 |[39m
+     [90m 22 |[39m     [36mconst[39m allBasic [33m=[39m screen[33m.[39mgetAllByRole([32m'button'[39m[33m,[39m {name[33m:[39m[32m"Basic Questions"[39m})
+    [31m[1m>[22m[39m[90m 23 |[39m     expect(allBasic[33m.[39mlength)[33m.[39mtoEqual([35m2[39m)
+     [90m    |[39m                             [31m[1m^[22m[39m
+     [90m 24 |[39m
+     [90m 25 |[39m     expect(screen[33m.[39mgetByTestId([32m'basicDesc'[39m))[33m.[39mtoBeInTheDocument()
+     [90m 26 |[39m   })[0m
+
+      at Object.<anonymous> (src/tests/App.test.tsx:23:29)
+
+  ● Testing homepage › tests if there is a button and description for the detailed questions
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 2
+    Received: 1
+
+    [0m [90m 31 |[39m     [33m<[39m[33m/[39m[33mMemoryRouter[39m[33m>[39m)[33m;[39m
+     [90m 32 |[39m     [36mconst[39m allDetailed [33m=[39m screen[33m.[39mgetAllByRole([32m'button'[39m[33m,[39m {name[33m:[39m[35m/Detailed Questions/i[39m})
+    [31m[1m>[22m[39m[90m 33 |[39m     expect(allDetailed[33m.[39mlength)[33m.[39mtoEqual([35m2[39m)
+     [90m    |[39m                                [31m[1m^[22m[39m
+     [90m 34 |[39m
+     [90m 35 |[39m     expect(screen[33m.[39mgetByTestId([32m'detailedDesc'[39m))[33m.[39mtoBeInTheDocument()
+     [90m 36 |[39m   })[0m
+
+      at Object.<anonymous> (src/tests/App.test.tsx:33:32)
+
 FAIL src/tests/BasicQs.test.tsx
   ● testing the basic question page › see if there at least 7 questions
 
@@ -45,21 +79,21 @@ FAIL src/tests/DetailedQs.test.tsx
 ---------------------|---------|----------|---------|---------|-----------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s           
 ---------------------|---------|----------|---------|---------|-----------------------------
-All files            |   13.31 |    25.92 |    3.26 |   19.41 |                             
+All files            |   13.58 |    26.36 |    3.22 |   19.64 |                             
  src                 |   25.71 |    16.66 |      10 |   25.71 |                             
   App.tsx            |    37.5 |       50 |    12.5 |    37.5 | 10-11,18,26-32,47-84        
   index.tsx          |       0 |      100 |     100 |       0 | 14-36                       
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10                        
- src/pages           |   12.12 |    26.47 |    2.79 |   18.48 |                             
+ src/pages           |   12.43 |    26.92 |    2.75 |   18.77 |                             
   BasicQs.tsx        |   16.08 |    38.88 |    3.33 |   26.43 | 24-31,51,56-58,65-72,93-212 
-  DetailedQs.tsx     |   15.67 |    38.23 |     3.5 |   26.58 | 25-30,52-65,88-497          
+  DetailedQs.tsx     |   16.42 |    38.88 |    3.38 |   27.05 | 25-30,52-59,66,71-73,92-508 
   basicReport.tsx    |       0 |        0 |       0 |       0 | 7-75                        
-  detailedReport.tsx |       0 |        0 |       0 |       0 | 7-67                        
+  detailedReport.tsx |       0 |        0 |       0 |       0 | 7-68                        
   faq.tsx            |       0 |        0 |       0 |       0 | 6-21                        
   userProf.tsx       |       0 |        0 |       0 |       0 | 6-21                        
 ---------------------|---------|----------|---------|---------|-----------------------------
-Test Suites: 2 failed, 1 passed, 3 total
-Tests:       2 failed, 16 passed, 18 total
+Test Suites: 3 failed, 3 total
+Tests:       4 failed, 14 passed, 18 total
 Snapshots:   0 total
-Time:        4.468 s
+Time:        4.576 s
 Ran all test suites.
