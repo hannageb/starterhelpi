@@ -73,7 +73,7 @@ function App() {
           >
             Basic Questions
           </button>
-          <p className="button-description" data-testId="basicDesc">
+          <p className="button-description" data-testid="basicDesc">
             Find out what field might be best for you by answering a sweet and simple questionnaire.
           </p>
         </div>
@@ -87,14 +87,14 @@ function App() {
           >
             Detailed Questions
           </button>
-          <p className="button-description" data-testId="detailedDesc">
+          <p className="button-description" data-testid="detailedDesc">
             Click this button if you want a more personalized career suggestion!
           </p>
         </div>
       </div>
 
 
-      <footer>
+      <footer data-testid="footer">
         <div className="api-box">
           <Form className="api-key-form">
             <Form.Label>API Key:</Form.Label>

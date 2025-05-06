@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import DetailedQ from '../pages/DetailedQs'
 
-describe("testing the basic question page", () => {
+describe("testing the detailed questions page", () => {
     test('if there is a navigation bar', () => {
         render(<DetailedQ/>)
         expect(screen.getByTestId("header")).toBeInTheDocument()
