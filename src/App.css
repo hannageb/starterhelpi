@@ -166,7 +166,7 @@ button:hover{
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 } 
 
-footer .api-box {
+.api-box {
   background-color: rgba(10, 58, 106, 0.7);
   padding: 30px 30px;
   display: flex;
@@ -175,7 +175,7 @@ footer .api-box {
   margin: 0%;
 }
 
-footer .api-key-form label {
+.api-key-form label {
   color: white;
   font-weight: bold;
   font-size: 16px;
@@ -183,7 +183,7 @@ footer .api-key-form label {
   display: block;
 }
 
-footer .api-key-form input {
+.api-key-form input {
   border-radius: 8px;
   padding: 10px;
   width: 250px;
@@ -191,7 +191,7 @@ footer .api-key-form input {
   text-align: center;
 }
 
-footer .submit-button {
+.submit-button {
   font-size: 14px;
   padding: 8px 18px;
   margin-top: 15px;
@@ -206,7 +206,7 @@ footer .submit-button {
   justify-content: center;
 }
 
-footer .submit-button:hover {
+.submit-button:hover {
   background-image: radial-gradient(rgb(109, 175, 237), rgb(90, 85, 233));
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
