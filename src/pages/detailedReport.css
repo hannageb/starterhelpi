@@ -10,6 +10,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    gap: 10px;
 }
 
 
@@ -95,4 +96,8 @@
 .wrapper:hover .letter{
     transform: translateY(-300px);
     transition-delay: 0.5s;
+}
+
+.intro-text{
+    justify-content: center;
 }
