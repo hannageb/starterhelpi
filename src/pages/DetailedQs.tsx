@@ -61,20 +61,24 @@ function DetailedQ() {
         }
     };
 
-    function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
-        setResponses({
-            ...responses,
-            [event.target.name]: event.target.value,
-        });
-    }
+    /* saves responses as "Question name: answer" */
+        const updateResponse = (event: React.ChangeEvent<HTMLInputElement>) => {
+            setResponses({ ...responses, [event.target.name]: event.target.value });
+        };
+    
+        const clearResponse = () => {
+            /* clears the responses, progress bar, and if the question has been answered */
+            setResponses({})
+            setProgress(0);
+            setPropName([""]);
+        }
 
     return (
         <div>
             <GoHomeScreen />
             <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
                 <div style={{ textAlign: 'center' }}>
-                    <p>{progress}%</p>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
+                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
                         <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke"}}>{progress}%</p>
                         </div>
                     </div>
@@ -491,12 +495,21 @@ function DetailedQ() {
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                    <button
+                    <div className="submit-container">
+                        <button
                         disabled={Object.keys(responses).length < 10}
-                        className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                        onClick={() => { setGoToReport(true); }}>
-                        Submit
-                    </button>
+                            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+                            onClick={() => { setGoToReport(true); }}
+                            >
+                            Submit
+                        </button>
+                        <button
+                            className={`clear-button ${Object.keys(responses).length === 0 ? 'disabled' : 'enabled'}`}
+                            onClick={() => {clearResponse()}}
+                            >
+                            Clear
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -504,9 +517,8 @@ function DetailedQ() {
             <div data-testid='confettiAnim'>
                 {showConfetti && <Confetti width={width} height={height} />}
             </div>
-
             <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+                <div><p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p></div>
             </footer>
         </div>
     );

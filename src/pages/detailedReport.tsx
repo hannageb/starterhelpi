@@ -36,7 +36,7 @@ function GoHomeScreen() {
 function DetailedReport(){
     const location = useLocation();
     const { responses } = location.state;
-    const [report, setReport] = useState<string>("");
+    const [report, setReport] = useState<string[]>([""]);
     const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
     useEffect(() => {
         async function fetchReport() {
@@ -48,18 +48,19 @@ function DetailedReport(){
                     messages: [
                         {
                             role: "system",
-                            content: 'You are running a career helper quiz for students to find their potential future career fields. Provide a detailed and thoughtful career recommendation based on the user\'s answers to the following questions. Start your response with "Your Results: "',
-                        },
+                            /* GPT prompt */
+                            content: 'You are running a career helper quiz for students to find their potential future career fields. Provide a brief but thorough career recommendation based on the users answers to the following questions of a detailed questionnaire. Start your response with Your Results:, provide three specific career options and separate the three options with @'},
                         {
                             role: "user",
                             content: `${answers}`,
                         },
                     ],
                 });
-                setReport(response.choices[0]?.message?.content || "No response");
+                setReport(response.choices[0]?.message?.content?.split('@') || ["No response"]);
             } catch (error) {
                 console.error("Error generating report:", error);
-                setReport("error");
+                setReport(["Error"]);
+                alert("An error occurred while generating report")
             }
         }
     fetchReport();
@@ -67,13 +68,14 @@ function DetailedReport(){
     return(
         <div data-testId="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
+            <h5 className="intro-text" style={{textAlign: 'center', fontSize: '20px'}}>{report[0]}</h5>
             <div className='envBody'>
                 <div className='wrapper'>
                     <div className='lid one'></div>
                     <div className='lid two'></div>
                     <div className='envelope'></div>
                     <div className='letter'>
-                        <p>{report}</p>
+                        <p>{report[1]}</p>
                     </div>
                 </div>
                 <div className='wrapper'>
@@ -81,7 +83,7 @@ function DetailedReport(){
                     <div className='lid two'></div>
                     <div className='envelope'></div>
                     <div className='letter'>
-                        <p>{report}</p>
+                        <p>{report[2]}</p>
                     </div>
                 </div>
                 <div className='wrapper'>
@@ -89,7 +91,7 @@ function DetailedReport(){
                     <div className='lid two'></div>
                     <div className='envelope'></div>
                     <div className='letter'>
-                        <p>{report}</p>
+                        <p>{report[3]}</p>
                     </div>
                 </div>
             </div>
