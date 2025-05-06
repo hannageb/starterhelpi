@@ -19,7 +19,7 @@ function GoHomeScreen() {
     if (goToBasic) return <Navigate to="/Basic Question" />;
 
     return (
-        <header style={{justifyContent: 'space-between'}} data-testId="header">
+        <header style={{justifyContent: 'space-between'}} data-testid="header">
             <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>DETAILED QUESTIONS</h1>
             <div className="nav-bar">
                 <button onClick={() => setGoToHome(true)} className="back-button">
@@ -71,7 +71,7 @@ function DetailedQ() {
     return (
         <div>
             <GoHomeScreen />
-            <div style={{ display: 'flex', justifyContent: 'center'}} data-testId="progressBar">
+            <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <p>{progress}%</p>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
@@ -84,7 +84,7 @@ function DetailedQ() {
                 {page === 1 && (
                     <>
                         <h3>1) Which type of work environment do you prefer?</h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check type="radio" name="work-environment" onChange={(e) => { updateResponse(e); ChangeProg(e); } } id="office" label="Structured office setting" value="office" checked={responses["work-environment"] === "office"} />
                             <Form.Check type="radio" name="work-environment" onChange={(e) => { updateResponse(e); ChangeProg(e); } } id="remote" label="Flexible remote work" value="remote" checked={responses["work-environment"] === "remote"} />
                             <Form.Check
@@ -123,7 +123,7 @@ function DetailedQ() {
                         <h3>
                             2) Which skills do you excel at or enjoy using the most?
                         </h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="work-skills"
@@ -179,7 +179,7 @@ function DetailedQ() {
                 {page === 2 && (
                     <>
                         <h3>3) How do you prefer to work?</h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="work-preferences"
@@ -214,7 +214,7 @@ function DetailedQ() {
                                 checked={responses["work-preferences"] === "large-group"} />
                         </Form.Group>
                         <h3>4) What level of education or training are you open to pursuing?</h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="education-level"
@@ -255,7 +255,7 @@ function DetailedQ() {
                 {page === 3 && (
                     <>
                         <h3>5) How important is job stability and salary to you?</h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check type="radio" name="stability-and-salary" onChange={(e) => { updateResponse(e); ChangeProg(e); } } id="extremely-important" label="Extremely important (I need a secure and high-paying job)" value="extremely-important" checked={responses["stability-and-salary"] === "extremely-important"} />
                             <Form.Check
                                 type="radio"
@@ -275,7 +275,7 @@ function DetailedQ() {
                                 checked={responses["stability-and-salary"] === "not-very-important"} />
                         </Form.Group>
                         <h3>6) How do you handle stress and pressure at work?</h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="handle-stress"
@@ -317,7 +317,7 @@ function DetailedQ() {
                         <h3>
                             7) Are you open to relocating for better career opportunities?
                         </h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="relocating"
@@ -346,7 +346,7 @@ function DetailedQ() {
                         <h3>
                             8) What kind of career growth and advancement opportunities are important to you?
                         </h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="career-growth"
@@ -388,7 +388,7 @@ function DetailedQ() {
                         <h3>
                             9) How do you prefer to solve problems at work?
                         </h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="problem-solving"
@@ -433,7 +433,7 @@ function DetailedQ() {
                         <h3>
                             10) How do you want to be recognized or valued in your career?
                         </h3>
-                        <Form.Group onChange={ChangeProg}>
+                        <Form.Group data-testid="question">
                             <Form.Check
                                 type="radio"
                                 name="recognition"
@@ -501,7 +501,7 @@ function DetailedQ() {
             </div>
 
             
-            <div data-testId='confettiAnim'>
+            <div data-testid='confettiAnim'>
                 {showConfetti && <Confetti width={width} height={height} />}
             </div>
 
