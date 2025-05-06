@@ -61,12 +61,17 @@ function DetailedQ() {
         }
     };
 
-    function updateResponse(event: React.ChangeEvent<HTMLInputElement>) {
-        setResponses({
-            ...responses,
-            [event.target.name]: event.target.value,
-        });
-    }
+    /* saves responses as "Question name: answer" */
+        const updateResponse = (event: React.ChangeEvent<HTMLInputElement>) => {
+            setResponses({ ...responses, [event.target.name]: event.target.value });
+        };
+    
+        const clearResponse = () => {
+            /* clears the responses, progress bar, and if the question has been answered */
+            setResponses({})
+            setProgress(0);
+            setPropName([""]);
+        }
 
     return (
         <div>
@@ -491,12 +496,21 @@ function DetailedQ() {
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                    <button
+                    <div className="submit-container">
+                        <button
                         disabled={Object.keys(responses).length < 10}
-                        className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
-                        onClick={() => { setGoToReport(true); }}>
-                        Submit
-                    </button>
+                            className={`submit-button ${Object.keys(responses).length < 10 ? 'disabled' : 'enabled'}`}
+                            onClick={() => { setGoToReport(true); }}
+                            >
+                            Submit
+                        </button>
+                        <button
+                            className={`clear-button ${Object.keys(responses).length === 0 ? 'disabled' : 'enabled'}`}
+                            onClick={() => {clearResponse()}}
+                            >
+                            Clear
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -504,9 +518,8 @@ function DetailedQ() {
             <div data-testid='confettiAnim'>
                 {showConfetti && <Confetti width={width} height={height} />}
             </div>
-
             <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+                <div><p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p></div>
             </footer>
         </div>
     );
