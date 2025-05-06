@@ -84,7 +84,7 @@ function DetailedQ() {
                     </div>
                 </div>
             </div>
-            <div className="Questions">
+            <div className="Questions" data-testid = 'question skeleton'>
                 {page === 1 && (
                     <>
                         <h3>1) Which type of work environment do you prefer?</h3>
