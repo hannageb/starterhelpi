@@ -67,32 +67,39 @@ function DetailedReport(){
     return(
         <div data-testId="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
-            <div className='envBody'>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
-                        <p>{report}</p>
+            <div className='envelopesContainer'>
+                <div className='envBody'>
+                    <div className='wrapper'>
+                        <div className='lid one'/>
+                        <div className='lid two'/>
+                        <div className='envelope'/>
+                        <div className='letter'>
+                            <p>{report}</p>
+                        </div>
                     </div>
                 </div>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
-                        <p>{report}</p>
+                <div className='envBody'>
+                    <div className='wrapper'>
+                        <div className='lid one'/>
+                        <div className='lid two'/>
+                        <div className='envelope'/>
+                        <div className='letter'>
+                            <p>{report}</p>
+                        </div>
                     </div>
                 </div>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
-                        <p>{report}</p>
+                <div className='envBody'>
+                    <div className='wrapper'>
+                        <div className='lid one'/>
+                        <div className='lid two'/>
+                        <div className='envelope'/>
+                        <div className='letter'>
+                            <p>{report}</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            
             <footer className="footer">
                 <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
             </footer>
