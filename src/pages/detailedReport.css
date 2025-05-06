@@ -1,8 +1,6 @@
-/* formating help from chatGPT */
-.envelopesContainer{
+.envContainer{
     display:flex;
-    flex-wrap: wrap;
-    gap:10px;
+    gap:5px;
 }
 
 .envBody{
@@ -10,16 +8,13 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    gap: 10px;
 }
-
 
 .wrapper{
     height: 200px;
     width: 500px;
     background-color: #1658d2;
     position: relative;
-    display:flex;
     justify-content: center;
     align-items: center;
     z-index: 0;
