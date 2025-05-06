@@ -36,7 +36,7 @@ function App() {
     <div className='body'>
       <div className="title">
         <header>
-          <h1>Welcome to CareerHelpi!</h1>
+          <h1 style={{fontFamily: 'Callingstone', fontStyle: 'bold'}}>Welcome to CareerHelpi!</h1>
           <h4 className="tagline">Discover your future. One question at a time.</h4>
         </header>
 
@@ -69,6 +69,7 @@ function App() {
               playSound();
               navigate('/Basic Question');
             }}
+            style={{fontFamily:'callingstone'}}
           >
             Basic Questions
           </button>
@@ -82,6 +83,7 @@ function App() {
               playSound();
               navigate('/Detailed Question');
             }}
+            style={{fontFamily:'callingstone'}}
           >
             Detailed Questions
           </button>
