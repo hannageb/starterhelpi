@@ -50,6 +50,12 @@ function BasicQ() {
         setResponses({ ...responses, [event.target.name]: event.target.value });
     };
 
+    const clearResponse = () => {
+        setResponses({})
+        setProgress(0);
+        setPropName([""]);
+    }
+
     const nextPage = () => { if (page < 5) setPage(page + 1); };
     const prevPage = () => { if (page > 1) setPage(page - 1); };
 
@@ -72,8 +78,7 @@ function BasicQ() {
             <GoHomeScreen />
             <div style={{ display: 'flex', justifyContent: 'center'}} data-testId="progressBar">
                 <div style={{ textAlign: 'center' }}>
-                    <p>{progress}%</p>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%'}}>
+                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
                         <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke"}}>{progress}%</p>
                         </div>
                     </div>
@@ -232,6 +237,12 @@ function BasicQ() {
                             >
                             Submit
                         </button>
+                        <button
+                            className={`clear-button ${Object.keys(responses).length === 0 ? 'disabled' : 'enabled'}`}
+                            onClick={() => {clearResponse()}}
+                            >
+                            Clear
+                        </button>
                     </div>
                 </div>
              </div >
@@ -239,7 +250,7 @@ function BasicQ() {
             {showConfetti && <Confetti width={width} height={height} />}
         </div>
         <footer className="footer">
-            <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
+            <div><p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p></div>
         </footer>
     </div>    
     );
