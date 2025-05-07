@@ -4,43 +4,13 @@ import Form from 'react-bootstrap/Form';
 import './BasicQs.css';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
-import ProgressBar from "./progress_bar";
-
-function GoHomeScreen() {
-    const [goToHome, setGoToHome] = useState(false);
-    const [goToFAQ, setGoToFAQ] = useState(false);
-    const [goToDetailed, setGoToDetailed] = useState(false);
-    const [goToUser, setGoToUser] = useState(false);
-
-    if (goToHome) return <Navigate to="/" />;
-    if (goToFAQ) return <Navigate to="/FAQ" />;
-    if (goToUser) return <Navigate to="/User Profile"/>;
-    if (goToDetailed) return <Navigate to="/Detailed Question"/>;
-
-    return (
-        <header style={{justifyContent: 'space-between'}} data-testid="nav bar">
-            <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>BASIC QUESTIONS</h1>
-            <div className="nav-bar">
-                <button 
-                    onClick={() => setGoToHome(true)} 
-                    className="back-button" 
-                    aria-label="homePage" /* aria-label from Gemini */>
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img> 
-                </button>
-                <button onClick={() => setGoToFAQ(true)}>FAQ</button>
-                <button onClick={() => setGoToUser(true)}>User Profile</button>
-                <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
-            </div>
-            <h5 className="description" style={{color: '#E6D9D9',fontStyle:'italic',textAlign:'center'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
-        </header>
-    );
-}
+import GoHomeScreen from "./homepages/basic_home";
 
 function BasicQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
     const [showConfetti, setShowConfetti] = useState(false);
     const [width, height] = useWindowSize();
-    
+    const [progress, setProgress] = useState<number>(0);
     const [page, setPage] = useState(1);
     const [propName, setPropName] = useState([""]);
     const [goToReport, setGoToReport] = useState(false); 
@@ -77,8 +47,15 @@ function BasicQ() {
     
     return (
         <div>
-            <GoHomeScreen />
-            <ProgressBar/>
+            <GoHomeScreen data-testid='nav bar' />
+            <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
+                <div style={{ textAlign: 'center' }}>
+                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
+                        <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke"}}>{progress}%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="Questions" data-testid = 'question skeleton'>
                 {page === 1 && (
                     <>

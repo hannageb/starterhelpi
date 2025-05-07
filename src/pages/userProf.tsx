@@ -1,21 +1,5 @@
-import { useState } from 'react';
-import { Navigate } from 'react-router';
 import './userProf.css'
-
-function GoHomeScreen() {
-    const [goToHome, setGoToHome] = useState(false);
-
-    if (goToHome) return <Navigate to="/" />;
-
-    return (
-        <header className="header">
-            <h1 className="centerTitle">User Profile</h1>
-            <button onClick={() => setGoToHome(true)} className="back-button">
-            <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="50" height="50"></img>
-            </button>
-        </header>
-    );
-}
+import GoHomeScreen from './homepages/FAQ_user_home';
 
 function UserProf(){
     return(
