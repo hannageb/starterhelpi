@@ -19,17 +19,23 @@ if (prevKey !== null) {
 }
 
 function App() {
+  const [keySubmit, setKeySubmit] = useState<boolean>(false)
   const [key, setKey] = useState<string>(keyData);
   const navigate = useNavigate();
 
   function handleSubmit() {
     playSound();
     localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload();
+    setKeySubmit(true)
+    if(keyData!==key){
+      console.warn("Need to put an API key")
+      window.location.reload();
+    }
   }
 
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
+    setKeySubmit(false)
   }
 
   return (
@@ -47,6 +53,7 @@ function App() {
               playSound();
               navigate('/User Profile');
             }}
+            disabled={!keySubmit}
           >
             User Profile
           </button>
@@ -56,6 +63,7 @@ function App() {
               playSound();
               navigate('/FAQ');
             }}
+            disabled={!keySubmit}
           >
             FAQ
           </button>
@@ -70,6 +78,7 @@ function App() {
               navigate('/Basic Question');
             }}
             style={{fontFamily:'callingstone'}}
+            disabled={!keySubmit}
           >
             Basic Questions
           </button>
@@ -84,6 +93,7 @@ function App() {
               navigate('/Detailed Question');
             }}
             style={{fontFamily:'callingstone'}}
+            disabled={!keySubmit}
           >
             Detailed Questions
           </button>
