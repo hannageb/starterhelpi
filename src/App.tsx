@@ -19,15 +19,20 @@ if (prevKey !== null) {
 }
 
 function App() {
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const [keySubmit, setKeySubmit] = useState<boolean>(false)
   const [key, setKey] = useState<string>(keyData);
   const navigate = useNavigate();
 
   function handleSubmit() {
-    playSound();
-    localStorage.setItem(saveKeyData, JSON.stringify(key));
-    setKeySubmit(true)
-    if(keyData!==key){
+    if(key.trim() === ""){
+      setErrorMessage("Please enter API key")
+    }
+    else{
+      setErrorMessage('')
+      playSound();
+      localStorage.setItem(saveKeyData, JSON.stringify(key));
+      setKeySubmit(true)
       window.location.reload();
     }
   }
@@ -112,6 +117,10 @@ function App() {
               placeholder="Insert API Key Here"
               onChange={changeKey}
             />
+            {errorMessage && (
+              <p style={{color:'red'}}>{errorMessage}</p>
+            )}
+            
             <br />
             <div className="centered-button">
               <Button
