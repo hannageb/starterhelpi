@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import './BasicQs.css';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
+import ProgressBar from "./progress_bar";
 
 function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
@@ -39,7 +40,7 @@ function BasicQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
     const [showConfetti, setShowConfetti] = useState(false);
     const [width, height] = useWindowSize();
-    const [progress, setProgress] = useState<number>(0);
+    
     const [page, setPage] = useState(1);
     const [propName, setPropName] = useState([""]);
     const [goToReport, setGoToReport] = useState(false); 
@@ -77,14 +78,7 @@ function BasicQ() {
     return (
         <div>
             <GoHomeScreen />
-            <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
-                <div style={{ textAlign: 'center' }}>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
-                        <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke"}}>{progress}%</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ProgressBar/>
             <div className="Questions" data-testid = 'question skeleton'>
                 {page === 1 && (
                     <>

@@ -28,7 +28,6 @@ function App() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
     setKeySubmit(true)
     if(keyData!==key){
-      console.warn("Need to put an API key")
       window.location.reload();
     }
   }
