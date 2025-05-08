@@ -19,27 +19,38 @@ if (prevKey !== null) {
 }
 
 function App() {
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [popup, setPopUp] = useState<boolean>(false)
+  const [errorMessage, setErrorMessage] = useState<string>("")
   const [keySubmit, setKeySubmit] = useState<boolean>(false)
   const [key, setKey] = useState<string>(keyData);
   const navigate = useNavigate();
 
   function handleSubmit() {
     if(key.trim() === ""){
-      setErrorMessage("Please enter API key")
+      setPopUp(true);
+      setErrorMessage("Please enter an API")
+      return;
     }
     else{
-      setErrorMessage('')
+      setErrorMessage("")
       playSound();
       localStorage.setItem(saveKeyData, JSON.stringify(key));
-      setKeySubmit(true)
-      window.location.reload();
+      //setKeySubmit(true)
+      //window.location.reload();
     }
   }
 
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
+    console.log(localStorage.getItem(saveKeyData))
     setKey(event.target.value);
-    setKeySubmit(false)
+    setKeySubmit(event.target.value.trim() !== "");
+    if(event.target.value.trim()===""){
+      setPopUp(true)
+      setErrorMessage("Please enter an API key.");
+    }
+    else if(errorMessage){
+      setErrorMessage("");
+    }
   }
 
   return (
@@ -107,7 +118,15 @@ function App() {
         </div>
       </div>
 
-
+      {popup && (
+        <div className='popupOverlay'>
+          <div className='popupContent'>
+            <h2>Warning</h2>
+            <p>Please enter an API key</p>
+            <button onClick={()=>setPopUp(false)}>Ok</button>
+          </div>
+        </div>
+      )}
       <footer data-testid="footer">
         <div className="api-box">
           <Form className="api-key-form">
@@ -116,12 +135,10 @@ function App() {
               type="password"
               placeholder="Insert API Key Here"
               onChange={changeKey}
+              value={key}
             />
-            {errorMessage && (
-              <p style={{color:'red'}}>{errorMessage}</p>
-            )}
-            
             <br />
+            {errorMessage && (<div><p style={{ color: 'red' }}>{errorMessage}</p></div>)}
             <div className="centered-button">
               <Button
                 className="Submit-Button"
