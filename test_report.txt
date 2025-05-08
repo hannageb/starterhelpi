@@ -2,98 +2,76 @@
 > starter_helpi@0.1.0 test
 > react-scripts test --coverage
 
-FAIL src/tests/App.test.tsx
-  ● Testing homepage › tests if there is a button and description for the basic questions
+PASS src/tests/App.test.tsx
+  ● Console
 
-    expect(received).toEqual(expected) // deep equality
+    console.error
+      Warning: React does not recognize the `data-testId` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+          at div
+          at div
+          at App (/home/runner/work/starterhelpi/starterhelpi/src/App.tsx:28:37)
+          at Router (/home/runner/work/starterhelpi/starterhelpi/node_modules/react-router/dist/development/index.js:5869:13)
+          at MemoryRouter (/home/runner/work/starterhelpi/starterhelpi/node_modules/react-router/dist/development/index.js:5791:3)
 
-    Expected: 2
-    Received: 1
+    [0m [90m 36 |[39m     [33m<[39m[33m/[39m[33mMemoryRouter[39m[33m>[39m)[33m;[39m
+     [90m 37 |[39m     [36mconst[39m apiButton [33m=[39m screen[33m.[39mgetByRole([32m'button'[39m[33m,[39m {name[33m:[39m[32m"Submit"[39m})
+    [31m[1m>[22m[39m[90m 38 |[39m     fireEvent[33m.[39mclick(apiButton)
+     [90m    |[39m               [31m[1m^[22m[39m
+     [90m 39 |[39m     expect(screen[33m.[39mgetByPlaceholderText([32m"Insert API Key Here"[39m))[33m.[39mtoBeInTheDocument()
+     [90m 40 |[39m     expect(screen[33m.[39mgetByTestId([32m"Error-popup"[39m))[33m.[39mtoBeInTheDocument()
+     [90m 41 |[39m     expect(screen[33m.[39mgetByTestId([32m"Error-Message"[39m))[33m.[39mtoBeInTheDocument()[0m
 
-    [0m [90m 21 |[39m
-     [90m 22 |[39m     [36mconst[39m allBasic [33m=[39m screen[33m.[39mgetAllByRole([32m'button'[39m[33m,[39m {name[33m:[39m[32m"Basic Questions"[39m})
-    [31m[1m>[22m[39m[90m 23 |[39m     expect(allBasic[33m.[39mlength)[33m.[39mtoEqual([35m2[39m)
-     [90m    |[39m                             [31m[1m^[22m[39m
-     [90m 24 |[39m
-     [90m 25 |[39m     expect(screen[33m.[39mgetByTestId([32m'basicDesc'[39m))[33m.[39mtoBeInTheDocument()
-     [90m 26 |[39m   })[0m
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3757:7)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:22232:17)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26632:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:26607:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:26505:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:26473:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:26124:20)
+      at flushSyncCallbacks (node_modules/react-dom/cjs/react-dom.development.js:12042:22)
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:47:25
+      at Object.eventWrapper (node_modules/@testing-library/react/dist/pure.js:107:28)
+      at fireEvent (node_modules/@testing-library/dom/dist/events.js:12:35)
+      at Function.fireEvent.<computed> [as click] (node_modules/@testing-library/dom/dist/events.js:110:36)
+      at Function.click (node_modules/@testing-library/react/dist/fire-event.js:15:52)
+      at Object.<anonymous> (src/tests/App.test.tsx:38:15)
 
-      at Object.<anonymous> (src/tests/App.test.tsx:23:29)
+PASS src/tests/BasicQs.test.tsx
+PASS src/tests/DetailedQs.test.tsx
+------------------------|---------|----------|---------|---------|--------------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
+------------------------|---------|----------|---------|---------|--------------------------
+All files               |      16 |    36.88 |    5.16 |   21.33 |                          
+ src                    |   28.57 |    33.33 |   18.18 |   28.57 |                          
+  App.tsx               |   35.55 |    42.85 |   22.22 |   35.55 | 10-11,18-23,41-62,78-136 
+  index.tsx             |       0 |      100 |     100 |       0 | 14-36                    
+  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                     
+ src/pages              |   11.26 |    46.87 |    3.36 |   15.64 |                          
+  BasicQs.tsx           |   12.69 |    53.57 |    3.63 |   18.91 | 22,27-29,36-43,64-183    
+  DetailedQs.tsx        |      13 |    53.57 |     3.7 |   19.44 | 26-33,40,45-47,66-482    
+  basicReport.tsx       |       0 |        0 |       0 |       0 | 10-47                    
+  detailedReport.tsx    |       0 |        0 |       0 |       0 | 8-39                     
+  faq.tsx               |       0 |      100 |       0 |       0 | 5                        
+  userProf.tsx          |       0 |      100 |       0 |       0 | 5                        
+ src/pages/homepages    |   23.52 |     22.5 |       8 |   30.76 |                          
+  FAQ_user_home.tsx     |       0 |        0 |       0 |       0 | 5-12                     
+  basic_home.tsx        |   52.38 |       50 |   16.66 |   68.75 | 21-27                    
+  basic_report_home.tsx |       0 |        0 |       0 |       0 | 5-27                     
+  detailed_home.tsx     |   52.94 |       50 |      20 |   69.23 | 19-24                    
+  detailed_rep_home.tsx |       0 |        0 |       0 |       0 | 5-28                     
+------------------------|---------|----------|---------|---------|--------------------------
 
-  ● Testing homepage › tests if there is a button and description for the detailed questions
-
-    expect(received).toEqual(expected) // deep equality
-
-    Expected: 2
-    Received: 1
-
-    [0m [90m 31 |[39m     [33m<[39m[33m/[39m[33mMemoryRouter[39m[33m>[39m)[33m;[39m
-     [90m 32 |[39m     [36mconst[39m allDetailed [33m=[39m screen[33m.[39mgetAllByRole([32m'button'[39m[33m,[39m {name[33m:[39m[35m/Detailed Questions/i[39m})
-    [31m[1m>[22m[39m[90m 33 |[39m     expect(allDetailed[33m.[39mlength)[33m.[39mtoEqual([35m2[39m)
-     [90m    |[39m                                [31m[1m^[22m[39m
-     [90m 34 |[39m
-     [90m 35 |[39m     expect(screen[33m.[39mgetByTestId([32m'detailedDesc'[39m))[33m.[39mtoBeInTheDocument()
-     [90m 36 |[39m   })[0m
-
-      at Object.<anonymous> (src/tests/App.test.tsx:33:32)
-
-FAIL src/tests/BasicQs.test.tsx
-  ● testing the basic question page › see if there at least 7 questions
-
-    TestingLibraryElementError: Unable to find an element by: [data-testid="question"]
-
-    Ignored nodes: comments, script, style
-    [36m<body />[39m
-
-    [0m [90m 25 |[39m     })
-     [90m 26 |[39m     test([32m'see if there at least 7 questions'[39m[33m,[39m () [33m=>[39m {
-    [31m[1m>[22m[39m[90m 27 |[39m         [36mconst[39m numQues [33m=[39m screen[33m.[39mgetAllByTestId([32m"question"[39m)
-     [90m    |[39m                                [31m[1m^[22m[39m
-     [90m 28 |[39m         expect(numQues[33m.[39mlength)[33m.[39mtoBeGreaterThanOrEqual([35m7[39m)
-     [90m 29 |[39m     })
-     [90m 30 |[39m     test([32m'seeing if there is a progress bar'[39m[33m,[39m () [33m=>[39m {[0m
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
-      at getAllByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:109:15)
-      at Object.<anonymous> (src/tests/BasicQs.test.tsx:27:32)
-
-FAIL src/tests/DetailedQs.test.tsx
-  ● testing the detailed questions page › see if there at least 7 questions
-
-    expect(received).toBeGreaterThanOrEqual(expected)
-
-    Expected: >= 7
-    Received:    2
-
-    [0m [90m 28 |[39m         render([33m<[39m[33mDetailedQ[39m[33m/[39m[33m>[39m)
-     [90m 29 |[39m         [36mconst[39m numQues [33m=[39m screen[33m.[39mgetAllByTestId([32m"question"[39m)
-    [31m[1m>[22m[39m[90m 30 |[39m         expect(numQues[33m.[39mlength)[33m.[39mtoBeGreaterThanOrEqual([35m7[39m)
-     [90m    |[39m                                [31m[1m^[22m[39m
-     [90m 31 |[39m     })
-     [90m 32 |[39m     test([32m'seeing if there is a progress bar'[39m[33m,[39m () [33m=>[39m {
-     [90m 33 |[39m         render([33m<[39m[33mDetailedQ[39m[33m/[39m[33m>[39m)[0m
-
-      at Object.<anonymous> (src/tests/DetailedQs.test.tsx:30:32)
-
----------------------|---------|----------|---------|---------|-----------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s           
----------------------|---------|----------|---------|---------|-----------------------------
-All files            |   13.58 |    26.36 |    3.22 |   19.64 |                             
- src                 |   25.71 |    16.66 |      10 |   25.71 |                             
-  App.tsx            |    37.5 |       50 |    12.5 |    37.5 | 10-11,18,26-32,47-84        
-  index.tsx          |       0 |      100 |     100 |       0 | 14-36                       
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10                        
- src/pages           |   12.43 |    26.92 |    2.75 |   18.77 |                             
-  BasicQs.tsx        |   16.08 |    38.88 |    3.33 |   26.43 | 24-31,51,56-58,65-72,93-212 
-  DetailedQs.tsx     |   16.42 |    38.88 |    3.38 |   27.05 | 25-30,52-59,66,71-73,92-508 
-  basicReport.tsx    |       0 |        0 |       0 |       0 | 7-75                        
-  detailedReport.tsx |       0 |        0 |       0 |       0 | 7-68                        
-  faq.tsx            |       0 |        0 |       0 |       0 | 6-21                        
-  userProf.tsx       |       0 |        0 |       0 |       0 | 6-21                        
----------------------|---------|----------|---------|---------|-----------------------------
-Test Suites: 3 failed, 3 total
-Tests:       4 failed, 14 passed, 18 total
+Test Suites: 3 passed, 3 total
+Tests:       19 passed, 19 total
 Snapshots:   0 total
-Time:        4.576 s
+Time:        4.702 s
 Ran all test suites.
