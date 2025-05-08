@@ -138,7 +138,7 @@ function App() {
               value={key}
             />
             <br />
-            {errorMessage && (<div><p style={{ color: 'red' }}>{errorMessage}</p></div>)}
+            {errorMessage && (<div><p style={{ color: 'red', fontFamily:'Callingstone' }}>{errorMessage}</p></div>)}
             <div className="centered-button">
               <Button
                 className="Submit-Button"
