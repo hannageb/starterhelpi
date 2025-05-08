@@ -119,7 +119,7 @@ function App() {
       </div>
 
       {popup && (
-        <div className='popupOverlay'>
+        <div className='popupOverlay' data-testId='Error-popup'>
           <div className='popupContent'>
             <h2>Warning</h2>
             <p>Please enter an API key</p>
@@ -138,7 +138,7 @@ function App() {
               value={key}
             />
             <br />
-            {errorMessage && (<div><p style={{ color: 'red', fontFamily:'Callingstone' }}>{errorMessage}</p></div>)}
+            {errorMessage && (<div data-testId='Error-Message'><p style={{ color: 'red', fontFamily:'Callingstone' }}>{errorMessage}</p></div>)}
             <div className="centered-button">
               <Button
                 className="Submit-Button"
