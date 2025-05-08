@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from '../App';
 import { MemoryRouter } from 'react-router';
 
@@ -18,10 +18,7 @@ describe("Testing homepage", () => {
     render(<MemoryRouter>
       <App/>
     </MemoryRouter>);
-
-    const allBasic = screen.getAllByRole('button', {name:"Basic Questions"})
-    expect(allBasic.length).toEqual(2)
-
+    expect(screen.getByRole('button', {name:"Basic Questions"})).toBeInTheDocument()
     expect(screen.getByTestId('basicDesc')).toBeInTheDocument()
   })
 
@@ -29,9 +26,18 @@ describe("Testing homepage", () => {
     render(<MemoryRouter>
       <App/>
     </MemoryRouter>);
-    const allDetailed = screen.getAllByRole('button', {name:/Detailed Questions/i})
-    expect(allDetailed.length).toEqual(2)
-
+    expect(screen.getByRole('button', {name:"Detailed Questions"})).toBeInTheDocument()
     expect(screen.getByTestId('detailedDesc')).toBeInTheDocument()
+  })
+
+  test('testing if error popup shows up', () => {
+    render(<MemoryRouter>
+      <App/>
+    </MemoryRouter>);
+    const apiButton = screen.getByRole('button', {name:"Submit"})
+    fireEvent.click(apiButton)
+    expect(screen.getByPlaceholderText("Insert API Key Here")).toBeInTheDocument()
+    expect(screen.getByTestId("Error-popup")).toBeInTheDocument()
+    expect(screen.getByTestId("Error-Message")).toBeInTheDocument()
   })
 })

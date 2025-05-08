@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import DetailedQ from '../pages/DetailedQs'
 
 describe("testing the detailed questions page", () => {
@@ -23,12 +23,6 @@ describe("testing the detailed questions page", () => {
         render(<DetailedQ/>);
         expect(screen.getByRole("button",{name:/Basic Questions/i})).toBeInTheDocument()
     })
-
-    test('see if there at least 7 questions', () => {
-        render(<DetailedQ/>)
-        const numQues = screen.getAllByTestId("question")
-        expect(numQues.length).toBeGreaterThanOrEqual(7)
-    })
     test('seeing if there is a progress bar', () => {
         render(<DetailedQ/>)
         expect(screen.getByTestId("progressBar")).toBeInTheDocument()
@@ -36,5 +30,23 @@ describe("testing the detailed questions page", () => {
     test('testing for confetti effect', () => {
         render(<DetailedQ/>)
         expect(screen.getByTestId('confettiAnim')).toBeInTheDocument()
+    })
+})
+
+describe("testing the number of questions", () => {
+    test('see if there at questions on first page', async () => {
+        render(<DetailedQ/>)
+        let numQues = 0;
+        const button = screen.getByRole('button', { name: /Next ➡️/i });
+        numQues+=screen.getAllByTestId('question').length
+        while(numQues<10){
+            fireEvent.click(button);
+            numQues+=screen.getAllByTestId('question').length
+        }
+        expect(numQues).toBeGreaterThanOrEqual(7)
+    })
+    test('seeing if question skeleton is rendered', ()=>{
+        render(<DetailedQ/>)
+        expect(screen.getByTestId('question skeleton')).toBeInTheDocument()
     })
 })

@@ -4,36 +4,7 @@ import Form from 'react-bootstrap/Form';
 import './BasicQs.css';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
-
-function GoHomeScreen() {
-    const [goToHome, setGoToHome] = useState(false);
-    const [goToFAQ, setGoToFAQ] = useState(false);
-    const [goToDetailed, setGoToDetailed] = useState(false);
-    const [goToUser, setGoToUser] = useState(false);
-
-    if (goToHome) return <Navigate to="/" />;
-    if (goToFAQ) return <Navigate to="/FAQ" />;
-    if (goToUser) return <Navigate to="/User Profile"/>;
-    if (goToDetailed) return <Navigate to="/Detailed Question"/>;
-
-    return (
-        <header style={{justifyContent: 'space-between'}} data-testid="header">
-            <h1 style={{fontFamily: 'callingstone', fontSize: '35px', paddingTop: '10px'}}>BASIC QUESTIONS</h1>
-            <div className="nav-bar">
-                <button 
-                    onClick={() => setGoToHome(true)} 
-                    className="back-button" 
-                    aria-label="homePage" /* aria-label from Gemini */>
-                    <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img> 
-                </button>
-                <button onClick={() => setGoToFAQ(true)}>FAQ</button>
-                <button onClick={() => setGoToUser(true)}>User Profile</button>
-                <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
-            </div>
-            <h5 className="description" style={{color: '#E6D9D9',fontStyle:'italic',textAlign:'center'}}>Find out what field might be best for you by answering a sweet and simple questionnaire</h5>
-        </header>
-    );
-}
+import GoHomeScreen from "./homepages/basic_home";
 
 function BasicQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
@@ -76,7 +47,7 @@ function BasicQ() {
     
     return (
         <div>
-            <GoHomeScreen />
+            <GoHomeScreen data-testid='nav bar' />
             <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
@@ -85,10 +56,10 @@ function BasicQ() {
                     </div>
                 </div>
             </div>
-            <div className="Questions">
+            <div className="Questions" data-testid = 'question skeleton'>
                 {page === 1 && (
                     <>
-                        <h3 >1) I like disassembling and reassembling things</h3>
+                        <h3>1) I like disassembling and reassembling things</h3>
                         <Form.Group data-testid="question">
                             <Form.Check inline type="radio" name="I like disassembling and reassembling things" value="Strongly Agree" label="Strongly Agree" checked={responses["I like disassembling and reassembling things"] === "Strongly Agree"} onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
                             <Form.Check inline type="radio" name="I like disassembling and reassembling things" value="Agree" label="Agree" checked={responses["I like disassembling and reassembling things"] === "Agree"}onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}} />
@@ -143,7 +114,7 @@ function BasicQ() {
 
                         <h3>6) What hobbies do you find yourself doing in your freetime?</h3>
                         <Form.Group data-testid="question">
-                            <Form.Check type="checkbox" name="What hobbies do you find yourself doing in your freetime?" value="Arts" label="Arts (drawing, painting, playing music)" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
+                            <Form.Check type="checkbox" name="What hobbies do you find yourself doing in your freetime?" value="Arts" label="Arts (drawing, painting, playing music)" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}} aria-label='question'/>
                             <Form.Check type="checkbox" name="What hobbies do you find yourself doing in your freetime?" value="Building" label="Building something" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
                             <Form.Check type="checkbox" name="What hobbies do you find yourself doing in your freetime?" value="Sports" label="Playing sports" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
                             <Form.Check type="checkbox" name="What hobbies do you find yourself doing in your freetime?" value="Friends" label="Hanging out with friends" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
