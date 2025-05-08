@@ -15,7 +15,13 @@ let keyData = "";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData);
 if (prevKey !== null) {
-  keyData = JSON.parse(prevKey);
+  try{
+    keyData = JSON.parse(prevKey);
+  }
+  catch(error){
+    console.error("Error parsing the API key");
+    keyData="";
+  }
 }
 
 function App() {
@@ -47,6 +53,10 @@ function App() {
     if(event.target.value.trim()===""){
       setPopUp(true)
       setErrorMessage("Please enter an API key.");
+    }
+    else if(event.target.value.trim().length <= 5){
+      setErrorMessage("The API key should be longer than 5 characters")
+      setPopUp(true);
     }
     else if(errorMessage){
       setErrorMessage("");
