@@ -47,6 +47,14 @@ function DetailedReport(){
                     <div className='lid two'></div>
                     <div className='envelope'></div>
                     <div className='letter'>
+                        <p>{report[0]}</p>
+                    </div>
+                </div>
+                <div className='wrapper'>
+                    <div className='lid one'></div>
+                    <div className='lid two'></div>
+                    <div className='envelope'></div>
+                    <div className='letter'>
                         <p>{report[1]}</p>
                     </div>
                 </div>
@@ -56,14 +64,6 @@ function DetailedReport(){
                     <div className='envelope'></div>
                     <div className='letter'>
                         <p>{report[2]}</p>
-                    </div>
-                </div>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
-                        <p>{report[3]}</p>
                     </div>
                 </div>
             </div>

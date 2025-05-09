@@ -26,7 +26,7 @@ function BasicQ() {
             setErrorMessage("")
         }
         catch(err){
-            console.error("error updating responses")
+            console.error("error updating responses",err)
             setErrorMessage("Error updating responses")
         }
     };
@@ -43,15 +43,21 @@ function BasicQ() {
 
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
         updateResponse(event);
-        if (!propName.includes(event.target.name)) {
-            const newProgress = progress + 10 > 100 ? 100 : progress + 10;
-            setPropName([...propName, event.target.name]);
-            setProgress(newProgress);
-            if (newProgress === 100) {
-                setShowConfetti(true);
-                setTimeout(() => setShowConfetti(false), 5000);
-            }
-        }  
+        try{
+            if (!propName.includes(event.target.name)) {
+                const newProgress = progress + 10 > 100 ? 100 : progress + 10;
+                setPropName([...propName, event.target.name]);
+                setProgress(newProgress);
+                if (newProgress === 100) {
+                    setShowConfetti(true);
+                    setTimeout(() => setShowConfetti(false), 5000);
+                }
+            } 
+        }
+        catch(err){
+            console.error("error changing progress", err)
+            setErrorMessage("Error changing the progress bar")
+        }
     };
     
     return (
