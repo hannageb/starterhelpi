@@ -15,12 +15,20 @@ function BasicQ() {
     const [page, setPage] = useState(1);
     const [propName, setPropName] = useState([""]);
     const [goToReport, setGoToReport] = useState(false); 
+    const [errorMessage, setErrorMessage] = useState<string>("")
 
     if (goToReport) return <Navigate to="/Basic Report" state={{responses}}/>;
 
     /* saves responses as "Question name: answer" */
     const updateResponse = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setResponses({ ...responses, [event.target.name]: event.target.value });
+        try{
+            setResponses({ ...responses, [event.target.name]: event.target.value });
+            setErrorMessage("")
+        }
+        catch(err){
+            console.error("error updating responses")
+            setErrorMessage("Error updating responses")
+        }
     };
 
     const clearResponse = () => {
@@ -58,6 +66,7 @@ function BasicQ() {
                 </div>
             </div>
             <div className="Questions" data-testid = 'question skeleton'>
+                {errorMessage && <div className="error_message" style={{color:'red', marginBottom:'10px'}}>{errorMessage}</div>}
                 {page === 1 && (
                     <>
                         <h3>1) I like disassembling and reassembling things</h3>
