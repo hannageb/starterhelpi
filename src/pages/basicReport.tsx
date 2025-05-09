@@ -71,8 +71,18 @@ function BasicReport() {
             }
         GPTIntegration();
     }, [responses, savedKey]); 
+
+        /* loading function from  https://stackoverflow.com/questions/66136068/how-to-have-a-loading-screen-until-all-my-components-are-mounted-in-react*/
+        const [isLoading, setIsLoading] = useState(true);
+        const handleLoading = () => {
+            setIsLoading(false);
+        }
+        useEffect(() => {
+            window.addEventListener("load", handleLoading);
+            return () => window.removeEventListener("load", handleLoading);
+        }, [])
     
-    return(
+    return !isLoading? (
         <div data-testId="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
             <div>
@@ -91,7 +101,7 @@ function BasicReport() {
                 <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
             </footer>
         </div>
-    );
+    ): (<div className="loader"></div>)
 }
 
-    export default BasicReport;
+export default BasicReport;
