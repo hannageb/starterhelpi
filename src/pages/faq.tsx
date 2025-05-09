@@ -5,10 +5,6 @@ function FAQ(){
     return(
         <div>
             <GoHomeScreen></GoHomeScreen>
-            <div className="Desc">
-                <h5 style={{color: '#E6D9D9'}}>Some frequently asked questions</h5>
-            </div>
-            
             <div className='Container'>
                 <div className='FaQ'>
                     <div>

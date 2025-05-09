@@ -47,9 +47,11 @@ function DetailedQ() {
             setPropName([""]);
         }
 
+        
+
     return (
         <div>
-            <GoHomeScreen />
+            <GoHomeScreen data-testid='nav bar' />
             <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
@@ -65,14 +67,7 @@ function DetailedQ() {
                         <Form.Group data-testid="question">
                             <Form.Check type="radio" name="work-environment" onChange={(e) => { updateResponse(e); ChangeProg(e); } } id="office" label="Structured office setting" value="office" checked={responses["work-environment"] === "office"} />
                             <Form.Check type="radio" name="work-environment" onChange={(e) => { updateResponse(e); ChangeProg(e); } } id="remote" label="Flexible remote work" value="remote" checked={responses["work-environment"] === "remote"} />
-                            <Form.Check
-                                type="radio"
-                                name="work-environment"
-                                onChange={(e) => { updateResponse(e); ChangeProg(e); } }
-                                id="hybrid"
-                                label="Flexible hybrid work"
-                                value="hybrid"
-                                checked={responses["work-environment"] === "hybrid"} />
+                            <Form.Check type="radio" name="work-environment" onChange={(e) => { updateResponse(e); ChangeProg(e); } } id="hybrid" label="Flexible hybrid work" value="hybrid" checked={responses["work-environment"] === "hybrid"} />
                             <Form.Check
                                 type="radio"
                                 name="work-environment"

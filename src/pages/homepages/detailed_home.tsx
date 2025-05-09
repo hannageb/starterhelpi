@@ -23,7 +23,7 @@ function GoHomeScreen() {
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
                 <button onClick={() => setGoToBasic(true)}>Basic Questions</button>
             </div>
-            <h5 className="description" style={{ color: '#E6D9D9', fontStyle:'italic', textAlign:'center'}}> Click this button if you want a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
+            <h5 className="description" style={{ color: '#E6D9D9', fontStyle:'italic', textAlign:'center'}}> Answer these questions for a more personalized career suggestion! Instead of just a general field, you'll answer in-depth questions about your interests, skills, and work preferences to get a more specific career match tailored to you.</h5>
         </header>
     );
 }

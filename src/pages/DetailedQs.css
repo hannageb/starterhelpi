@@ -52,3 +52,47 @@
   box-shadow: 0 0 15px rgba(103, 97, 212, 0.8); 
   color: rgb(197, 198, 224);
 }
+
+submit-button {
+  background-color: gray;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-top: 20px;
+
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button.enabled {
+  background-color: #00264d;
+  cursor: pointer;
+}
+
+.submit-button.enabled:hover {
+  background-color: #001f3f;
+}
+
+.submit-button.disabled {
+  cursor: not-allowed;
+}
+
+.submit-container {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+gap: 20px;
+}
+
+.clear-button {
+background-color: gray;
+color: white;
+font-size: 18px;
+padding: 10px 20px;
+margin-top: 20px;
+
+border: none;
+border-radius: 8px;
+transition: background-color 0.3s ease-in-out;
+}

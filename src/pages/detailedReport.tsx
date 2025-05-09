@@ -10,6 +10,7 @@ function DetailedReport(){
     const [report, setReport] = useState<string[]>([""]);
     const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
     useEffect(() => {
+        console.log(responses);
         async function fetchReport() {
             const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
             const answers = Object.entries(responses).map(([key, value]) => `${key}: ${value}`).join("\n");
@@ -28,6 +29,7 @@ function DetailedReport(){
                     ],
                 });
                 setReport(response.choices[0]?.message?.content?.split('@') || ["No response"]);
+                console.log(response.choices[0]?.message?.content);
             } catch (error) {
                 console.error("Error generating report:", error);
                 setReport(["Error"]);
@@ -36,8 +38,19 @@ function DetailedReport(){
         }
     fetchReport();
 }, [responses, savedKey]);
-    return(
-        <div data-testId="resultEnvelope">
+
+    /* Loading screen */
+    const [isLoading, setIsLoading] = useState(true);
+    const handleLoading = () => {
+        setIsLoading(false);
+    }
+    setTimeout(()=>{
+        console.log("Loading...");
+        handleLoading();}, 5000);
+    
+    
+    return !isLoading? (
+        <div data-testid="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
             <h5 className="intro-text" style={{textAlign: 'center', fontSize: '20px'}}>{report[0]}</h5>
             <div className='envBody'>
@@ -70,7 +83,7 @@ function DetailedReport(){
                 <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
             </footer>
         </div>
-    );
+    ): (<div className="loader"></div>)
 }
 
 export default DetailedReport;
