@@ -3,6 +3,7 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import clickSound from './click.mp3';
+import Footer from './footer';
 
 const audio = new Audio(clickSound);
 
@@ -159,9 +160,7 @@ function App() {
             </div>
           </Form>
         </div>
-        <div className="footer">
-        <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-        </div>
+        <Footer/>
       </footer>
     </div>
   );

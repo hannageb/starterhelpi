@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { OpenAI } from "openai";
 import GoHomeScreen from './homepages/detailed_rep_home';
+import Footer from '../footer';
 
 function DetailedReport(){
     const location = useLocation();
@@ -66,9 +67,7 @@ function DetailedReport(){
                     </div>
                 </div>
             </div>
-            <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-            </footer>
+            <Footer/>
         </div>
     );
 }

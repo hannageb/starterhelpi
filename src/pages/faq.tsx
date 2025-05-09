@@ -1,5 +1,6 @@
 import './faq.css'
 import GoHomeScreen from './homepages/FAQ_user_home';
+import Footer from '../footer';
 
 function FAQ(){
     return(
@@ -23,9 +24,7 @@ function FAQ(){
                     </div>
                 </div>
             </div>
-            <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-            </footer>
+            <Footer/>
         </div>
     )
 }

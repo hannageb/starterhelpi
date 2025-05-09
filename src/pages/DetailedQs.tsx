@@ -1,5 +1,4 @@
 // Full integrated DetailedQ.tsx including report navigation and ALL questions
-
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import './DetailedQs.css';
@@ -7,6 +6,7 @@ import { Navigate } from "react-router";
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
 import GoHomeScreen from "./homepages/detailed_home";
+import Footer from "../footer";
 
 function DetailedQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
@@ -491,9 +491,7 @@ function DetailedQ() {
             <div data-testid='confettiAnim'>
                 {showConfetti && <Confetti width={width} height={height} />}
             </div>
-            <footer className="footer">
-                <div><p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p></div>
-            </footer>
+            <Footer/>
         </div>
     );
 }

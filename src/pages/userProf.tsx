@@ -1,5 +1,6 @@
 import './userProf.css'
 import GoHomeScreen from './homepages/FAQ_user_home';
+import Footer from '../footer';
 
 function UserProf(){
     return(
@@ -13,9 +14,7 @@ function UserProf(){
                 <h6>Profile</h6>
             </div>
 
-            <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-            </footer>
+            <Footer/>
         </div>
     )
 }

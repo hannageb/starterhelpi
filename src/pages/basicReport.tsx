@@ -3,6 +3,7 @@ import {useEffect, useState } from "react";
 import {useLocation} from "react-router";
 import { OpenAI } from "openai";
 import GoHomeScreen from './homepages/basic_report_home';
+import Footer from '../footer';
 
 function BasicReport() {
  // most of this code is with help from ChatGPT and the docs
@@ -59,9 +60,7 @@ function BasicReport() {
                     </div>
                 </div>
             </div>
-            <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-            </footer>
+            <Footer/>
         </div>
     );
 }
