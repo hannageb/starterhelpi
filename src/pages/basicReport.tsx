@@ -44,7 +44,6 @@ function BasicReport() {
         GPTIntegration();
     }, [responses, savedKey]); 
 
-        /* loading function from  https://stackoverflow.com/questions/66136068/how-to-have-a-loading-screen-until-all-my-components-are-mounted-in-react*/
         const [isLoading, setIsLoading] = useState(true);
         const handleLoading = () => {
             setIsLoading(false);
@@ -52,9 +51,8 @@ function BasicReport() {
         setTimeout(()=>{
             console.log("Loading...");
             handleLoading();}, 3000);
-    
     return !isLoading? (
-        <div data-testId="resultEnvelope">
+        <div data-testid="resultEnvelope">
             <div><GoHomeScreen data-testid="nav bar"></GoHomeScreen></div>
             <div>
                 <div className='envBody'>
