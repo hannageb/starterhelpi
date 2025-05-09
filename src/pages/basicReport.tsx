@@ -49,10 +49,9 @@ function BasicReport() {
         const handleLoading = () => {
             setIsLoading(false);
         }
-        useEffect(() => {
-            window.addEventListener("load", handleLoading);
-            return () => window.removeEventListener("load", handleLoading);
-        }, [])
+        setTimeout(()=>{
+            console.log("Loading...");
+            handleLoading();}, 3000);
     
     return !isLoading? (
         <div data-testId="resultEnvelope">
