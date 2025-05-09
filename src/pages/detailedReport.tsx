@@ -10,6 +10,7 @@ function DetailedReport(){
     const [report, setReport] = useState<string[]>([""]);
     const savedKey = JSON.parse(localStorage.getItem("MYKEY") || '""');
     useEffect(() => {
+        console.log(responses);
         async function fetchReport() {
             const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true });
             const answers = Object.entries(responses).map(([key, value]) => `${key}: ${value}`).join("\n");
@@ -28,6 +29,7 @@ function DetailedReport(){
                     ],
                 });
                 setReport(response.choices[0]?.message?.content?.split('@') || ["No response"]);
+                console.log(response.choices[0]?.message?.content);
             } catch (error) {
                 console.error("Error generating report:", error);
                 setReport(["Error"]);

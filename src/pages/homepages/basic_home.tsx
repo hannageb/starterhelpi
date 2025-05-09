@@ -23,7 +23,7 @@ function GoHomeScreen() {
                 <button onClick={() => setGoToUser(true)}>User Profile</button>
                 <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
             </div>
-            <h5 className="description" style={{ color: '#E6D9D9', fontStyle:'italic', textAlign:'center'}}> Find out what field might be best for you by answering a sweet and simple questionnaire.</h5>
+            <h5 className="description" style={{ color: '#E6D9D9', fontStyle:'italic', textAlign:'center'}}> Answer these questions to find out what field might be best! By the end, you will receive a general field that match your interests and desires.</h5>
         </header>
     );
 }
