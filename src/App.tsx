@@ -15,21 +15,52 @@ let keyData = "";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData);
 if (prevKey !== null) {
-  keyData = JSON.parse(prevKey);
+  try{
+    keyData = JSON.parse(prevKey);
+  }
+  catch(error){
+    console.error("Error parsing the API key");
+    keyData="";
+  }
 }
 
 function App() {
+  const [popup, setPopUp] = useState<boolean>(false)
+  const [errorMessage, setErrorMessage] = useState<string>("")
+  const [keySubmit, setKeySubmit] = useState<boolean>(false)
   const [key, setKey] = useState<string>(keyData);
   const navigate = useNavigate();
 
   function handleSubmit() {
-    playSound();
-    localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload();
+    if(key.trim() === ""){
+      setPopUp(true);
+      setErrorMessage("Please enter an API")
+      return;
+    }
+    else{
+      setErrorMessage("")
+      playSound();
+      localStorage.setItem(saveKeyData, JSON.stringify(key));
+      //setKeySubmit(true)
+      //window.location.reload();
+    }
   }
 
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
+    console.log(localStorage.getItem(saveKeyData))
     setKey(event.target.value);
+    setKeySubmit(event.target.value.trim() !== "");
+    if(event.target.value.trim()===""){
+      setPopUp(true)
+      setErrorMessage("Please enter an API key.");
+    }
+    else if(event.target.value.trim().length <= 5){
+      setErrorMessage("The API key should be longer than 5 characters")
+      setPopUp(true);
+    }
+    else if(errorMessage){
+      setErrorMessage("");
+    }
   }
 
   return (
@@ -47,6 +78,7 @@ function App() {
               playSound();
               navigate('/User Profile');
             }}
+            disabled={!keySubmit}
           >
             User Profile
           </button>
@@ -56,6 +88,7 @@ function App() {
               playSound();
               navigate('/FAQ');
             }}
+            disabled={!keySubmit}
           >
             FAQ
           </button>
@@ -70,6 +103,7 @@ function App() {
               navigate('/Basic Question');
             }}
             style={{fontFamily:'callingstone'}}
+            disabled={!keySubmit}
           >
             Basic Questions
           </button>
@@ -84,6 +118,7 @@ function App() {
               navigate('/Detailed Question');
             }}
             style={{fontFamily:'callingstone'}}
+            disabled={!keySubmit}
           >
             Detailed Questions
           </button>
@@ -93,7 +128,15 @@ function App() {
         </div>
       </div>
 
-
+      {popup && (
+        <div className='popupOverlay' data-testId='Error-popup'>
+          <div className='popupContent'>
+            <h2>Warning</h2>
+            <p>Please enter an API key</p>
+            <button onClick={()=>setPopUp(false)}>Ok</button>
+          </div>
+        </div>
+      )}
       <footer data-testid="footer">
         <div className="api-box">
           <Form className="api-key-form">
@@ -102,8 +145,10 @@ function App() {
               type="password"
               placeholder="Insert API Key Here"
               onChange={changeKey}
+              value={key}
             />
             <br />
+            {errorMessage && (<div data-testId='Error-Message'><p style={{ color: 'red', fontFamily:'Callingstone' }}>{errorMessage}</p></div>)}
             <div className="centered-button">
               <Button
                 className="Submit-Button"

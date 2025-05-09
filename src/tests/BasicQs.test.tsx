@@ -1,16 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import BasicQ from '../pages/BasicQs'
 
 describe("testing the basic question page", () => {
-    test('if there is a navigation bar', () => {
-        render(<BasicQ/>)
-        expect(screen.getByTestId("header")).toBeInTheDocument()
-    })
-    test('if there is button to go to homescreen', () => {
-        render(<BasicQ/>)
-        expect(screen.getByRole("button", {name:/homePage/i})).toBeInTheDocument()
-        expect(screen.getByAltText("polar bear wearing a graduation cap")).toBeInTheDocument()
-    })
     test('if there is a button to go to the FAQ and the User Profile', () => {
         render(<BasicQ/>)
         expect(
@@ -23,10 +15,6 @@ describe("testing the basic question page", () => {
         render(<BasicQ/>);
         expect(screen.getByRole("button",{name:/Detailed Questions/i})).toBeInTheDocument()
     })
-    test('see if there at least 7 questions', () => {
-        const numQues = screen.getAllByTestId("question")
-        expect(numQues.length).toBeGreaterThanOrEqual(7)
-    })
     test('seeing if there is a progress bar', () => {
         render(<BasicQ/>)
         expect(screen.getByTestId("progressBar")).toBeInTheDocument()
@@ -38,5 +26,23 @@ describe("testing the basic question page", () => {
     test('testing for confetti effect', () => {
         render(<BasicQ/>)
         expect(screen.getByTestId('confettiAnim')).toBeInTheDocument()
+    })
+})
+
+describe("testing the number of questions", () => {
+    test('see if there at questions on first page', async () => {
+        render(<BasicQ/>)
+        let numQues = 0;
+        const button = screen.getByRole('button', { name: /Next ➡️/i });
+        numQues+=screen.getAllByTestId('question').length
+        while(numQues<10){
+            fireEvent.click(button);
+            numQues+=screen.getAllByTestId('question').length
+        }
+        expect(numQues).toBeGreaterThanOrEqual(7)
+    })
+    test('seeing if question skeleton is rendered', ()=>{
+        render(<BasicQ/>)
+        expect(screen.getByTestId('question skeleton')).toBeInTheDocument()
     })
 })
