@@ -52,12 +52,12 @@ function App() {
     setKey(event.target.value);
     setKeySubmit(event.target.value.trim() !== "");
     if(event.target.value.trim()===""){
-      setPopUp(true)
+      //setPopUp(true)
       setErrorMessage("Please enter an API key.");
     }
     else if(event.target.value.trim().length <= 5){
       setErrorMessage("The API key should be longer than 5 characters")
-      setPopUp(true);
+      //setPopUp(true);
     }
     else if(errorMessage){
       setErrorMessage("");
