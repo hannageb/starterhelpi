@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { OpenAI } from "openai";
 import GoHomeScreen from './homepages/detailed_rep_home';
+import Footer from '../footer';
 
 function DetailedReport(){
     const location = useLocation();
@@ -59,6 +60,14 @@ function DetailedReport(){
                     <div className='lid two'></div>
                     <div className='envelope'></div>
                     <div className='letter'>
+                        <p>{report[0]}</p>
+                    </div>
+                </div>
+                <div className='wrapper'>
+                    <div className='lid one'></div>
+                    <div className='lid two'></div>
+                    <div className='envelope'></div>
+                    <div className='letter'>
                         <p>{report[1]}</p>
                     </div>
                 </div>
@@ -70,18 +79,8 @@ function DetailedReport(){
                         <p>{report[2]}</p>
                     </div>
                 </div>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
-                        <p>{report[3]}</p>
-                    </div>
-                </div>
             </div>
-            <footer className="footer">
-                <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-            </footer>
+            <Footer/>
         </div>
     ): (<div className="loader"></div>)
 }

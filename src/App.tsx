@@ -3,6 +3,7 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import clickSound from './click.mp3';
+import Footer from './footer';
 
 const audio = new Audio(clickSound);
 
@@ -51,12 +52,10 @@ function App() {
     setKey(event.target.value);
     setKeySubmit(event.target.value.trim() !== "");
     if(event.target.value.trim()===""){
-      setPopUp(true)
       setErrorMessage("Please enter an API key.");
     }
     else if(event.target.value.trim().length <= 5){
       setErrorMessage("The API key should be longer than 5 characters")
-      setPopUp(true);
     }
     else if(errorMessage){
       setErrorMessage("");
@@ -159,9 +158,7 @@ function App() {
             </div>
           </Form>
         </div>
-        <div className="footer">
-        <p>Made with 💛 by Luc, Hanna & Isha — CareerHelpi 2025</p>
-        </div>
+        <Footer/>
       </footer>
     </div>
   );
