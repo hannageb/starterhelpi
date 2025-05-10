@@ -6,6 +6,7 @@ import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size'; 
 import GoHomeScreen from "./homepages/basic_home";
 import Footer from "../footer";
+import questions from "./BasicQuestion";
 
 function BasicQ() {
     const [responses, setResponses] = useState<{ [key: string]: string }>({});
