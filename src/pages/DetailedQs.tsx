@@ -24,15 +24,22 @@ function DetailedQ() {
     const prevPage = () => { if (page > 1) setPage(page - 1); };
 
     const ChangeProg = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (propName.indexOf(event.target.name) === -1) {
-            const newProgress = progress + 10 > 100 ? 100 : progress + 10;
-            setPropName([...propName, event.target.name]);
-            setProgress(newProgress);
+        updateResponse(event)
+        try{
+            if (propName.indexOf(event.target.name) === -1) {
+                const newProgress = progress + 10 > 100 ? 100 : progress + 10;
+                setPropName([...propName, event.target.name]);
+                setProgress(newProgress);
 
-            if (newProgress === 100) {
-                setShowConfetti(true);
-                setTimeout(() => setShowConfetti(false), 5000);
+                if (newProgress === 100) {
+                    setShowConfetti(true);
+                    setTimeout(() => setShowConfetti(false), 5000);
+                }
             }
+        }
+        catch(err){
+            console.error("error changing progress", err)
+            setErrorMessage("Error changing the progress bar")
         }
     };
 
