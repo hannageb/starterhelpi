@@ -82,8 +82,8 @@ function BasicReport() {
                     </div>
                 </div>
             </div>
-            <div className="buttons-under-envelope">
-                <button onClick={() => setGoToHome(true)} style={{justifyContent: 'center'}}>Return Home</button>
+            <div className="buttons-under-envelope" style={{ display: "flex", justifyContent: "center", marginTop: "5px", gap: '30px' }}>
+                <button onClick={() => setGoToHome(true)}>Return Home</button>
                 <button onClick={() => {downloadPDF()}}>Download Results</button>
             </div>
             <Footer />
