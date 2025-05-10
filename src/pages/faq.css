@@ -1,21 +1,3 @@
-.centerTitle { /*from Gemini; flex-grow: makes the div take up the available space while being in the center, this will push
-    the button to the right*/
-    flex-grow: 1;
-    text-align: center;
-}
-
-.header{
-    width: 100%;
-}
-
-.home-button{
-    float: left;
-}
-.Desc{
-    text-align: center;
-    font-style: italic;
-}
-
 .Container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(100px,1fr));

@@ -1,15 +1,3 @@
-.header{
-  display: flex;
-  align-items: center;
-  background-color: #0a3a6a;
-  color: goldenrod;
-}
-.centerTitle { /*from Gemini; flex-grow: makes the div take up the available space while being in the center, this will push
-  the button to the right*/
-  flex-grow: 1;
-  text-align: center;
-}
-
 .submit-button {
   background-color: gray;
   color: white;
@@ -52,23 +40,59 @@
   border: none;
   border-radius: 10px;
   font-weight: 600;
-  background-image: radial-gradient(rgb(237, 174, 12), rgb(246, 218, 134));
-  color: #0a3a6a;
+  background-image: radial-gradient(rgb(109, 175, 237), rgb(88, 83, 235));
+  color: rgb(223, 225, 255);
   transition: all 0.2s ease;
   box-shadow: none; 
 }
 
 .home-button-box button:hover {
-  background-image: radial-gradient(rgb(202, 145, 1), rgb(250, 195, 32));
+  background-image: radial-gradient(rgb(90, 146, 199), rgb(86, 82, 197));
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); 
+  box-shadow: 0 0 15px rgba(103, 97, 212, 0.8); 
+  color: rgb(197, 198, 224);
 }
 
-.footer {
-  width: 100%;
-  text-align: center;
-  background-color: rgba(10, 58, 106, 0.9);
+submit-button {
+  background-color: gray;
   color: white;
-  font-size: 0.9rem;
-  position: sticky;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-top: 20px;
+
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button.enabled {
+  background-color: #00264d;
+  cursor: pointer;
+}
+
+.submit-button.enabled:hover {
+  background-color: #001f3f;
+}
+
+.submit-button.disabled {
+  cursor: not-allowed;
+}
+
+.submit-container {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+gap: 20px;
+}
+
+.clear-button {
+background-color: gray;
+color: white;
+font-size: 18px;
+padding: 10px 20px;
+margin-top: 20px;
+
+border: none;
+border-radius: 8px;
+transition: background-color 0.3s ease-in-out;
 }

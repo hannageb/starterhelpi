@@ -9,7 +9,7 @@ import BasicReport from './pages/basicReport';
 import FAQ from './pages/faq';
 import UserProf from './pages/userProf';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

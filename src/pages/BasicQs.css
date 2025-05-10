@@ -1,20 +1,14 @@
-body {
-  margin: 0;
-  height: 100vh;
-  background-image: linear-gradient(to bottom right, #0a3a6a, goldenrod);
-  background-color: rgb(147, 177, 201);
-  background-size: cover;
-}
-
-.centerTitle { /*from Gemini; flex-grow: makes the div take up the available space while being in the center, this will push
-    the button to the right*/
-    text-align: center;
-}
-
-.Desc{
-    text-align: center;
-    font-style: italic;
-
+.Questions {
+  padding: 4%;
+  width: 60%;
+  margin: auto;
+  height: 70%;
+  background-color: rgba(10, 58, 106, 0.4); 
+  border-radius: 25px;
+  overflow-wrap: break-word;
+  color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  
 }
 
 .responses{
@@ -28,28 +22,27 @@ body {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 
 }
-.left-nav{
-    background-color:#0a3a6a;
-    align-items: left;
+
+
+.home-button-box button {
+  font-size: 18px;
+  padding: 12px 24px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  background-image: radial-gradient(rgb(109, 175, 237), rgb(88, 83, 235));
+  color: rgb(223, 225, 255);
+  transition: all 0.2s ease;
+  box-shadow: none; 
 }
 
-
-.right-nav{
-  background-color:#0a3a6a;
-  float: right;
+.home-button-box button:hover {
+  background-image: radial-gradient(rgb(90, 146, 199), rgb(86, 82, 197));
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(103, 97, 212, 0.8); 
+  color: rgb(197, 198, 224);
 }
-
-.Questions {
-  padding: 2%;
-  width: 60%;
-  margin: 2% auto;
-  background-color: rgba(10, 58, 106, 0.4); 
-  border-radius: 25px;
-  overflow-wrap: break-word;
-  color: white;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-}
-
 
 .submit-button {
     background-color: gray;
@@ -76,16 +69,20 @@ body {
     cursor: not-allowed;
   }
 
-.footer {
-  width: 100%;
-  text-align: center;
-  background-color: rgba(10, 58, 106, 0.9);
-  color: white;
-  font-size: 0.9rem;
-  position: fixed;
-}
 .submit-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  gap: 20px;
+}
+
+.clear-button {
+  background-color: gray;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
 }
