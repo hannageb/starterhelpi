@@ -129,7 +129,7 @@ function App() {
       </div>
 
       {popup && (
-        <div className='popupOverlay' data-testId='Error-popup'>
+        <div className='popupOverlay' data-testid='Error-popup'>
           <div className='popupContent'>
             <h2>Warning</h2>
             <p>Please enter an API key</p>
@@ -143,7 +143,6 @@ function App() {
             <Form.Label>API Key:</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Insert API Key Here"
               onChange={changeKey}
               value={key}
             />
