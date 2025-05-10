@@ -62,7 +62,9 @@ function BasicReport() {
     * code from jsPDF documentation and https://stackoverflow.com/questions/24272058/word-wrap-in-generated-pdf-using-jspdf 
     */
     const doc = new jsPDF();
-    const splitReport = doc.splitTextToSize(JSON.stringify(report), 180) // to break-word and prevent text from going off page
+    const joinedReport = report.join('\n')
+    const splitReport = doc.splitTextToSize(joinedReport, 180) // to break-word and prevent text from going off page
+
     const downloadPDF = (() => { 
         doc.text(splitReport, 10, 10); // text on the doc and size
         doc.save("CareerHelpi-Results.pdf");} // title of doc
