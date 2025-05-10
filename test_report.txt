@@ -9,7 +9,7 @@ PASS src/tests/App.test.tsx
       Warning: React does not recognize the `data-testId` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
           at div
           at div
-          at App (/home/runner/work/starterhelpi/starterhelpi/src/App.tsx:28:37)
+          at App (/home/runner/work/starterhelpi/starterhelpi/src/App.tsx:29:37)
           at Router (/home/runner/work/starterhelpi/starterhelpi/node_modules/react-router/dist/development/index.js:5869:13)
           at MemoryRouter (/home/runner/work/starterhelpi/starterhelpi/node_modules/react-router/dist/development/index.js:5791:3)
 
@@ -45,33 +45,37 @@ PASS src/tests/App.test.tsx
       at Function.click (node_modules/@testing-library/react/dist/fire-event.js:15:52)
       at Object.<anonymous> (src/tests/App.test.tsx:38:15)
 
-PASS src/tests/BasicQs.test.tsx
 PASS src/tests/DetailedQs.test.tsx
+PASS src/tests/BasicQs.test.tsx
 ------------------------|---------|----------|---------|---------|--------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 ------------------------|---------|----------|---------|---------|--------------------------
-All files               |   15.13 |    35.48 |    5.06 |   19.87 |                          
- src                    |   28.57 |    33.33 |   18.18 |   28.57 |                          
-  App.tsx               |   35.55 |    42.85 |   22.22 |   35.55 | 10-11,18-23,41-62,78-136 
+All files               |   15.63 |    35.93 |    6.83 |    20.3 |                          
+ src                    |    30.9 |    33.33 |      25 |    30.9 |                          
+  App.tsx               |    37.2 |    42.85 |   22.22 |    37.2 | 11-12,19-24,42-61,77-135 
+  footer.tsx            |     100 |      100 |     100 |     100 |                          
   index.tsx             |       0 |      100 |     100 |       0 | 14-36                    
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                     
- src/pages              |    10.7 |    44.11 |    3.25 |   14.43 |                          
-  BasicQs.tsx           |   12.69 |    53.57 |    3.63 |   18.91 | 22,27-29,36-43,64-183    
-  DetailedQs.tsx        |      13 |    53.57 |     3.7 |   19.44 | 26-33,40,45-47,68-477    
-  basicReport.tsx       |       0 |        0 |       0 |       0 | 10-56                    
-  detailedReport.tsx    |       0 |        0 |       0 |       0 | 8-52                     
-  faq.tsx               |       0 |      100 |       0 |       0 | 5                        
-  userProf.tsx          |       0 |      100 |       0 |       0 | 5                        
+ src/pages              |   26.15 |       15 |   14.28 |   25.86 |                          
+  BasicQs.tsx           |    42.5 |    21.42 |   28.57 |   44.11 | 24-30,36-38,45-59        
+  DetailedQs.tsx        |    42.5 |    21.42 |   28.57 |   44.11 | 27-42,48-54,60-62        
+  basicReport.tsx       |       0 |        0 |       0 |       0 | 11-57                    
+  detailedReport.tsx    |       0 |        0 |       0 |       0 | 9-53                     
+  faq.tsx               |       0 |      100 |       0 |       0 | 6                        
+  userProf.tsx          |       0 |      100 |       0 |       0 | 6                        
  src/pages/homepages    |   22.22 |    21.05 |    8.33 |   29.03 |                          
   FAQ_user_home.tsx     |       0 |        0 |       0 |       0 | 5-12                     
   basic_home.tsx        |   52.94 |       50 |      20 |   69.23 | 19-24                    
   basic_report_home.tsx |       0 |        0 |       0 |       0 | 5-27                     
   detailed_home.tsx     |   52.94 |       50 |      20 |   69.23 | 19-24                    
   detailed_rep_home.tsx |       0 |        0 |       0 |       0 | 5-28                     
+ src/pages/questions    |    1.06 |    81.25 |    2.06 |    2.06 |                          
+  BasicQuestion.tsx     |    1.05 |    81.25 |    2.04 |    2.04 | 36-155                   
+  DetailedQuestions.tsx |    1.07 |    81.25 |    2.08 |    2.08 | 36-452                   
 ------------------------|---------|----------|---------|---------|--------------------------
 
 Test Suites: 3 passed, 3 total
 Tests:       19 passed, 19 total
 Snapshots:   0 total
-Time:        4.837 s
+Time:        4.725 s
 Ran all test suites.
