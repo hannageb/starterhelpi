@@ -42,7 +42,7 @@
 .envelope{
     position:absolute;
     height:100%;
-    width:100%;
+    width:90%;
     top:0;
     left:0;
     border-top: 300px solid transparent;
@@ -55,7 +55,7 @@
 .lid{
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 90%;
     top: 0;
     left: 0;
     border-right: 375px solid transparent; 
@@ -92,4 +92,49 @@
 .wrapper:hover .letter{
     transform: translateY(-600px);
     transition-delay: 0.5s;
+}
+
+.loader {
+    border: 16px solid #5c59e4; /* Light grey */
+    border-top: 16px solid #52ace7; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+    
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+
+.intro-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    width: 60%;
+    margin-top: 2%;
+    background-color: rgba(10, 58, 106, 0.4); 
+    border-radius: 25px;
+    overflow-wrap: break-word;
+    color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }

@@ -62,9 +62,11 @@ function DetailedQ() {
             setPropName([""]);
         }
 
+        
+
     return (
         <div>
-            <GoHomeScreen />
+            <GoHomeScreen data-testid='nav bar' />
             <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
                 <div style={{ textAlign: 'center' }}>
                     <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
