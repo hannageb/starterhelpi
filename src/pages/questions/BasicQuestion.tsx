@@ -1,5 +1,4 @@
 import React from 'react'
-import './BasicQuestion.css'
 import { Form } from 'react-bootstrap';
 
 interface quesProps{
@@ -15,7 +14,7 @@ interface quesProps{
     setGoToReport: (value: boolean) => void
 }
 
-function questions({
+function Questions({
     errorMessage,
     page,
     responses,
@@ -163,4 +162,4 @@ function questions({
     );
 }
 
-export default questions
+export default Questions
