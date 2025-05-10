@@ -1,4 +1,4 @@
-.envBody{
+.detailedEnvBody{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,10 +8,9 @@
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    gap: 10px;
 }
 
-.wrapper{
+.detailedWrapper{
     height: 400px;
     width: 300px;
     background-color: #1658d2;
@@ -22,25 +21,24 @@
     z-index: 0;
 }
 
-.letter{
+.detailedLetter{
     position: absolute;
     top:0;
     width:90%;
     height: 90%;
     background-color: white;
     border-radius: 15px;
-    z-index:2;
-    transition: transform 0.25s ease-in-out;
+    z-index:2
 }
 
-.letter p{
+.detailedLetter p{
     text-align: center;
-    font-size: 18px;
+    font-size: 12px;
     margin-top: 30px;
     color: #3B4049;
 }
 
-.envelope{
+.detailedEnvelope{
     position:absolute;
     height:100%;
     width:100%;
@@ -80,17 +78,17 @@
     transition-delay: 0.5s;
 }
 
-.wrapper:hover .lid.one{
+.detailedWrapper:hover .lid.one{
     transform: rotateX(90deg);
     transition-delay: 0s;
 }
 
-.wrapper:hover .lid.two{
+.detailedWrapper:hover .lid.two{
     transform: rotateX(180deg);
     transition-delay: 0.25s;
 }
 
-.wrapper:hover .letter{
+.detailedWrapper:hover .detailedLetter{
     transform: translateY(-300px);
     transition-delay: 0.5s;
 }

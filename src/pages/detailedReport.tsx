@@ -70,28 +70,28 @@ function DetailedReport(){
         <div data-testid="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
             <h5 className="intro-text" style={{textAlign: 'center', fontSize: '20px'}}>{report[0]}</h5>
-            <div className='envBody'>
-                <div className='wrapper'>
+            <div className='detailedEnvBody'>
+                <div className='detailedWrapper'>
                     <div className='lid one'></div>
                     <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
+                    <div className='detailedEnvelope'></div>
+                    <div className='detailedLetter'>
                         <p>{report[1]}</p>
                     </div>
                 </div>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
+                <div className='detailedWrapper'>
+                    <div className='lid one Detailed'></div>
+                    <div className='lid two Detailed'></div>
+                    <div className='detailedEnvelope'></div>
+                    <div className='detailedLetter'>
                         <p>{report[2]}</p>
                     </div>
                 </div>
-                <div className='wrapper'>
-                    <div className='lid one'></div>
-                    <div className='lid two'></div>
-                    <div className='envelope'></div>
-                    <div className='letter'>
+                <div className='detailedWrapper'>
+                    <div className='lid one Detailed'></div>
+                    <div className='lid two Detailed'></div>
+                    <div className='detailedEnvelope'></div>
+                    <div className='detailedLetter'>
                         <p>{report[3]}</p>
                     </div>
                 </div>
