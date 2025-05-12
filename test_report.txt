@@ -358,8 +358,8 @@ FAIL src/tests/App.test.tsx
       at getByPlaceholderText (node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
       at Object.<anonymous> (src/tests/App.test.tsx:39:19)
 
-PASS src/tests/BasicQs.test.tsx
 PASS src/tests/DetailedQs.test.tsx
+PASS src/tests/BasicQs.test.tsx
 ------------------------|---------|----------|---------|---------|--------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 ------------------------|---------|----------|---------|---------|--------------------------
@@ -377,7 +377,7 @@ All files               |   14.91 |    34.84 |    6.58 |   19.25 |
   faq.tsx               |       0 |      100 |       0 |       0 | 6                        
   userProf.tsx          |       0 |      100 |       0 |       0 | 6                        
  src/pages/homepages    |   22.22 |    21.05 |    8.33 |   29.03 |                          
-  FAQ_user_home.tsx     |       0 |        0 |       0 |       0 | 5-12                     
+  FAQ_user_home.tsx     |       0 |        0 |       0 |       0 | 5-13                     
   basic_home.tsx        |   52.94 |       50 |      20 |   69.23 | 19-24                    
   basic_report_home.tsx |       0 |        0 |       0 |       0 | 5-27                     
   detailed_home.tsx     |   52.94 |       50 |      20 |   69.23 | 19-24                    
@@ -390,5 +390,5 @@ All files               |   14.91 |    34.84 |    6.58 |   19.25 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       2 failed, 17 passed, 19 total
 Snapshots:   0 total
-Time:        4.866 s
+Time:        4.783 s
 Ran all test suites.
