@@ -42,7 +42,7 @@
   height: 20px;
   transition: width 0.3s ease-in-out;
   border-radius: 30px; 
-  background-image: url("/public/ice.jpg");
+  background-image: URL("../../public/ice.jpg");
 }
 
 .home-button-box button {
