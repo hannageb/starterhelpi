@@ -152,8 +152,7 @@ function Questions({
                     </button>
                     <button
                         className={`clear-button ${Object.keys(responses).length === 0 ? 'disabled' : 'enabled'}`}
-                        onClick={() => {clearResponse()}}
-                        >
+                        onClick={() => {clearResponse()}}>
                         Clear
                     </button>
                 </div>

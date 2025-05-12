@@ -36,6 +36,7 @@ function BasicQ() {
         setResponses({})
         setProgress(0);
         setPropName([""]);
+        setPage(1);
     }
 
     const nextPage = () => { if (page < 5) setPage(page + 1); };
