@@ -67,7 +67,7 @@ function App() {
       <div className="title">
         <header>
           <h1 style={{fontFamily: 'Callingstone', fontStyle: 'bold'}}>Welcome to CareerHelpi!</h1>
-          <h4 className="tagline">Discover your future. One question at a time.</h4><h4>Please enter your API key in the footer to begin.</h4>
+          <div className="tagline" style={{fontSize: '12px'}}><h4>Discover your future. One question at a time.</h4><h4>Please enter your API key in the footer to begin.</h4></div>
         </header>
 
         <div className="nav">
