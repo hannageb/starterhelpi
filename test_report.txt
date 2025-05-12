@@ -73,6 +73,9 @@ FAIL src/tests/App.test.tsx
               [36m>[39m
                 [0mDiscover your future. One question at a time.[0m
               [36m</h4>[39m
+              [36m<h4>[39m
+                [0mPlease enter your API key in the footer to begin.[0m
+              [36m</h4>[39m
             [36m</header>[39m
             [36m<div[39m
               [33mclass[39m=[32m"nav"[39m
@@ -210,6 +213,9 @@ FAIL src/tests/App.test.tsx
                 [33mclass[39m=[32m"tagline"[39m
               [36m>[39m
                 [0mDiscover your future. One question at a time.[0m
+              [36m</h4>[39m
+              [36m<h4>[39m
+                [0mPlease enter your API key in the footer to begin.[0m
               [36m</h4>[39m
             [36m</header>[39m
             [36m<div[39m
@@ -384,5 +390,5 @@ All files               |   14.91 |    34.84 |    6.58 |   19.25 |
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       2 failed, 17 passed, 19 total
 Snapshots:   0 total
-Time:        4.82 s
+Time:        4.866 s
 Ran all test suites.
