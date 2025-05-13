@@ -8,7 +8,7 @@ import Footer from "../footer";
 import Questions from "./questions/BasicQuestion";
 
 function BasicQ() {
-    const [responses, setResponses] = useState<{ [key: string]: string }>({});
+    const [responses, setResponses] = useState<{ [key: string]: string | string[] }>({});
     const [showConfetti, setShowConfetti] = useState(false);
     const [width, height] = useWindowSize();
     const [progress, setProgress] = useState<number>(0);
@@ -30,6 +30,22 @@ function BasicQ() {
             setErrorMessage("Error updating responses")
         }
     };
+
+    const updateCheckboxResponse = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value, checked } = event.target;
+    
+        setResponses(prev => {
+            const prevValues = Array.isArray(prev[name]) ? [...prev[name] as string[]] : [];
+            return {
+                ...prev,
+                [name]: checked
+                    ? [...prevValues, value]
+                    : prevValues.filter(v => v !== value)
+            };
+        });
+        setErrorMessage("");
+    };
+    
 
     const clearResponse = () => {
         /* clears the responses, progress bar, and if the question has been answered */
@@ -72,6 +88,7 @@ function BasicQ() {
                 </div>
             </div>
             <Questions
+                updateCheckboxResponse={updateCheckboxResponse}
                 errorMessage={errorMessage}
                 page={page}
                 responses={responses}

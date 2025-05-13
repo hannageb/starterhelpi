@@ -4,7 +4,8 @@ import { Form } from 'react-bootstrap';
 interface quesProps{
     errorMessage: string,
     page: number,
-    responses: { [key: string]: string },
+    responses: { [key: string]: string | string[] },
+    updateCheckboxResponse: (event: React.ChangeEvent<HTMLInputElement>) => void,
     updateResponse: (event: React.ChangeEvent<HTMLInputElement>) => void,
     ChangeProg: (event: React.ChangeEvent<HTMLInputElement>) => void,
     nextPage: () => void,
@@ -19,6 +20,7 @@ function Questions({
     page,
     responses,
     updateResponse,
+    updateCheckboxResponse,
     ChangeProg,
     nextPage,
     prevPage,
@@ -64,11 +66,11 @@ function Questions({
 
                     <h3 >4) What subjects do you enjoy?</h3>
                     <Form.Group data-testid="question">
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Math" label="Mathematics" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Biology" label="Biology" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="History" label="History" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="English & Foreign Language" label="English & Foreign Language" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Chemistry" label="Chemistry" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Math" label="Mathematics" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Biology" label="Biology" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="History" label="History" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="English & Foreign Language" label="English & Foreign Language" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Chemistry" label="Chemistry" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
                     </Form.Group>
                 </>
             )}

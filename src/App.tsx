@@ -4,13 +4,29 @@ import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import clickSound from './click.mp3';
 import Footer from './footer';
+import Snowfall from 'react-snowfall'
 
 const audio = new Audio(clickSound);
 
 const playSound = () => {
   audio.currentTime = 0;
   audio.play();
-};
+}; 
+
+<Snowfall
+  color="white"
+  snowflakeCount={150}
+  style={{
+    position: 'fixed',
+    width: '100vw',
+    height: '100vh',
+    zIndex: 0, // keep it in the background
+    top: 0,
+    left: 0,
+    pointerEvents: 'none',
+  }}
+/>
+
 
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -64,6 +80,19 @@ function App() {
 
   return (
     <div className='body'>
+      <Snowfall
+      color="white"
+      snowflakeCount={150}
+      style={{
+        position: 'fixed',
+        width: '100vw',
+        height: '100vh',
+        zIndex: 0,
+        top: 0,
+        left: 0,
+        pointerEvents: 'none',
+      }}
+    />
       <div className="title">
         <header>
           <h1 style={{fontFamily: 'Callingstone', fontStyle: 'bold'}}>Welcome to CareerHelpi!</h1>
@@ -93,6 +122,7 @@ function App() {
           </button>
         </div>
       </div>
+
 
       <div className="home-button-wrapper">
         <div className="home-button-box">
@@ -146,7 +176,7 @@ function App() {
               value={key}
             />
             <br />
-            {errorMessage && (<div data-testId='Error-Message'><p style={{ color: 'red', fontFamily:'Callingstone' }}>{errorMessage}</p></div>)}
+            {errorMessage && (<div data-testid='Error-Message'><p style={{ color: 'red', fontFamily:'Callingstone' }}>{errorMessage}</p></div>)}
             <div className="centered-button">
               <Button
                 className="Submit-Button"
@@ -161,6 +191,8 @@ function App() {
       </footer>
     </div>
   );
-}
+} 
+
+
 
 export default App;
