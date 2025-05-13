@@ -71,21 +71,15 @@ function DetailedReport(){
             <div><GoHomeScreen></GoHomeScreen></div>
             <h5 className="intro-text" style={{textAlign: 'center', fontSize: '20px'}}>{report[0]}</h5>
             <div className='envBodyDet'>
-                <div className='gridEnv'>
-                    {[1,2,3].map((i) =>(
-                        <div className='wrapperDet'>
-                            <div className='lidDet oneDet'></div>
-                            <div className='lidDet twoDet'></div>
-                            <div className='envelopeDet'></div>
-                            <div className='letterDet'>
-                                <p>{report[i]}</p>
-                            </div>
-                        </div>
-                    ))}
+                <div className='wrapperDet'>
+                    <div className='lidDet oneDet'></div>
+                    <div className='lidDet twoDet'></div>
+                    <div className='envelopeDet'></div>
+                    <div className='letterDet'>
+                        <p>{report[1]}</p>
+                    </div>
                 </div>
-                
-                    
-                {/* <div className='wrapperDet'>
+                <div className='wrapperDet'>
                     <div className='lidDet oneDet'></div>
                     <div className='lidDet twoDet'></div>
                     <div className='envelopeDet'></div>
@@ -100,7 +94,7 @@ function DetailedReport(){
                     <div className='letterDet'>
                         <p>{report[3]}</p>
                     </div>
-                </div> */}
+                </div>
             </div>
             <div className="buttons-under-envelope" style={{ display: "flex", justifyContent: "center", marginTop: "5px", gap: '30px' }}>
                 <button onClick={() => setGoToHome(true)}>Return Home</button>

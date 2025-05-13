@@ -1,28 +1,20 @@
-.gridEnv{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    width: 100%;
-    max-width: 1200px;
-}
-
 .envBodyDet{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    height: 200vh;
+    height: 250vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
     align-items: center;
     font-family: sans-serif;
 }
 
 .wrapperDet{
     height: 300px;
-    width: 581px;
+    width: calc(50%);
     background-color: #1658d2;
     position: relative;
     display:flex;
@@ -44,8 +36,8 @@
 
 .letterDet p{
     text-align: center;
-    font-size: 30px;
-    margin-top: 2%;
+    font-size: 16px;
+    margin-top: 5%;
     color: #3B4049;
 }
 
@@ -100,13 +92,13 @@
 }
 
 .wrapperDet:hover .letterDet{
-    transform: translateY(-600px);
+    transform: translateY(-400px);
     transition-delay: 0.5s;
 }
 
 .loader {
-    border: 16px solid #5c59e4; /* Light grey */
-    border-top: 16px solid #52ace7; /* Blue */
+    border: 16px solid #5c59e4;
+    border-top: 16px solid #52ace7;
     border-radius: 50%;
     width: 120px;
     height: 120px;
