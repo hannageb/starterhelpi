@@ -1,11 +1,20 @@
+.gridEnv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
 .envBodyDet{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 300vh;
+    height: 200vh;
     width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
@@ -13,7 +22,7 @@
 
 .wrapperDet{
     height: 300px;
-    width: 750px;
+    width: 581px;
     background-color: #1658d2;
     position: relative;
     display:flex;
