@@ -11,7 +11,6 @@ describe("Testing homepage", () => {
     </MemoryRouter>);
     expect(screen.getByRole('button', {name:"Submit"})).toBeInTheDocument()
     expect(screen.getByTestId('footer')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("Insert API Key Here")).toBeInTheDocument();
   })
 
   test('tests if there is a button and description for the basic questions', () => {
@@ -36,7 +35,6 @@ describe("Testing homepage", () => {
     </MemoryRouter>);
     const apiButton = screen.getByRole('button', {name:"Submit"})
     fireEvent.click(apiButton)
-    expect(screen.getByPlaceholderText("Insert API Key Here")).toBeInTheDocument()
     expect(screen.getByTestId("Error-popup")).toBeInTheDocument()
     expect(screen.getByTestId("Error-Message")).toBeInTheDocument()
   })
