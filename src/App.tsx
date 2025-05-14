@@ -13,6 +13,7 @@ const playSound = () => {
   audio.play();
 }; 
 
+/* Snowflake animation found online: npmjs.com/package/react-snowfall */
 <Snowfall
   color="white"
   snowflakeCount={150}
@@ -20,7 +21,7 @@ const playSound = () => {
     position: 'fixed',
     width: '100vw',
     height: '100vh',
-    zIndex: 0, // keep it in the background
+    zIndex: 0, 
     top: 0,
     left: 0,
     pointerEvents: 'none',
@@ -77,7 +78,8 @@ function App() {
       setErrorMessage("");
     }
   }
-
+  
+/* Snowflake animation found online: npmjs.com/package/react-snowfall */
   return (
     <div className='body'>
       <Snowfall
@@ -96,7 +98,7 @@ function App() {
       <div className="title">
         <header>
           <h1 style={{fontFamily: 'Callingstone', fontStyle: 'bold'}}>Welcome to CareerHelpi!</h1>
-          <div className="tagline" style={{fontSize: '12px'}}><h4>Discover your future. One question at a time.</h4><h4>Please enter your API key in the footer to begin.</h4></div>
+          <h4 className="tagline">Discover your future. One question at a time.</h4><h4>Please enter your API key in the footer to begin.</h4>
         </header>
 
         <div className="nav">
