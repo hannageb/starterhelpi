@@ -53,29 +53,43 @@ function App() {
     if(key.trim() === ""){
       setPopUp(true);
       setErrorMessage("Please enter an API")
+      setKeySubmit(false)
       return;
+    }
+    else if(key.trim().length <= 5){
+      setErrorMessage("The API key should be longer than 5 characters")
+      setKeySubmit(false)
+    }
+    else if(!key.startsWith("sk-") || !key.includes("T3BlbkFJ")){
+      setErrorMessage("Please enter a valid API key")
+      setKeySubmit(false)
     }
     else{
       setErrorMessage("")
       playSound();
       localStorage.setItem(saveKeyData, JSON.stringify(key));
-      //setKeySubmit(true)
+      setKeySubmit(true)
       //window.location.reload();
     }
   }
 
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log(localStorage.getItem(saveKeyData))
     setKey(event.target.value);
-    setKeySubmit(event.target.value.trim() !== "");
     if(event.target.value.trim()===""){
       setErrorMessage("Please enter an API key.");
+      setKeySubmit(false)
     }
     else if(event.target.value.trim().length <= 5){
       setErrorMessage("The API key should be longer than 5 characters")
+      setKeySubmit(false)
     }
-    else if(errorMessage){
+    else if(!event.target.value.startsWith("sk-") || !event.target.value.includes("T3BlbkFJ")){
+      setErrorMessage("Please enter a valid API key")
+      setKeySubmit(false)
+    }
+    else {
       setErrorMessage("");
+      setKeySubmit(true);
     }
   }
   
@@ -183,6 +197,7 @@ function App() {
               <Button
                 className="Submit-Button"
                 onClick={handleSubmit}
+                disabled={!keySubmit}
               >
                 Submit
               </Button>
