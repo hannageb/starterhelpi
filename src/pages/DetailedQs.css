@@ -1,3 +1,25 @@
+
+/* for reference on how to put the "progress.jpg" into the progress bar
+*  https://texteffects.dev/posts/ice-text-effect
+*/
+
+.progress-container{
+  width: 700px;
+  border: 2px solid;
+  border-color: rgb(84, 104, 134);
+  border-Radius: 30px; 
+  margin-bottom: 2%;
+  margin-top: 4%;
+}
+
+.progress-bar{
+  height: 20px;
+  transition: width 0.3s ease-in-out;
+  border-radius: 30px; 
+  background-image: URL("../../public/ice.jpg");
+}
+
+
 .submit-button {
   background-color: gray;
   color: white;

@@ -59,7 +59,7 @@
     top: 0;
     left: 0;
     border-right: 375px solid transparent; 
-    border-bottom: 300px solid transparent;
+    border-bottom: 100px solid transparent;
     border-left: 375px solid transparent;
     transform-origin: top;
     transition: transform 0.25s ease-in-out;
@@ -90,13 +90,13 @@
 }
 
 .wrapper:hover .letter{
-    transform: translateY(-600px);
+    transform: translateY(-500px);
     transition-delay: 0.5s;
 }
 
 .loader {
-    border: 16px solid #5c59e4; /* Light grey */
-    border-top: 16px solid #52ace7; /* Blue */
+    border: 16px solid #5c59e4; 
+    border-top: 16px solid #52ace7;
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -119,7 +119,6 @@
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid #3498db;
-    -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
   }
 
