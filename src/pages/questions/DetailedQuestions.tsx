@@ -448,9 +448,8 @@ function Questions({
                         Submit
                     </button>
                     <button
-                        className={`clear-button ${Object.keys(responses).length === 0 ? 'disabled' : 'enabled'}`}
-                        onClick={() => {clearResponse()}}
-                        >
+                        className="clear-button"
+                        onClick={clearResponse} disabled={Object.keys(responses).length === 0}>
                         Clear
                     </button>
                 </div>
