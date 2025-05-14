@@ -33,26 +33,6 @@
 
 }
 
-.home-button-box button {
-  font-size: 18px;
-  padding: 12px 24px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  background-image: radial-gradient(rgb(109, 175, 237), rgb(88, 83, 235));
-  color: rgb(223, 225, 255);
-  transition: all 0.2s ease;
-  box-shadow: none; 
-}
-
-.home-button-box button:hover {
-  background-image: radial-gradient(rgb(90, 146, 199), rgb(86, 82, 197));
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(103, 97, 212, 0.8); 
-  color: rgb(197, 198, 224);
-}
-
 submit-button {
   background-color: gray;
   color: white;

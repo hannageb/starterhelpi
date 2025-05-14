@@ -101,6 +101,12 @@ button:hover{
   background-image: radial-gradient(rgb(90, 146, 199), rgb(86, 82, 197));
 }
 
+
+button:disabled{
+    background-image: radial-gradient(rgb(21, 57, 91), rgb(59, 55, 179));
+
+}
+
 .detailed-qs{
   position: fixed;
   right: 20%;
@@ -123,7 +129,7 @@ button:hover{
 }
 
 .home-button-box {
-  background-color: rgba(10, 58, 106, 0.7);
+  background-color: rgba(27, 82, 136, 0.7);
   padding: 60px 40px;
   border-radius: 35px;
   width: 400px !important;         
@@ -137,7 +143,6 @@ button:hover{
 
 }
 
-
 .button-description {
   margin-top: 15px;
   font-size: 16px;
@@ -146,10 +151,12 @@ button:hover{
   max-width: 250px;
 }
 
+
 .home-button-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 } 
+
 
 .api-box {
   background-color: rgba(10, 58, 106, 0.7);
