@@ -1,20 +1,19 @@
 .envBodyDet{
     margin: 0;
     padding: 0;
-    height: 250vh;
+    box-sizing: border-box;
+    height: 300vh;
     width: 100%;
     display: flex;
-    box-sizing: border-box;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-family: sans-serif;
 }
 
 .wrapperDet{
     height: 300px;
-    width: calc(50%);
+    width: 750px;
     background-color: #1658d2;
     position: relative;
     display:flex;
@@ -36,8 +35,8 @@
 
 .letterDet p{
     text-align: center;
-    font-size: 16px;
-    margin-top: 5%;
+    font-size: 30px;
+    margin-top: 2%;
     color: #3B4049;
 }
 
@@ -76,7 +75,7 @@
 
 .lidDet.twoDet{
     border-top: 300px solid #3760C9;
-    transform: rotateX(90deg);
+    transform: rotateX(0deg);
     z-index: 1;
     transition-delay: 0.5s;
 }
@@ -92,13 +91,13 @@
 }
 
 .wrapperDet:hover .letterDet{
-    transform: translateY(-400px);
+    transform: translateY(-500px);
     transition-delay: 0.5s;
 }
 
 .loader {
-    border: 16px solid #5c59e4;
-    border-top: 16px solid #52ace7;
+    border: 16px solid #5c59e4; /* Light grey */
+    border-top: 16px solid #52ace7; /* Blue */
     border-radius: 50%;
     width: 120px;
     height: 120px;

@@ -1,3 +1,25 @@
+
+/* for reference on how to put the "progress.jpg" into the progress bar
+*  https://texteffects.dev/posts/ice-text-effect
+*/
+
+.progress-container{
+  width: 700px;
+  border: 2px solid;
+  border-color: rgb(84, 104, 134);
+  border-Radius: 30px; 
+  margin-bottom: 2%;
+  margin-top: 4%;
+}
+
+.progress-bar{
+  height: 20px;
+  transition: width 0.3s ease-in-out;
+  border-radius: 30px; 
+  background-image: URL("../../public/ice.jpg");
+}
+
+
 .submit-button {
   background-color: gray;
   color: white;
@@ -21,6 +43,10 @@
   cursor: not-allowed;
 }
 
+button:disabled{
+    background-image: radial-gradient(rgb(21, 57, 91), rgb(59, 55, 179));
+}
+
 .Questions {
   padding: 4%;
   width: 60%;
@@ -33,26 +59,6 @@
 
 }
 
-.home-button-box button {
-  font-size: 18px;
-  padding: 12px 24px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  background-image: radial-gradient(rgb(109, 175, 237), rgb(88, 83, 235));
-  color: rgb(223, 225, 255);
-  transition: all 0.2s ease;
-  box-shadow: none; 
-}
-
-.home-button-box button:hover {
-  background-image: radial-gradient(rgb(90, 146, 199), rgb(86, 82, 197));
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(103, 97, 212, 0.8); 
-  color: rgb(197, 198, 224);
-}
-
 submit-button {
   background-color: gray;
   color: white;
@@ -63,19 +69,6 @@ submit-button {
   border: none;
   border-radius: 8px;
   transition: background-color 0.3s ease-in-out;
-}
-
-.submit-button.enabled {
-  background-color: #00264d;
-  cursor: pointer;
-}
-
-.submit-button.enabled:hover {
-  background-color: #001f3f;
-}
-
-.submit-button.disabled {
-  cursor: not-allowed;
 }
 
 .submit-container {

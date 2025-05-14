@@ -96,7 +96,7 @@ function DetailedReport(){
                     </div>
                 </div>
             </div>
-            <div className="buttons-under-envelope" style={{ display: "flex", justifyContent: "center", marginTop: "5px", gap: '30px' }}>
+            <div className="buttons-under-envelope" style={{ display: "flex", justifyContent: "center", gap: '30px' }}>
                 <button onClick={() => setGoToHome(true)}>Return Home</button>
                 <button onClick={() => {downloadPDF()}}>Download Results</button>
             </div>
