@@ -50,7 +50,7 @@ PASS src/tests/DetailedQs.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
 ------------------------|---------|----------|---------|---------|-------------------------
-All files               |   11.54 |    28.98 |    5.29 |   14.56 |                         
+All files               |   11.57 |    28.67 |    5.32 |    14.6 |                         
  src                    |    1.78 |        0 |    8.33 |    1.78 |                         
   App.tsx               |       0 |        0 |       0 |       0 | 9-167                   
   footer.tsx            |     100 |      100 |     100 |     100 |                         
@@ -69,13 +69,13 @@ All files               |   11.54 |    28.98 |    5.29 |   14.56 |
   basic_report_home.tsx |       0 |        0 |       0 |       0 | 5-27                    
   detailed_home.tsx     |   52.94 |       50 |      20 |   69.23 | 19-24                   
   detailed_rep_home.tsx |       0 |        0 |       0 |       0 | 5-28                    
- src/pages/questions    |    1.06 |    81.25 |    2.06 |    2.06 |                         
+ src/pages/questions    |    1.06 |    83.33 |    2.08 |    2.08 |                         
   BasicQuestion.tsx     |    1.05 |    81.25 |    2.04 |    2.04 | 38-157                  
-  DetailedQuestions.tsx |    1.07 |    81.25 |    2.08 |    2.08 | 36-452                  
+  DetailedQuestions.tsx |    1.08 |    85.71 |    2.12 |    2.12 | 36-446                  
 ------------------------|---------|----------|---------|---------|-------------------------
 
 Test Suites: 1 failed, 2 passed, 3 total
 Tests:       15 passed, 15 total
 Snapshots:   0 total
-Time:        4.849 s
+Time:        4.819 s
 Ran all test suites.
