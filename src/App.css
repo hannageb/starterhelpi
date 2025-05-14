@@ -331,7 +331,7 @@ header{
 body {
   margin: 0;
   height: 100vh;
-  background-image: url("/Users/ishakashif/Documents/CISC275 /starterhelpi/public/landscape.png");
+  background-image: url("/public/landscape.png");
   background-size: cover;
   background-color: rgb(147, 177, 201);
   background-size: contain;
