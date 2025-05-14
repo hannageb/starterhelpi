@@ -26,7 +26,8 @@ function BasicReport() {
         async function fetchReport(){
         const client = new OpenAI({ apiKey: savedKey, dangerouslyAllowBrowser: true })
         /** maps the questions to the answer the user provided */
-        const answers = Object.entries(responses).map(([key, value]) => `${key}: ${value}`).join("\n");
+        const answers = Object.entries(responses).map(([key, value]) => Array.isArray(value) ? `${key}: ${value.join(", ")}` : `${key}: ${value}`).join("\n");
+
         try {
         const response = await client.chat.completions.create({
                 model: "gpt-4.1",
