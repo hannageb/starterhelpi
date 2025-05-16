@@ -1110,9 +1110,9 @@ FAIL src/tests/DetailedQs.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
 ------------------------|---------|----------|---------|---------|-------------------------
-All files               |   10.99 |     27.2 |    5.59 |   13.67 |                         
- src                    |    1.53 |        0 |    9.09 |    1.53 |                         
-  App.tsx               |       0 |        0 |       0 |       0 | 9-171                   
+All files               |   10.69 |    25.69 |    5.55 |   13.18 |                         
+ src                    |    1.28 |        0 |    8.33 |    1.28 |                         
+  App.tsx               |       0 |        0 |       0 |       0 | 9-192                   
   footer.tsx            |     100 |      100 |     100 |     100 |                         
   index.tsx             |       0 |      100 |     100 |       0 | 13-34                   
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                    
@@ -1135,5 +1135,5 @@ All files               |   10.99 |     27.2 |    5.59 |   13.67 |
 Test Suites: 3 failed, 3 total
 Tests:       2 failed, 13 passed, 15 total
 Snapshots:   0 total
-Time:        5.155 s
+Time:        5.091 s
 Ran all test suites.
