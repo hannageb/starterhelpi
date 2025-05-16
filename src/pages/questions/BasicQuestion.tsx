@@ -63,27 +63,24 @@ function Questions({
                         <Form.Check inline type="radio" name="I am good at persuading others" value="Disagree" label="Disagree" checked={responses["I am good at persuading others"] === "Disagree"} onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
                         <Form.Check inline type="radio" name="I am good at persuading others" value="Strongly Disagree" label="Strongly Disagree" checked={responses["I am good at persuading others"] === "Strongly Disagree"} onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
                     </Form.Group>
-
-                    <h3 >4) What subjects do you enjoy?</h3>
+                    <h3>4) Would you consider yourself an introvert, ambivert, or extrovert?</h3>
                     <Form.Group data-testid="question">
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Math" label="Mathematics" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Biology" label="Biology" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="History" label="History" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="English & Foreign Language" label="English & Foreign Language" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Chemistry" label="Chemistry" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check inline type="radio" name="Would you consider yourself an introvert, ambivert, or extrovert?" value="Introvert" label="Introvert" checked={responses["Would you consider yourself an introvert, ambivert, or extrovert?"] === "Introvert"} onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
+                        <Form.Check inline type="radio" name="Would you consider yourself an introvert, ambivert, or extrovert?" value="Ambivert" label="Ambivert" checked={responses["Would you consider yourself an introvert, ambivert, or extrovert?"] === "Ambivert"} onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
+                        <Form.Check inline type="radio" name="Would you consider yourself an introvert, ambivert, or extrovert?" value="Extrovert" label="Extrovert" checked={responses["Would you consider yourself an introvert, ambivert, or extrovert?"] === "Extrovert"} onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
                     </Form.Group>
                 </>
             )}
 
             {page === 3 && (
                 <>
-                    <h3>5) What skills do you have?</h3>
+                    <h3>5) What subjects do you enjoy?</h3>
                     <Form.Group data-testid="question">
-                        <Form.Check type="checkbox" name="What skills do you have?" value="Communication" label="Communication" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What skills do you have?" value="Leadership" label="Leadership" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What skills do you have?" value="Problem Solving" label="Problem Solving" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What skills do you have?" value="Time Management" label="Time Management" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
-                        <Form.Check type="checkbox" name="What skills do you have?" value="Creativity" label="Creativity" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Math" label="Mathematics" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Biology" label="Biology" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="History" label="History" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="English & Foreign Language" label="English & Foreign Language" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
+                        <Form.Check type="checkbox" name="What subjects do you enjoy?" value="Chemistry" label="Chemistry" onChange={(e: React.ChangeEvent<HTMLInputElement>)=> {updateCheckboxResponse(e); ChangeProg(e)}}/>
                     </Form.Group>
 
                     <h3>6) What hobbies do you find yourself doing in your freetime?</h3>
