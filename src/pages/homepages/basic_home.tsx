@@ -5,10 +5,8 @@ function GoHomeScreen() {
     const [goToHome, setGoToHome] = useState(false);
     const [goToFAQ, setGoToFAQ] = useState(false);
     const [goToDetailed, setGoToDetailed] = useState(false);
-    const [goToUser, setGoToUser] = useState(false)
     
     if (goToFAQ) return <Navigate to="/FAQ" />;
-    if (goToUser) return <Navigate to="/User Profile"/>;
     if (goToDetailed) return <Navigate to="/Detailed Question" />;
     if (goToHome) return <Navigate to="/" />;
 
@@ -20,7 +18,6 @@ function GoHomeScreen() {
                     <img src="./cisc275-logo.png" alt="polar bear wearing a graduation cap" width="30" height="30"></img>
                 </button>
                 <button onClick={() => setGoToFAQ(true)}>FAQ</button>
-                <button onClick={() => setGoToUser(true)}>User Profile</button>
                 <button onClick={() => setGoToDetailed(true)}>Detailed Questions</button>
             </div>
             <h5 className="description" style={{ color: '#E6D9D9', fontStyle:'italic', textAlign:'center'}}> Answer these questions to find out what field might be best! By the end, you will receive a general field that match your interests and desires.</h5>

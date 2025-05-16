@@ -120,16 +120,6 @@ function App() {
             style={{ fontSize: '15px' }}
             onClick={() => {
               playSound();
-              navigate('/User Profile');
-            }}
-            disabled={!keySubmit}
-          >
-            User Profile
-          </button>
-          <button
-            style={{ fontSize: '15px' }}
-            onClick={() => {
-              playSound();
               navigate('/FAQ');
             }}
             disabled={!keySubmit}

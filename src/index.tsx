@@ -7,7 +7,6 @@ import DetailedQ from './pages/DetailedQs';
 import DetailedReport from './pages/detailedReport';
 import BasicReport from './pages/basicReport';
 import FAQ from './pages/faq';
-import UserProf from './pages/userProf';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router';
 
@@ -24,7 +23,6 @@ root.render(
       <Route path='/Detailed Report' element={<DetailedReport/>} />
       <Route path='/Basic Report' element={<BasicReport/>} />
       <Route path='/FAQ' element={<FAQ/>} />
-      <Route path='/User Profile' element={<UserProf/>} />
     </Routes>
   </HashRouter>  
   </React.StrictMode>
