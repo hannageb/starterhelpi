@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
@@ -49,6 +49,26 @@ function App() {
   const [key, setKey] = useState<string>(keyData);
   const navigate = useNavigate();
 
+  /** from chatgpt to fix the fact that the API key would already be in the input box
+   *  but it wouldn't let you submit */
+
+  useEffect(() => { // useEffect allows for better usage of non-React dependencies which we indeed are using 
+    /** all of these are the cases that an error message should occur */
+    if (key.trim() === "") {
+      setErrorMessage("Please enter an API key.");
+      setKeySubmit(false);
+    } else if (key.trim().length <= 5) {
+      setErrorMessage("The API key should be longer than 5 characters");
+      setKeySubmit(false);
+    } else if (!key.startsWith("sk-") || !key.includes("T3BlbkFJ")) { // upon a google search we saw that most OpenAI keys, if not all begin with sk- and contain "T3BlbkFJ"
+      setErrorMessage("Please enter a valid API key");
+      setKeySubmit(false);
+    } else {
+      setErrorMessage("");
+      setKeySubmit(true);
+    }
+  }, [key]);
+
   function handleSubmit() {
     if(key.trim() === ""){
       setPopUp(true);
@@ -63,7 +83,7 @@ function App() {
     else if(!key.startsWith("sk-") || !key.includes("T3BlbkFJ")){
       setErrorMessage("Please enter a valid API key")
       setKeySubmit(false)
-    }
+    } 
     else{
       setErrorMessage("")
       playSound();
@@ -74,16 +94,17 @@ function App() {
   }
 
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-    setKey(event.target.value);
-    if(event.target.value.trim()===""){
+    const newKey = event.target.value;
+    setKey(newKey);
+    if(newKey.trim() === "") {
       setErrorMessage("Please enter an API key.");
       setKeySubmit(false)
-    }
-    else if(event.target.value.trim().length <= 5){
+    } 
+    else if(newKey.trim().length <= 5){
       setErrorMessage("The API key should be longer than 5 characters")
       setKeySubmit(false)
     }
-    else if(!event.target.value.startsWith("sk-") || !event.target.value.includes("T3BlbkFJ")){
+    else if(!newKey.startsWith("sk-") || !newKey.includes("T3BlbkFJ")){
       setErrorMessage("Please enter a valid API key")
       setKeySubmit(false)
     }
@@ -92,7 +113,7 @@ function App() {
       setKeySubmit(true);
     }
   }
-  
+
 /* Snowflake animation found online: npmjs.com/package/react-snowfall */
   return (
     <div className='body'>
