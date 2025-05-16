@@ -18,7 +18,7 @@ function DetailedReport(){
     const handleLoading = () => {setIsLoading(false);}
     setTimeout(()=>{
         console.log("Loading...");
-        handleLoading();}, 5000);
+        handleLoading();}, 6000);
 
     useEffect(() => {
         console.log(responses);
@@ -69,7 +69,9 @@ function DetailedReport(){
     return !isLoading? (
         <div data-testid="resultEnvelope">
             <div><GoHomeScreen></GoHomeScreen></div>
-            <h5 className="intro-text" style={{textAlign: 'center', fontSize: '20px'}}>{report[0]}</h5>
+            <div className="intro-text">
+                <h5 style={{textAlign: 'center', fontSize: '20px', fontStyle:'italic'}}>Scroll down to see your results</h5>
+            </div>
             <div className='envBodyDet'>
                 <div className='wrapperDet'>
                     <div className='lidDet oneDet'></div>

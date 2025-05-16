@@ -74,7 +74,9 @@ function BasicReport() {
     return !isLoading? (
         <><div data-testid="resultEnvelope">
             <div><GoHomeScreen data-testid="nav bar"></GoHomeScreen></div>
-            <h5 className="intro-text" style={{ textAlign: 'center', fontSize: '20px' }}>{report[0]}</h5>
+            <div className="intro-text">
+                <h5 style={{textAlign: 'center', fontSize: '20px', fontStyle:'italic'}}>{report[0]} <br/>Scroll down to see an explanation</h5>
+            </div>
             <div className='envBody'>
                 <div className='wrapper'>
                     <div className='lid one'></div>
