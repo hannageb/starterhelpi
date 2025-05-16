@@ -51,7 +51,7 @@ button:disabled{
   padding: 4%;
   width: 60%;
   margin: auto;
-  background-color: rgba(10, 58, 106, 0.4); 
+  background-color: rgba(10, 58, 106, 0.8);
   border-radius: 25px;
   overflow-wrap: break-word;
   color: white;
