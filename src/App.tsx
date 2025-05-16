@@ -49,7 +49,8 @@ function App() {
   const [key, setKey] = useState<string>(keyData);
   const navigate = useNavigate();
 
-  /** from chatgpt to fix the fact that the API key would already be in the input box
+  /** useEffect is from ChatGPT but the if/else statements were created by us 
+   *  useEffect was used to fix the fact that the API key would already be in the input box
    *  but it wouldn't let you submit */
 
   useEffect(() => { // useEffect allows for better usage of non-React dependencies which we indeed are using 

@@ -7,8 +7,8 @@ import Footer from '../footer';
 import { jsPDF } from "jspdf";
 
 function BasicReport() {
- // most of this code is with help from ChatGPT and the docs
-    /** location and location.state access the users' responses to the questions from BasicQs.tsx */
+   // most of this code is with help from ChatGPT and the documentation
+    /** location and location.state are used to access the users' responses to the questions from BasicQs.tsx */
     const location = useLocation();
     const { responses } = location.state;
     const [report, setReport] = useState<string[]>([""]);
