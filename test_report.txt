@@ -1110,15 +1110,15 @@ FAIL src/tests/DetailedQs.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
 ------------------------|---------|----------|---------|---------|-------------------------
-All files               |   11.01 |     27.2 |    5.59 |   13.71 |                         
+All files               |   10.99 |     27.2 |    5.59 |   13.67 |                         
  src                    |    1.53 |        0 |    9.09 |    1.53 |                         
   App.tsx               |       0 |        0 |       0 |       0 | 9-171                   
   footer.tsx            |     100 |      100 |     100 |     100 |                         
   index.tsx             |       0 |      100 |     100 |       0 | 13-34                   
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                    
- src/pages              |   22.01 |       12 |   11.11 |   21.98 |                         
+ src/pages              |   21.87 |       12 |   11.11 |   21.83 |                         
   BasicQs.tsx           |    37.5 |    16.66 |      20 |   38.09 | 24-30,35-46,52-55,62-76 
-  DetailedQs.tsx        |    42.5 |    21.42 |   28.57 |   44.11 | 27-42,48-54,60-62       
+  DetailedQs.tsx        |   41.46 |    21.42 |   28.57 |   42.85 | 27-42,48-54,60-63       
   basicReport.tsx       |       0 |        0 |       0 |       0 | 12-90                   
   detailedReport.tsx    |       0 |        0 |       0 |       0 | 11-101                  
   faq.tsx               |       0 |      100 |       0 |       0 | 6                       
@@ -1135,5 +1135,5 @@ All files               |   11.01 |     27.2 |    5.59 |   13.71 |
 Test Suites: 3 failed, 3 total
 Tests:       2 failed, 13 passed, 15 total
 Snapshots:   0 total
-Time:        5.041 s
+Time:        5.021 s
 Ran all test suites.
