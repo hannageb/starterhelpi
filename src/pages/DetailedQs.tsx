@@ -69,8 +69,8 @@ function DetailedQ() {
             <GoHomeScreen data-testid='nav bar' />
             <div style={{ display: 'flex', justifyContent: 'center'}} data-testid="progressBar">
                 <div style={{ textAlign: 'center' }}>
-                    <div style={{ width: '700px', border: '2px solid', borderRadius: '30px', marginBottom: '2%', marginTop: '4%'}}>
-                        <div style={{ height: '20px', backgroundImage: "linear-gradient(rgb(40, 130, 213), rgb(73, 70, 173))", width: `${progress}%`, transition: "width 0.3s ease-in-out", borderRadius: '30px'}}><p style={{color: "whitesmoke", marginBottom: '2%'}}>{progress}%</p>
+                    <div className="progress-container">
+                        <div className='progress-bar' style={{width: `${progress}%`}}><p style={{color: 'snow', margin: '2%', justifyContent: 'center'}}>{progress}%</p>
                         </div>
                     </div>
                 </div>
