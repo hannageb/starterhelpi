@@ -60,6 +60,7 @@ function DetailedQ() {
             setResponses({})
             setProgress(0);
             setPropName([""]);
+            setPage(1);
         }
 
         
