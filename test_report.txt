@@ -617,7 +617,7 @@ FAIL src/tests/DetailedQs.test.tsx
 
       Name "":
       [36m<p[39m
-        [33mstyle[39m=[32m"color: whitesmoke; margin-bottom: 2%;"[39m
+        [33mstyle[39m=[32m"color: snow; margin: 2%; justify-content: center;"[39m
       [36m/>[39m
 
       Name "":
@@ -793,13 +793,14 @@ FAIL src/tests/DetailedQs.test.tsx
               [33mstyle[39m=[32m"text-align: center;"[39m
             [36m>[39m
               [36m<div[39m
-                [33mstyle[39m=[32m"width: 700px; border: 2px solid; border-radius: 30px; margin-bottom: 2%; margin-top: 4%;"[39m
+                [33mclass[39m=[32m"progress-container"[39m
               [36m>[39m
                 [36m<div[39m
-                  [33mstyle[39m=[32m"height: 20px; width: 0%; transition: width 0.3s ease-in-out; border-radius: 30px;"[39m
+                  [33mclass[39m=[32m"progress-bar"[39m
+                  [33mstyle[39m=[32m"width: 0%;"[39m
                 [36m>[39m
                   [36m<p[39m
-                    [33mstyle[39m=[32m"color: whitesmoke; margin-bottom: 2%;"[39m
+                    [33mstyle[39m=[32m"color: snow; margin: 2%; justify-content: center;"[39m
                   [36m>[39m
                     [0m0[0m
                     [0m%[0m
@@ -1134,5 +1135,5 @@ All files               |   10.92 |     27.2 |    5.52 |   13.63 |
 Test Suites: 3 failed, 3 total
 Tests:       2 failed, 13 passed, 15 total
 Snapshots:   0 total
-Time:        5.177 s
+Time:        4.966 s
 Ran all test suites.
