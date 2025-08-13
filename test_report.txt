@@ -45,6 +45,492 @@ FAIL src/tests/App.test.tsx
       at Object.<anonymous> (src/App.tsx:7:1)
       at Object.<anonymous> (src/tests/App.test.tsx:3:1)
 
+FAIL src/tests/BasicQs.test.tsx
+  ● testing the basic question page › if there is a button to go to the FAQ and the User Profile
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/User Profile/i`
+
+    Here are the accessible roles:
+
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mstyle[39m=[32m"justify-content: space-between;"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      heading:
+
+      Name "BASIC QUESTIONS":
+      [36m<h1[39m
+        [33mstyle[39m=[32m"font-family: callingstone; font-size: 35px; padding-top: 10px;"[39m
+      [36m/>[39m
+
+      Name "Answer these questions to find out what field might be best! By the end, you will receive a general field that match your interests and desires.":
+      [36m<h5[39m
+        [33mclass[39m=[32m"description"[39m
+        [33mstyle[39m=[32m"color: rgb(230, 217, 217); font-style: italic; text-align: center;"[39m
+      [36m/>[39m
+
+      Name "1) I like disassembling and reassembling things":
+      [36m<h3 />[39m
+
+      Name "2) I am good at collaborating with others":
+      [36m<h3 />[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "polar bear wearing a graduation cap":
+      [36m<button[39m
+        [33mclass[39m=[32m"back-button"[39m
+      [36m/>[39m
+
+      Name "FAQ":
+      [36m<button />[39m
+
+      Name "Detailed Questions":
+      [36m<button />[39m
+
+      Name "⬅️ Previous":
+      [36m<button[39m
+        [33mdisabled[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "Next ➡️":
+      [36m<button />[39m
+
+      Name "Submit":
+      [36m<button[39m
+        [33mclass[39m=[32m"submit-button disabled"[39m
+        [33mdisabled[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "Clear":
+      [36m<button[39m
+        [33mclass[39m=[32m"clear-button disabled"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      img:
+
+      Name "polar bear wearing a graduation cap":
+      [36m<img[39m
+        [33malt[39m=[32m"polar bear wearing a graduation cap"[39m
+        [33mheight[39m=[32m"30"[39m
+        [33msrc[39m=[32m"./cisc275-logo.png"[39m
+        [33mwidth[39m=[32m"30"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      paragraph:
+
+      Name "":
+      [36m<p[39m
+        [33mstyle[39m=[32m"color: snow; margin: 2%; justify-content: center;"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<p />[39m
+
+      --------------------------------------------------
+      radio:
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Strongly Agree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Agree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Disagree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Strongly Disagree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I am good at collaborating with others"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Strongly Agree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I am good at collaborating with others"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Agree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I am good at collaborating with others"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I am good at collaborating with others"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Disagree"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mname[39m=[32m"I am good at collaborating with others"[39m
+        [33mtype[39m=[32m"radio"[39m
+        [33mvalue[39m=[32m"Strongly Disagree"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      contentinfo:
+
+      Name "":
+      [36m<footer[39m
+        [33mclass[39m=[32m"footer"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<header[39m
+            [33mstyle[39m=[32m"justify-content: space-between;"[39m
+          [36m>[39m
+            [36m<h1[39m
+              [33mstyle[39m=[32m"font-family: callingstone; font-size: 35px; padding-top: 10px;"[39m
+            [36m>[39m
+              [0mBASIC QUESTIONS[0m
+            [36m</h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"nav-bar"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"back-button"[39m
+              [36m>[39m
+                [36m<img[39m
+                  [33malt[39m=[32m"polar bear wearing a graduation cap"[39m
+                  [33mheight[39m=[32m"30"[39m
+                  [33msrc[39m=[32m"./cisc275-logo.png"[39m
+                  [33mwidth[39m=[32m"30"[39m
+                [36m/>[39m
+              [36m</button>[39m
+              [36m<button>[39m
+                [0mFAQ[0m
+              [36m</button>[39m
+              [36m<button>[39m
+                [0mDetailed Questions[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<h5[39m
+              [33mclass[39m=[32m"description"[39m
+              [33mstyle[39m=[32m"color: rgb(230, 217, 217); font-style: italic; text-align: center;"[39m
+            [36m>[39m
+              [0m Answer these questions to find out what field might be best! By the end, you will receive a general field that match your interests and desires.[0m
+            [36m</h5>[39m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mdata-testid[39m=[32m"progressBar"[39m
+            [33mstyle[39m=[32m"display: flex; justify-content: center;"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"text-align: center;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"progress-container"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"progress-bar"[39m
+                  [33mstyle[39m=[32m"width: 0%;"[39m
+                [36m>[39m
+                  [36m<p[39m
+                    [33mstyle[39m=[32m"color: snow; margin: 2%; justify-content: center;"[39m
+                  [36m>[39m
+                    [0m0[0m
+                    [0m%[0m
+                  [36m</p>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"Questions"[39m
+            [33mdata-testid[39m=[32m"question skeleton"[39m
+          [36m>[39m
+            [36m<h3>[39m
+              [0m1) I like disassembling and reassembling things[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mdata-testid[39m=[32m"question"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Strongly Agree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mStrongly Agree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Agree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mAgree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mNeither agree nor Disagree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Disagree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mDisagree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Strongly Disagree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mStrongly Disagree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<h3>[39m
+              [0m2) I am good at collaborating with others[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mdata-testid[39m=[32m"question"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I am good at collaborating with others"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Strongly Agree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mStrongly Agree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I am good at collaborating with others"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Agree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mAgree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I am good at collaborating with others"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mNeither agree nor Disagree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I am good at collaborating with others"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Disagree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mDisagree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"form-check form-check-inline"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-check-input"[39m
+                  [33mname[39m=[32m"I am good at collaborating with others"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"Strongly Disagree"[39m
+                [36m/>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-check-label"[39m
+                  [33mtitle[39m=[32m""[39m
+                [36m>[39m
+                  [0mStrongly Disagree[0m
+                [36m</label>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"pagination-buttons"[39m
+              [33mstyle[39m=[32m"display: flex; justify-content: space-between; margin-top: 20px;"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mdisabled[39m=[32m""[39m
+              [36m>[39m
+                [0m⬅️ Previous[0m
+              [36m</button>[39m
+              [36m<button>[39m
+                [0mNext ➡️[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"text-align: center; margin-top: 30px;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"submit-container"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"submit-button disabled"[39m
+                  [33mdisabled[39m=[32m""[39m
+                [36m>[39m
+                  [0mSubmit[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"clear-button disabled"[39m
+                [36m>[39m
+                  [0mClear[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mdata-testid[39m=[32m"confettiAnim"[39m
+          [36m/>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"footer"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<p>[39m
+                [0mMade with 💛 by Luc, Hanna & Isha — CareerHelpi 2025[0m
+              [36m</p>[39m
+            [36m</div>[39m
+          [36m</footer>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m  9 |[39m             screen[33m.[39mgetByRole([32m"button"[39m[33m,[39m {name[33m:[39m[35m/FAQ/i[39m}) 
+     [90m 10 |[39m             [33m&&[39m 
+    [31m[1m>[22m[39m[90m 11 |[39m             screen[33m.[39mgetByRole([32m"button"[39m[33m,[39m {name[33m:[39m[35m/User Profile/i[39m})
+     [90m    |[39m                    [31m[1m^[22m[39m
+     [90m 12 |[39m         )[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 13 |[39m     })
+     [90m 14 |[39m     test([32m'if there is a button for the detailed question'[39m[33m,[39m()[33m=>[39m{[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+      at Object.<anonymous> (src/tests/BasicQs.test.tsx:11:20)
+
 FAIL src/tests/DetailedQs.test.tsx
   ● testing the detailed questions page › if there is a button to go to the FAQ and the User Profile
 
@@ -621,492 +1107,6 @@ FAIL src/tests/DetailedQs.test.tsx
       at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
       at Object.<anonymous> (src/tests/DetailedQs.test.tsx:19:20)
 
-FAIL src/tests/BasicQs.test.tsx
-  ● testing the basic question page › if there is a button to go to the FAQ and the User Profile
-
-    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/User Profile/i`
-
-    Here are the accessible roles:
-
-      banner:
-
-      Name "":
-      [36m<header[39m
-        [33mstyle[39m=[32m"justify-content: space-between;"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-      heading:
-
-      Name "BASIC QUESTIONS":
-      [36m<h1[39m
-        [33mstyle[39m=[32m"font-family: callingstone; font-size: 35px; padding-top: 10px;"[39m
-      [36m/>[39m
-
-      Name "Answer these questions to find out what field might be best! By the end, you will receive a general field that match your interests and desires.":
-      [36m<h5[39m
-        [33mclass[39m=[32m"description"[39m
-        [33mstyle[39m=[32m"color: rgb(230, 217, 217); font-style: italic; text-align: center;"[39m
-      [36m/>[39m
-
-      Name "1) I like disassembling and reassembling things":
-      [36m<h3 />[39m
-
-      Name "2) I am good at collaborating with others":
-      [36m<h3 />[39m
-
-      --------------------------------------------------
-      button:
-
-      Name "polar bear wearing a graduation cap":
-      [36m<button[39m
-        [33mclass[39m=[32m"back-button"[39m
-      [36m/>[39m
-
-      Name "FAQ":
-      [36m<button />[39m
-
-      Name "Detailed Questions":
-      [36m<button />[39m
-
-      Name "⬅️ Previous":
-      [36m<button[39m
-        [33mdisabled[39m=[32m""[39m
-      [36m/>[39m
-
-      Name "Next ➡️":
-      [36m<button />[39m
-
-      Name "Submit":
-      [36m<button[39m
-        [33mclass[39m=[32m"submit-button disabled"[39m
-        [33mdisabled[39m=[32m""[39m
-      [36m/>[39m
-
-      Name "Clear":
-      [36m<button[39m
-        [33mclass[39m=[32m"clear-button disabled"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-      img:
-
-      Name "polar bear wearing a graduation cap":
-      [36m<img[39m
-        [33malt[39m=[32m"polar bear wearing a graduation cap"[39m
-        [33mheight[39m=[32m"30"[39m
-        [33msrc[39m=[32m"./cisc275-logo.png"[39m
-        [33mwidth[39m=[32m"30"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-      paragraph:
-
-      Name "":
-      [36m<p[39m
-        [33mstyle[39m=[32m"color: snow; margin: 2%; justify-content: center;"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<p />[39m
-
-      --------------------------------------------------
-      radio:
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Strongly Agree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Agree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Disagree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Strongly Disagree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I am good at collaborating with others"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Strongly Agree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I am good at collaborating with others"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Agree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I am good at collaborating with others"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I am good at collaborating with others"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Disagree"[39m
-      [36m/>[39m
-
-      Name "":
-      [36m<input[39m
-        [33mclass[39m=[32m"form-check-input"[39m
-        [33mname[39m=[32m"I am good at collaborating with others"[39m
-        [33mtype[39m=[32m"radio"[39m
-        [33mvalue[39m=[32m"Strongly Disagree"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-      contentinfo:
-
-      Name "":
-      [36m<footer[39m
-        [33mclass[39m=[32m"footer"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-
-    Ignored nodes: comments, script, style
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<header[39m
-            [33mstyle[39m=[32m"justify-content: space-between;"[39m
-          [36m>[39m
-            [36m<h1[39m
-              [33mstyle[39m=[32m"font-family: callingstone; font-size: 35px; padding-top: 10px;"[39m
-            [36m>[39m
-              [0mBASIC QUESTIONS[0m
-            [36m</h1>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"nav-bar"[39m
-            [36m>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"back-button"[39m
-              [36m>[39m
-                [36m<img[39m
-                  [33malt[39m=[32m"polar bear wearing a graduation cap"[39m
-                  [33mheight[39m=[32m"30"[39m
-                  [33msrc[39m=[32m"./cisc275-logo.png"[39m
-                  [33mwidth[39m=[32m"30"[39m
-                [36m/>[39m
-              [36m</button>[39m
-              [36m<button>[39m
-                [0mFAQ[0m
-              [36m</button>[39m
-              [36m<button>[39m
-                [0mDetailed Questions[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<h5[39m
-              [33mclass[39m=[32m"description"[39m
-              [33mstyle[39m=[32m"color: rgb(230, 217, 217); font-style: italic; text-align: center;"[39m
-            [36m>[39m
-              [0m Answer these questions to find out what field might be best! By the end, you will receive a general field that match your interests and desires.[0m
-            [36m</h5>[39m
-          [36m</header>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"progressBar"[39m
-            [33mstyle[39m=[32m"display: flex; justify-content: center;"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mstyle[39m=[32m"text-align: center;"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"progress-container"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"progress-bar"[39m
-                  [33mstyle[39m=[32m"width: 0%;"[39m
-                [36m>[39m
-                  [36m<p[39m
-                    [33mstyle[39m=[32m"color: snow; margin: 2%; justify-content: center;"[39m
-                  [36m>[39m
-                    [0m0[0m
-                    [0m%[0m
-                  [36m</p>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"Questions"[39m
-            [33mdata-testid[39m=[32m"question skeleton"[39m
-          [36m>[39m
-            [36m<h3>[39m
-              [0m1) I like disassembling and reassembling things[0m
-            [36m</h3>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"question"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Strongly Agree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mStrongly Agree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Agree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mAgree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mNeither agree nor Disagree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Disagree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mDisagree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I like disassembling and reassembling things"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Strongly Disagree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mStrongly Disagree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-            [36m<h3>[39m
-              [0m2) I am good at collaborating with others[0m
-            [36m</h3>[39m
-            [36m<div[39m
-              [33mdata-testid[39m=[32m"question"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I am good at collaborating with others"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Strongly Agree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mStrongly Agree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I am good at collaborating with others"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Agree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mAgree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I am good at collaborating with others"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Neither agree nor Disagree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mNeither agree nor Disagree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I am good at collaborating with others"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Disagree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mDisagree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"form-check form-check-inline"[39m
-              [36m>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-check-input"[39m
-                  [33mname[39m=[32m"I am good at collaborating with others"[39m
-                  [33mtype[39m=[32m"radio"[39m
-                  [33mvalue[39m=[32m"Strongly Disagree"[39m
-                [36m/>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-check-label"[39m
-                  [33mtitle[39m=[32m""[39m
-                [36m>[39m
-                  [0mStrongly Disagree[0m
-                [36m</label>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"pagination-buttons"[39m
-              [33mstyle[39m=[32m"display: flex; justify-content: space-between; margin-top: 20px;"[39m
-            [36m>[39m
-              [36m<button[39m
-                [33mdisabled[39m=[32m""[39m
-              [36m>[39m
-                [0m⬅️ Previous[0m
-              [36m</button>[39m
-              [36m<button>[39m
-                [0mNext ➡️[0m
-              [36m</button>[39m
-            [36m</div>[39m
-            [36m<div[39m
-              [33mstyle[39m=[32m"text-align: center; margin-top: 30px;"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"submit-container"[39m
-              [36m>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"submit-button disabled"[39m
-                  [33mdisabled[39m=[32m""[39m
-                [36m>[39m
-                  [0mSubmit[0m
-                [36m</button>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"clear-button disabled"[39m
-                [36m>[39m
-                  [0mClear[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"confettiAnim"[39m
-          [36m/>[39m
-          [36m<footer[39m
-            [33mclass[39m=[32m"footer"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<p>[39m
-                [0mMade with 💛 by Luc, Hanna & Isha — CareerHelpi 2025[0m
-              [36m</p>[39m
-            [36m</div>[39m
-          [36m</footer>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-    [0m [90m  9 |[39m             screen[33m.[39mgetByRole([32m"button"[39m[33m,[39m {name[33m:[39m[35m/FAQ/i[39m}) 
-     [90m 10 |[39m             [33m&&[39m 
-    [31m[1m>[22m[39m[90m 11 |[39m             screen[33m.[39mgetByRole([32m"button"[39m[33m,[39m {name[33m:[39m[35m/User Profile/i[39m})
-     [90m    |[39m                    [31m[1m^[22m[39m
-     [90m 12 |[39m         )[33m.[39mtoBeInTheDocument()[33m;[39m
-     [90m 13 |[39m     })
-     [90m 14 |[39m     test([32m'if there is a button for the detailed question'[39m[33m,[39m()[33m=>[39m{[0m
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
-      at Object.<anonymous> (src/tests/BasicQs.test.tsx:11:20)
-
 ------------------------|---------|----------|---------|---------|-------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
 ------------------------|---------|----------|---------|---------|-------------------------
@@ -1135,5 +1135,5 @@ All files               |   10.69 |    25.69 |    5.55 |   13.18 |
 Test Suites: 3 failed, 3 total
 Tests:       2 failed, 13 passed, 15 total
 Snapshots:   0 total
-Time:        5.453 s
+Time:        5.301 s
 Ran all test suites.
